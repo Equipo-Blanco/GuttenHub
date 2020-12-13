@@ -7,4 +7,6 @@
     <string name="ejemplo_email_com">ejemplo@email.com</string>
     <string name="_681393521">681393521</string>
     <string name="direccion">Direccion:</string>
+    <string name="env_os">Envíos</string>
+    <string name="ccitas">Calendario Citas</string>
 </resources>

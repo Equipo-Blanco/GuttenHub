@@ -977,6 +977,7 @@
     <string name="app_name">DRAFT SL</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
+    <string name="ccitas">Calendario Citas</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
@@ -985,6 +986,7 @@
     <string name="clear_text_end_icon_content_description">Clear text</string>
     <string name="direccion">Direccion:</string>
     <string name="ejemplo_email_com">ejemplo@email.com</string>
+    <string name="env_os">Envíos</string>
     <string name="envios">Envios</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>

@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Main" >
+        <activity android:name="com.example.main.pedidos" />
+        <activity android:name="com.example.main.envios" />
+        <activity android:name="com.example.main.citas" />
         <activity android:name="com.example.main.partners" />
         <activity android:name="com.example.main.MainActivity" >
             <intent-filter>

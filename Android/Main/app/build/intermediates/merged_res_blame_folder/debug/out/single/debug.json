@@ -12,6 +12,14 @@
         "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\drawable\\phone.jpg"
     },
     {
+        "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_envios.xml.flat",
+        "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\layout\\activity_envios.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_citas.xml.flat",
+        "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\layout\\activity_citas.xml"
+    },
+    {
         "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
@@ -90,6 +98,10 @@
     {
         "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gmail.jpg.flat",
         "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\drawable\\gmail.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_pedidos.xml.flat",
+        "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\layout\\activity_pedidos.xml"
     },
     {
         "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",

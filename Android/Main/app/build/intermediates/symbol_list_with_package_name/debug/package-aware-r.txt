@@ -1954,6 +1954,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvCitas
+id tvEnvios
+id tvPartners
 id unchecked
 id uniform
 id unlabeled
@@ -2026,8 +2029,11 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_citas
+layout activity_envios
 layout activity_main
 layout activity_partners
+layout activity_pedidos
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2130,6 +2136,7 @@ string abc_toolbar_collapse_description
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string ccitas
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2138,6 +2145,7 @@ string citas
 string clear_text_end_icon_content_description
 string direccion
 string ejemplo_email_com
+string env_os
 string envios
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
