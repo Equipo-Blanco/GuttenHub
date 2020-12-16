@@ -53,27 +53,26 @@ public class NuevaCita extends AppCompatActivity {
             public void onClick(View v) {
                 String titulo;
                 String descrip;
-
-                if(et_titulo.getText().length()>0){
+                //Comprueba y valida si se ha introducido alguna información en el titulo
+                //si está vacío pone un texto por defecto.
+                if (et_titulo.getText().length() > 0) {
                     titulo = et_titulo.getText().toString();
-                }else{
-                    titulo="Sin titulo";
+                } else {
+                    titulo = "Sin titulo";
                 }
-
-                if(et_descripcion.getText().length()>0){
+                //Comprueba y valida si se ha introducido alguna información en descripción
+                //si está vacío pone un texto por defecto.
+                if (et_descripcion.getText().length() > 0) {
                     descrip = et_descripcion.getText().toString();
-                }else{
-                    descrip="Sin descripción";
+                } else {
+                    descrip = "Sin descripción";
                 }
-
-
 
                 File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/citas/KheArpehta.xml");
 
                 if (!newxmlfile.exists()) {
                     newxmlfile.getParentFile().mkdir();
                 }
-                //newxmlfile.mkdir();
                 try {
                     newxmlfile.createNewFile();
                 } catch (IOException e) {
@@ -82,7 +81,7 @@ public class NuevaCita extends AppCompatActivity {
 
                 FileOutputStream fileos = null;
                 try {
-                    fileos = new FileOutputStream(newxmlfile);
+                    fileos = new FileOutputStream(newxmlfile, true);
 
                 } catch (FileNotFoundException e) {
                     Log.e("FileNotFoundException", e.toString());
