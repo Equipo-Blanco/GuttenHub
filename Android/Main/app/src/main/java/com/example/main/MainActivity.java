@@ -1,5 +1,8 @@
 package com.example.main;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -9,8 +12,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.List;
 
@@ -24,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton bot_correo;
     ImageButton bot_llamada;
     TextView telf;
-    private static final int STORAGE_PERMISSION_CODE = 101;
+    static final int REQUEST_CODE = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intentEnvios = new Intent(this, envios.class);
         Intent intentPedidos = new Intent(this, pedidos.class);
         Intent intentMaps = new Intent(this, mapa.class);
+
+        pidePermisos();
 
         bot_llamada.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,5 +120,46 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentPedidos);
             }
         });
+    }
+
+    public void pidePermisos() {
+        if (ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) + ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) !=
+                PackageManager.PERMISSION_GRANTED) {
+            //Permiso sin conceder
+            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                //Crear Dialogo de Alerta
+                AlertDialog.Builder builder = new AlertDialog.Builder(
+                        MainActivity.this);
+                builder.setTitle("Conceder permisos:");
+                builder.setMessage("Leer y Escribir Archivos");
+                builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ActivityCompat.requestPermissions(
+                                MainActivity.this,
+                                new String[]{
+                                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                        Manifest.permission.READ_EXTERNAL_STORAGE
+                                }, REQUEST_CODE
+                        );
+                    }
+                });
+                builder.setNegativeButton("Cancelar", null);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            } else {
+                ActivityCompat.requestPermissions(
+                        MainActivity.this,
+                        new String[]{
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE
+                        }, REQUEST_CODE
+                );
+            }
+        } else {
+            //Cuando los permisos ya están concedidos
+            //Toast.makeText(getApplicationContext(), "Ya tienes permisos", Toast.LENGTH_SHORT).show();
+        }
     }
 }

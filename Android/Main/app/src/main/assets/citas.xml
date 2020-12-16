@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <citas>
-
+    <cita>
+        <fecha>18-12-2020</fecha>
+        <titulo>titulo cita</titulo>
+        <descripcion>texto descripcion</descripcion>
+    </cita>
 </citas>

@@ -1,29 +1,27 @@
 package com.example.main;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
+import android.util.Xml;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.xmlpull.v1.XmlSerializer;
 
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.StringWriter;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
+import static android.content.Intent.ACTION_CREATE_DOCUMENT;
 
 public class NuevaCita extends AppCompatActivity {
 
@@ -53,50 +51,77 @@ public class NuevaCita extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
+                String titulo;
+                String descrip;
+
+                if(et_titulo.getText().length()>0){
+                    titulo = et_titulo.getText().toString();
+                }else{
+                    titulo="Sin titulo";
+                }
+
+                if(et_descripcion.getText().length()>0){
+                    descrip = et_descripcion.getText().toString();
+                }else{
+                    descrip="Sin descripción";
+                }
+
+
+
+                File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/citas/KheArpehta.xml");
+
+                if (!newxmlfile.exists()) {
+                    newxmlfile.getParentFile().mkdir();
+                }
+                //newxmlfile.mkdir();
                 try {
-                    guardaCita(fecha);
+                    newxmlfile.createNewFile();
+                } catch (IOException e) {
+                    Log.e("IOException", "Exception in create new File(");
+                }
+
+                FileOutputStream fileos = null;
+                try {
+                    fileos = new FileOutputStream(newxmlfile);
+
+                } catch (FileNotFoundException e) {
+                    Log.e("FileNotFoundException", e.toString());
+                }
+                XmlSerializer serializer = Xml.newSerializer();
+
+                try {
+                    serializer.setOutput(fileos, "UTF-8");
+                    serializer.startDocument(null, Boolean.valueOf(true));
+                    serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
+
+                    serializer.startTag(null, "citas");
+
+                    serializer.startTag(null, "cita");
+
+                    serializer.startTag(null, "fecha");
+                    serializer.text(fecha);
+                    //serializer.attribute(null, "attribute", "value");
+                    serializer.endTag(null, "fecha");
+
+                    serializer.startTag(null, "titulo");
+                    serializer.text(titulo);
+                    serializer.endTag(null, "titulo");
+
+                    serializer.startTag(null, "descrip");
+                    serializer.text(descrip);
+                    serializer.endTag(null, "descrip");
+
+                    serializer.endTag(null, "cita");
+                    serializer.endTag(null, "citas");
+                    serializer.endDocument();
+                    serializer.flush();
+                    fileos.close();
+                    //TextView tv = (TextView)findViewById(R.);
+
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    Log.e("Exception", "Exception occured in writing");
                 }
             }
         });
-
     }
-
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void guardaCita(String _fecha) throws Exception {
-        String titulo = et_titulo.getText().toString();
-        String descripcion = et_descripcion.getText().toString();
-
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        DocumentBuilder db = dbf.newDocumentBuilder();
-        Document doc = db.newDocument();
-
-        Element elemRaiz = doc.createElement("citas");
-        doc.appendChild(elemRaiz);
-
-        Element elemDia = doc.createElement("cita");
-        elemRaiz.appendChild(elemDia);
-
-        Element elemFecha = doc.createElement("fecha");
-        elemFecha.appendChild(doc.createTextNode(_fecha));
-        elemDia.appendChild(elemFecha);
-
-        Element elemTitulo = doc.createElement("titulo");
-        elemTitulo.appendChild(doc.createTextNode(titulo));
-        elemDia.appendChild(elemTitulo);
-
-        Element elemDescrip = doc.createElement("descripcion");
-        elemDescrip.appendChild(doc.createTextNode(descripcion));
-        elemDia.appendChild(elemDescrip);
-
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
-        DOMSource source = new DOMSource(doc);
-        Files.createFile(Paths.get(Environment.getExternalStorageDirectory().getAbsolutePath() + "/DRAFT"));
-        StreamResult result = new StreamResult(new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + "DRAFT" + "/" + "citas1.xml"));
-
-        transformer.transform(source, result);
-    }
-
 }
