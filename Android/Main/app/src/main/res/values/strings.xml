@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DRAFT SL</string>
+    <string name="app_name">DRAFT</string>
     <string name="citas">Citas</string>
     <string name="pedidos">Pedidos</string>
     <string name="partners">Partners</string>
@@ -9,4 +9,10 @@
     <string name="direccion">Direccion:</string>
     <string name="env_os">Envíos</string>
     <string name="ccitas">Calendario Citas</string>
+    <string name="title_activity_mapa">Map</string>
+    <string name="seleccionar_fecha">Seleccionar fecha</string>
+    <string name="guardar">Guardar</string>
+    <string name="descripcion">Descripción:</string>
+    <string name="titulo_cita">Título cita:</string>
+    <string name="cita_para_el_dia">Cita para el dia</string>
 </resources>

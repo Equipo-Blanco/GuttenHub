@@ -68,6 +68,10 @@
         "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_mapa.xml.flat",
+        "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\layout\\activity_mapa.xml"
+    },
+    {
         "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
@@ -96,12 +100,12 @@
         "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gmail.jpg.flat",
-        "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\drawable\\gmail.jpg"
-    },
-    {
         "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_pedidos.xml.flat",
         "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\layout\\activity_pedidos.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gmail.jpg.flat",
+        "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\drawable\\gmail.jpg"
     },
     {
         "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
@@ -114,5 +118,9 @@
     {
         "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_maps.jpg.flat",
         "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\drawable\\maps.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_nueva_cita.xml.flat",
+        "source": "C:\\Users\\Sergio\\AndroidStudioProjects\\TrabajoGrupal\\Proyecto\\Main\\app\\src\\main\\res\\layout\\activity_nueva_cita.xml"
     }
 ]

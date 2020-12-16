@@ -19,6 +19,30 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25sp" />
+
+        <CalendarView
+            android:id="@+id/viewcalendario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/tvDia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:text="@string/seleccionar_fecha"
+            android:textColor="@color/black" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/BtnNuevo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_gravity="end"
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:contentDescription="TODO" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

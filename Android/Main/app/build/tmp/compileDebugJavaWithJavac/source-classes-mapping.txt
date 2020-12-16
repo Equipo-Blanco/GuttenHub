@@ -1,9 +1,5 @@
-com/example/main/MainActivity.java
- com.example.main.MainActivity
- com.example.main.MainActivity$1
- com.example.main.MainActivity$2
- com.example.main.MainActivity$3
- com.example.main.MainActivity$4
+com/example/main/mapa.java
+ com.example.main.mapa
 com/example/main/pedidos.java
  com.example.main.pedidos
 com/example/main/partners.java
@@ -14,3 +10,17 @@ com/example/main/BuildConfig.java
  com.example.main.BuildConfig
 com/example/main/citas.java
  com.example.main.citas
+ com.example.main.citas$1
+ com.example.main.citas$2
+com/example/main/NuevaCita.java
+ com.example.main.NuevaCita
+ com.example.main.NuevaCita$1
+com/example/main/MainActivity.java
+ com.example.main.MainActivity
+ com.example.main.MainActivity$1
+ com.example.main.MainActivity$2
+ com.example.main.MainActivity$3
+ com.example.main.MainActivity$4
+ com.example.main.MainActivity$5
+ com.example.main.MainActivity$6
+ com.example.main.MainActivity$7
