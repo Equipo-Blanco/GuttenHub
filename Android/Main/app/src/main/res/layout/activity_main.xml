@@ -23,12 +23,27 @@
             app:srcCompat="@drawable/draft"
             android:contentDescription="TODO" />
 
-        <TextView
-            android:id="@+id/TxDireccion"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:text="@string/direccion" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/TxDireccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="@string/direccion"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spnDelegaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="20dp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,6 +54,7 @@
 
             <ImageButton
                 android:id="@+id/BtnCorreo"
+                style="@android:style/Widget.ImageButton"
                 android:layout_width="98dp"
                 android:layout_height="68dp"
                 android:layout_marginEnd="10dp"
@@ -48,21 +64,23 @@
 
             <ImageButton
                 android:id="@+id/BtnLlamar"
+                style="@android:style/Widget.ImageButton"
                 android:layout_width="85dp"
                 android:layout_height="75dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:contentDescription="TODO"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/phone" />
 
             <ImageButton
                 android:id="@+id/BtnMapa"
+                style="@android:style/Widget.ImageButton"
                 android:layout_width="103dp"
                 android:layout_height="75dp"
                 android:layout_marginStart="10dp"
                 android:contentDescription="TODO"
-                android:scaleType="fitCenter"
+                android:scaleType="centerInside"
                 app:srcCompat="@drawable/maps" />
         </LinearLayout>
 
@@ -91,22 +109,26 @@
         <Button
             android:id="@+id/BtnCitas"
             style="@style/tamañoBotones"
-            android:text="@string/citas" />
+            android:text="@string/citas"
+            app:cornerRadius="30dp" />
 
         <Button
             android:id="@+id/BtnPartners"
             style="@style/tamañoBotones"
-            android:text="@string/partners" />
+            android:text="@string/partners"
+            app:cornerRadius="25dp" />
 
         <Button
             android:id="@+id/BtnPedidos"
             style="@style/tamañoBotones"
-            android:text="@string/pedidos" />
+            android:text="@string/pedidos"
+            app:cornerRadius="25dp" />
 
         <Button
             android:id="@+id/BtnEnvios"
             style="@style/tamañoBotones"
-            android:text="@string/envios" />
+            android:text="@string/envios"
+            app:cornerRadius="25dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

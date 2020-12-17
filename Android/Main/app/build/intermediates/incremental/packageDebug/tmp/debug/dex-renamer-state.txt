@@ -1,4 +1,4 @@
-#Wed Dec 16 22:18:46 CET 2020
+#Thu Dec 17 20:56:33 CET 2020
 base.0=C\:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

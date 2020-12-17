@@ -29,7 +29,7 @@
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/draft"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -52,10 +52,18 @@
         <activity
             android:name="com.example.main.mapa"
             android:label="@string/title_activity_mapa" />
-        <activity android:name="com.example.main.pedidos" />
-        <activity android:name="com.example.main.envios" />
-        <activity android:name="com.example.main.citas" />
-        <activity android:name="com.example.main.partners" />
+        <activity
+            android:name="com.example.main.pedidos"
+            android:parentActivityName="com.example.main.MainActivity" />
+        <activity
+            android:name="com.example.main.envios"
+            android:parentActivityName="com.example.main.MainActivity" />
+        <activity
+            android:name="com.example.main.citas"
+            android:parentActivityName="com.example.main.MainActivity" />
+        <activity
+            android:name="com.example.main.partners"
+            android:parentActivityName="com.example.main.MainActivity" />
         <activity android:name="com.example.main.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -9,8 +9,11 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton bot_correo;
     ImageButton bot_llamada;
     TextView telf;
+    Spinner spin_delegaciones;
     static final int REQUEST_CODE = 123;
 
     @Override
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         bot_correo = (ImageButton) findViewById(R.id.BtnCorreo);
         bot_llamada = (ImageButton) findViewById(R.id.BtnLlamar);
         telf = (TextView) findViewById(R.id.TxTel);
+        spin_delegaciones = (Spinner) findViewById(R.id.spnDelegaciones);
 
         //Intents para moverse por la app
         Intent intentPartner = new Intent(this, partners.class);
@@ -57,6 +62,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intentMaps = new Intent(this, mapa.class);
 
         pidePermisos();
+
+        final String[] datos = new String[]{"Gipuzkoa", "Bizkaia", "Araba", "Malaga", "Madrid", "Canarias"};
+        //Elemento ArrayAdapter, que permite coger un Array como fuente de información
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+        //Creamos nuestro Spinner
+
+        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin_delegaciones.setAdapter(adaptador);
+
+        spin_delegaciones.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        Object item = parent.getItemAtPosition(position);
+
+                        //tx_seleccionado.setText("Elegido: " +item.toString());
+                    }
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                }
+        );
 
         bot_llamada.setOnClickListener(new View.OnClickListener() {
             @Override
