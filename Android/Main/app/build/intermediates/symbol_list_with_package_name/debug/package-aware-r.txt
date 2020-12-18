@@ -1810,8 +1810,10 @@ id edit_query
 id end
 id enterAlways
 id enterAlwaysCollapsed
+id et_asunto
 id et_descripcion
 id et_titulo
+id etm_msg
 id existente
 id exitUntilCollapsed
 id expand_activities_button
@@ -2009,6 +2011,7 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
 id textView1
 id textView2
 id textView3
@@ -2041,6 +2044,10 @@ id tvCitas
 id tvDia
 id tvEnvios
 id tvPartners
+id tv_asunto
+id tv_destinatario
+id tv_msg
+id tv_ndelegacion
 id tv_titulo
 id unchecked
 id uniform
