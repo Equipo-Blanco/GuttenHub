@@ -73,8 +73,8 @@
 47        -->
 48        <meta-data
 48-->C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:31:9-33:55
-49            android:name="com.google.android.geo.API_KEY"
-49-->C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:32:13-58
+49            android:name="com.google.android.maps.v2.API_KEY"
+49-->C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:32:13-62
 50            android:value="@string/google_maps_key" />
 50-->C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:33:13-52
 51

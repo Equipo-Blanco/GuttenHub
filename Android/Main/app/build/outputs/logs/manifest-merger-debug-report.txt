@@ -103,12 +103,12 @@ activity#com.example.main.NuevaCita
 ADDED from C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:22:9-56
 	android:name
 		ADDED from C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:22:19-44
-meta-data#com.google.android.geo.API_KEY
+meta-data#com.google.android.maps.v2.API_KEY
 ADDED from C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:31:9-33:55
 	android:value
 		ADDED from C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:33:13-52
 	android:name
-		ADDED from C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:32:13-58
+		ADDED from C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:32:13-62
 activity#com.example.main.mapa
 ADDED from C:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:35:9-37:59
 	android:label
