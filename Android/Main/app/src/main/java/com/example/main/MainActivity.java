@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton bot_mapa;
     ImageButton bot_correo;
     ImageButton bot_llamada;
-    TextView telf;
+    TextView telf, mail;
     Spinner spin_delegaciones;
     static final int REQUEST_CODE = 123;
 
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         bot_correo = (ImageButton) findViewById(R.id.BtnCorreo);
         bot_llamada = (ImageButton) findViewById(R.id.BtnLlamar);
         telf = (TextView) findViewById(R.id.TxTel);
+        mail = (TextView) findViewById(R.id.TxEmail);
         spin_delegaciones = (Spinner) findViewById(R.id.spnDelegaciones);
 
         //Intents para moverse por la app
@@ -63,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
 
         pidePermisos();
 
-        final String[] datos = new String[]{"Gipuzkoa", "Bizkaia", "Araba", "Malaga", "Madrid", "Canarias"};
+        final String[] datos = new String[]{"Gipuzkoa", "Bizkaia", "Araba", "Malaga", "Madrid", "Barcelona"};
+        final String[] telefonos = new String[]{"943123456", "946881171", "945007660", "951926010", "915094134", "932075839"};
+        final String[] correos = new String[]{"draftgipuzkoa@draft.com", "draftbizkaia@draft.com", "draftaraba@draft.com", "draftmalaga@draft.com", "draftmadrid@draft.com", "draftbarcelona@draft.com"};
         //Elemento ArrayAdapter, que permite coger un Array como fuente de información
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
         //Creamos nuestro Spinner
@@ -76,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         Object item = parent.getItemAtPosition(position);
-
-                        //tx_seleccionado.setText("Elegido: " +item.toString());
+                            mail.setText(correos[position]);
+                            telf.setText(telefonos[position]);
                     }
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
