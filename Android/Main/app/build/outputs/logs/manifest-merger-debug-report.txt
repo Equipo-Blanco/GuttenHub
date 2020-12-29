@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-60:12
-INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-60:12
-INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-60:12
-INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-60:12
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-64:12
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\c63d4a666c0a1ba98c2e2f24b9638d9e\material-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\b8718484daa03109e40dacfa216193fb\constraintlayout-2.0.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\4f9c7f78c15bb692cf0895b881aafbad\appcompat-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -36,25 +36,25 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Sergio\.gradl
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\06bc4641de51b04d4df94808d6e05292\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\1b64911e987df0fea019408e241659d7\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\a77c810a56173ccf6fb339f045a6aacd\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-60:12
-INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-60:12
-INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-60:12
+INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-64:12
+INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-64:12
 	package
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:3:5-31
 		INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml
 		INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-60:12
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-64:12
 		INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-60:12
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:1-64:12
 		INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:5:5-49:19
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:5:5-53:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\c63d4a666c0a1ba98c2e2f24b9638d9e\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\c63d4a666c0a1ba98c2e2f24b9638d9e\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\b8718484daa03109e40dacfa216193fb\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -88,75 +88,81 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Se
 	android:theme
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:12:9-42
 activity#com.example.main.Catalogo
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:13:9-55
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:13:9-15:20
+	android:parentActivityName
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:14:13-50
 	android:name
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:13:19-43
 activity#com.example.main.NuevaCita
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:14:9-47
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:16:9-17:50
+	android:parentActivityName
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:17:13-48
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:14:19-44
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:16:19-44
 activity#com.example.main.mapa
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:23:9-25:59
-	android:label
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:25:13-56
-	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:24:13-33
-activity#com.example.main.pedidos
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:27:9-29:58
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:26:9-29:57
 	android:parentActivityName
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:29:13-55
+	android:label
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:28:13-56
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:28:13-36
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:27:13-33
+activity#com.example.main.pedidos
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:31:9-33:58
+	android:parentActivityName
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:33:13-55
+	android:name
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:32:13-36
 activity#com.example.main.envios
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:30:9-32:58
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:34:9-36:58
 	android:parentActivityName
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:32:13-55
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:36:13-55
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:31:13-35
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:35:13-35
 activity#com.example.main.citas
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:33:9-35:58
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:37:9-39:58
 	android:parentActivityName
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:35:13-55
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:39:13-55
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:34:13-34
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:38:13-34
 activity#com.example.main.partners
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:36:9-38:58
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:40:9-42:58
 	android:parentActivityName
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:38:13-55
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:42:13-55
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:37:13-37
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:41:13-37
 activity#com.example.main.MainActivity
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:39:9-45:20
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:43:9-49:20
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:39:19-47
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:43:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:40:13-44:29
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:44:13-48:29
 action#android.intent.action.MAIN
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:41:17-69
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:45:17-69
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:41:25-66
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:45:25-66
 category#android.intent.category.LAUNCHER
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:43:17-77
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:47:17-77
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:43:27-74
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:47:27-74
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:46:9-48:55
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:50:9-52:55
 	android:value
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:48:13-52
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:52:13-52
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:47:13-62
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:51:13-62
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:50:5-81
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:54:5-81
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:50:22-78
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:54:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:56:5-79
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:60:5-79
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:56:22-76
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:60:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:58:5-80
+ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:62:5-80
 	android:name
-		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:58:22-77
+		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:62:22-77
 uses-sdk
 INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml

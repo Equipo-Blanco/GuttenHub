@@ -45,6 +45,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array precios
 array productos
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1645,6 +1646,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable patriots_local
+drawable patriots_visit
 drawable phone
 drawable test_custom_background
 drawable tooltip_frame_dark

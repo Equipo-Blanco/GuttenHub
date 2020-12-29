@@ -44,7 +44,8 @@ int animator mtrl_fab_hide_motion_spec 0x7f02000b
 int animator mtrl_fab_show_motion_spec 0x7f02000c
 int animator mtrl_fab_transformation_sheet_collapse_spec 0x7f02000d
 int animator mtrl_fab_transformation_sheet_expand_spec 0x7f02000e
-int array productos 0x7f030000
+int array precios 0x7f030000
+int array productos 0x7f030001
 int attr actionBarDivider 0x7f040000
 int attr actionBarItemBackground 0x7f040001
 int attr actionBarPopupTheme 0x7f040002
@@ -1644,10 +1645,12 @@ int drawable notification_template_icon_bg 0x7f0800a6
 int drawable notification_template_icon_low_bg 0x7f0800a7
 int drawable notification_tile_bg 0x7f0800a8
 int drawable notify_panel_notification_icon_bg 0x7f0800a9
-int drawable phone 0x7f0800aa
-int drawable test_custom_background 0x7f0800ab
-int drawable tooltip_frame_dark 0x7f0800ac
-int drawable tooltip_frame_light 0x7f0800ad
+int drawable patriots_local 0x7f0800aa
+int drawable patriots_visit 0x7f0800ab
+int drawable phone 0x7f0800ac
+int drawable test_custom_background 0x7f0800ad
+int drawable tooltip_frame_dark 0x7f0800ae
+int drawable tooltip_frame_light 0x7f0800af
 int id ALT 0x7f090000
 int id BOTTOM_END 0x7f090001
 int id BOTTOM_START 0x7f090002

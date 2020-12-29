@@ -1,5 +1,9 @@
 [
     {
+        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_patriots_local.jpg.flat",
+        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\drawable\\patriots_local.jpg"
+    },
+    {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
@@ -70,6 +74,10 @@
     {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_draft.jpeg.flat",
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\drawable\\draft.jpeg"
+    },
+    {
+        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_patriots_visit.jpg.flat",
+        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\drawable\\patriots_visit.jpg"
     },
     {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_item.xml.flat",

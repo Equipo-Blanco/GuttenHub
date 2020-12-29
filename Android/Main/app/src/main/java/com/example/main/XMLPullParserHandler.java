@@ -6,6 +6,8 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -27,7 +29,8 @@ public class XMLPullParserHandler {
             factory.setNamespaceAware(true);
             XmlPullParser xpp = factory.newPullParser();
 
-            InputStream stream = context.getAssets().open("citasGuardadas.xml");
+            //InputStream stream = context.getAssets().open("citasGuardadas.xml");
+            InputStream stream = new FileInputStream(new File( "/storage/emulated/0/Draft/citasGuardadas.xml"));
             xpp.setInput(stream, null);
 
             int eventType = xpp.getEventType();

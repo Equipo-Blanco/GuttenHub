@@ -36,8 +36,13 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Main" >
-        <activity android:name="com.example.main.Catalogo" />
-        <activity android:name="com.example.main.NuevaCita" />
+        <activity
+            android:name="com.example.main.Catalogo"
+            android:parentActivityName="com.example.main.pedidos" >
+        </activity>
+        <activity
+            android:name="com.example.main.NuevaCita"
+            android:parentActivityName="com.example.main.citas" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -48,7 +53,8 @@
         -->
         <activity
             android:name="com.example.main.mapa"
-            android:label="@string/title_activity_mapa" />
+            android:label="@string/title_activity_mapa"
+            android:parentActivityName="com.example.main.MainActivity" />
         <activity
             android:name="com.example.main.pedidos"
             android:parentActivityName="com.example.main.MainActivity" />

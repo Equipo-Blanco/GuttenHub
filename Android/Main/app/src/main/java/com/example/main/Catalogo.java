@@ -21,7 +21,9 @@ public class Catalogo extends AppCompatActivity {
     ImageView iv_imgProducto;
     String[] productos;
     String[] descripciones;
-    int[] imagenes = {R.drawable.falcons_local, R.drawable.falcons_visit};
+    String[] precios;
+    int[] imagenes = {R.drawable.falcons_local, R.drawable.falcons_visit,
+            R.drawable.patriots_local, R.drawable.patriots_visit};
     int mSelectedItem;
 
 
@@ -37,6 +39,7 @@ public class Catalogo extends AppCompatActivity {
         txv_prec = (TextView) findViewById(R.id.tv_precio);
 
         productos = getResources().getStringArray(R.array.productos);
+        precios = getResources().getStringArray(R.array.precios);
 
         MyAdapter adapter = new MyAdapter(this, productos);
         listView.setAdapter(adapter);
@@ -49,9 +52,16 @@ public class Catalogo extends AppCompatActivity {
                 txv_prod.setText(productos[position]);
                 try {
                     iv_imgProducto.setImageResource(imagenes[position]);
-                }catch (Exception e){
+                } catch (Exception e) {
                     System.out.println("No hay imagen para ese producto");
                     iv_imgProducto.setImageResource(R.drawable.draft);
+                }
+
+                try {
+                    txv_prec.setText("Precio: " + precios[position]);
+                } catch (Exception e) {
+                    System.out.println("No se ha establecido un precio");
+                    txv_prec.setText("Precio: N/D");
                 }
             }
         });
@@ -60,18 +70,6 @@ public class Catalogo extends AppCompatActivity {
     class MyAdapter extends ArrayAdapter<String> {
         Context context;
         String rTitle[];
-        String rDescription[];
-        int img[];
-
-/*
-        public MyAdapter(Context c, String[] title, String[] description, int[] _img) {
-            super(c, R.layout.row, R.id.textView1, title);
-            this.context = c;
-            this.rTitle = title;
-            this.rDescription = description;
-            this.img = _img;
-        }
-*/
 
         public MyAdapter(Context c, String[] productos) {
             super(c, R.layout.row, R.id.textView1, productos);
@@ -95,22 +93,15 @@ public class Catalogo extends AppCompatActivity {
                 viewHolder = (ViewHolder) row.getTag();
             }
             viewHolder.tv1.setText(rTitle[position]);
-            //viewHolder.tv2.setText(rDescription[position]);
-            //viewHolder.imv1.setImageResource(img[position]);
-
             return row;
         }
     }
 
     public class ViewHolder {
         TextView tv1;
-        //TextView tv2;
-        //ImageView imv1;
 
         public ViewHolder(View itemView) {
             tv1 = itemView.findViewById(R.id.textView1);
-            //tv2 = itemView.findViewById(R.id.textView2);
-            //imv1 = itemView.findViewById(R.id.imagenes);
         }
     }
 

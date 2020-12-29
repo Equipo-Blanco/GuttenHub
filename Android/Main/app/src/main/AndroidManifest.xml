@@ -10,8 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Main">
-        <activity android:name=".Catalogo"></activity>
-        <activity android:name=".NuevaCita" />
+        <activity android:name=".Catalogo"
+            android:parentActivityName=".pedidos" >
+        </activity>
+        <activity android:name=".NuevaCita"
+            android:parentActivityName=".citas"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -22,7 +25,8 @@
         -->
         <activity
             android:name=".mapa"
-            android:label="@string/title_activity_mapa" />
+            android:label="@string/title_activity_mapa"
+            android:parentActivityName=".MainActivity"/>
 
         <activity
             android:name=".pedidos"

@@ -21,6 +21,14 @@ com/example/main/envios.java
  com.example.main.envios
 com/example/main/BuildConfig.java
  com.example.main.BuildConfig
+com/example/main/pedidos.java
+ com.example.main.pedidos
+ com.example.main.pedidos$1
+com/example/main/Catalogo.java
+ com.example.main.Catalogo
+ com.example.main.Catalogo$1
+ com.example.main.Catalogo$MyAdapter
+ com.example.main.Catalogo$ViewHolder
 com/example/main/citas.java
  com.example.main.citas
  com.example.main.citas$1
@@ -28,11 +36,3 @@ com/example/main/citas.java
 com/example/main/NuevaCita.java
  com.example.main.NuevaCita
  com.example.main.NuevaCita$1
-com/example/main/Catalogo.java
- com.example.main.Catalogo
- com.example.main.Catalogo$1
- com.example.main.Catalogo$MyAdapter
- com.example.main.Catalogo$ViewHolder
-com/example/main/pedidos.java
- com.example.main.pedidos
- com.example.main.pedidos$1

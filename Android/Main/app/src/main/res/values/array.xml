@@ -14,4 +14,11 @@
         <item>Gorra 500 Millas Indianapolis</item>
         <item>Gorra Andretti Autosport</item>
     </string-array>
+
+    <string-array name="precios">
+        <item>59,90€</item>
+        <item>59,90€</item>
+        <item>68,50€</item>
+        <item>62,20€</item>
+    </string-array>
 </resources>

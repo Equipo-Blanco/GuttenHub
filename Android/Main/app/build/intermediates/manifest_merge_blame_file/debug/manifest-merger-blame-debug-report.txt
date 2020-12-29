@@ -11,19 +11,19 @@
 9-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-11-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:50:5-81
-11-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:50:22-78
+11-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:54:5-81
+11-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:54:22-78
 12    <!--
 13         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
 14         Google Maps Android API v2, but you must specify either coarse or fine
 15         location permissions for the "MyLocation" functionality.
 16    -->
 17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-17-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:56:5-79
-17-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:56:22-76
+17-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:60:5-79
+17-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:60:22-76
 18    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-18-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:58:5-80
-18-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:58:22-77
+18-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:62:5-80
+18-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:62:22-77
 19
 20    <!-- Include required permissions for Google Maps API to run. -->
 21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -41,7 +41,7 @@
 26-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\a998b89aa33dba7d2af0bd1f1f02715b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
 27
 28    <application
-28-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:5:5-49:19
+28-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:5:5-53:19
 29        android:allowBackup="true"
 29-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:6:9-35
 30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -60,94 +60,103 @@
 37        android:testOnly="true"
 38        android:theme="@style/Theme.Main" >
 38-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:12:9-42
-39        <activity android:name="com.example.main.Catalogo" />
-39-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:13:9-55
-39-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:13:19-43
-40        <activity android:name="com.example.main.NuevaCita" />
-40-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:14:9-47
-40-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:14:19-44
-41        <!--
-42             The API key for Google Maps-based APIs is defined as a string resource.
-43             (See the file "res/values/google_maps_api.xml").
-44             Note that the API key is linked to the encryption key used to sign the APK.
-45             You need a different API key for each encryption key, including the release key that is used to
-46             sign the APK for publishing.
-47             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-48        -->
-49        <activity
-49-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:23:9-25:59
-50            android:name="com.example.main.mapa"
-50-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:24:13-33
-51            android:label="@string/title_activity_mapa" />
-51-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:25:13-56
-52        <activity
-52-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:27:9-29:58
-53            android:name="com.example.main.pedidos"
-53-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:28:13-36
-54            android:parentActivityName="com.example.main.MainActivity" />
-54-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:29:13-55
-55        <activity
-55-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:30:9-32:58
-56            android:name="com.example.main.envios"
-56-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:31:13-35
+39        <activity
+39-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:13:9-15:20
+40            android:name="com.example.main.Catalogo"
+40-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:13:19-43
+41            android:parentActivityName="com.example.main.pedidos" >
+41-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:14:13-50
+42        </activity>
+43        <activity
+43-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:16:9-17:50
+44            android:name="com.example.main.NuevaCita"
+44-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:16:19-44
+45            android:parentActivityName="com.example.main.citas" />
+45-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:17:13-48
+46        <!--
+47             The API key for Google Maps-based APIs is defined as a string resource.
+48             (See the file "res/values/google_maps_api.xml").
+49             Note that the API key is linked to the encryption key used to sign the APK.
+50             You need a different API key for each encryption key, including the release key that is used to
+51             sign the APK for publishing.
+52             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+53        -->
+54        <activity
+54-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:26:9-29:57
+55            android:name="com.example.main.mapa"
+55-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:27:13-33
+56            android:label="@string/title_activity_mapa"
+56-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:28:13-56
 57            android:parentActivityName="com.example.main.MainActivity" />
-57-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:32:13-55
+57-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:29:13-55
 58        <activity
-58-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:33:9-35:58
-59            android:name="com.example.main.citas"
-59-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:34:13-34
+58-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:31:9-33:58
+59            android:name="com.example.main.pedidos"
+59-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:32:13-36
 60            android:parentActivityName="com.example.main.MainActivity" />
-60-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:35:13-55
+60-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:33:13-55
 61        <activity
-61-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:36:9-38:58
-62            android:name="com.example.main.partners"
-62-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:37:13-37
+61-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:34:9-36:58
+62            android:name="com.example.main.envios"
+62-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:35:13-35
 63            android:parentActivityName="com.example.main.MainActivity" />
-63-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:38:13-55
-64        <activity android:name="com.example.main.MainActivity" >
-64-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:39:9-45:20
-64-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:39:19-47
-65            <intent-filter>
-65-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:40:13-44:29
-66                <action android:name="android.intent.action.MAIN" />
-66-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:41:17-69
-66-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:41:25-66
-67
-68                <category android:name="android.intent.category.LAUNCHER" />
-68-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:43:17-77
-68-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:43:27-74
-69            </intent-filter>
-70        </activity>
-71
-72        <meta-data
-72-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:46:9-48:55
-73            android:name="com.google.android.maps.v2.API_KEY"
-73-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:47:13-62
-74            android:value="@string/google_maps_key" />
-74-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:48:13-52
-75        <!-- Needs to be explicitly declared on P+ -->
-76        <uses-library
-76-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\a998b89aa33dba7d2af0bd1f1f02715b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-77            android:name="org.apache.http.legacy"
-77-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\a998b89aa33dba7d2af0bd1f1f02715b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-78            android:required="false" />
-78-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\a998b89aa33dba7d2af0bd1f1f02715b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-79
-80        <activity
-80-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-81            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-81-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-82            android:exported="false"
-82-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-83            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-83-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-84
-85        <meta-data
-85-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-86            android:name="com.google.android.gms.version"
-86-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-87            android:value="@integer/google_play_services_version" />
-87-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-88    </application>
-89
-90</manifest>
+63-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:36:13-55
+64        <activity
+64-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:37:9-39:58
+65            android:name="com.example.main.citas"
+65-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:38:13-34
+66            android:parentActivityName="com.example.main.MainActivity" />
+66-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:39:13-55
+67        <activity
+67-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:40:9-42:58
+68            android:name="com.example.main.partners"
+68-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:41:13-37
+69            android:parentActivityName="com.example.main.MainActivity" />
+69-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:42:13-55
+70        <activity android:name="com.example.main.MainActivity" >
+70-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:43:9-49:20
+70-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:43:19-47
+71            <intent-filter>
+71-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:44:13-48:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:45:17-69
+72-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:45:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:47:17-77
+74-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:47:27-74
+75            </intent-filter>
+76        </activity>
+77
+78        <meta-data
+78-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:50:9-52:55
+79            android:name="com.google.android.maps.v2.API_KEY"
+79-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:51:13-62
+80            android:value="@string/google_maps_key" />
+80-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:52:13-52
+81        <!-- Needs to be explicitly declared on P+ -->
+82        <uses-library
+82-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\a998b89aa33dba7d2af0bd1f1f02715b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+83            android:name="org.apache.http.legacy"
+83-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\a998b89aa33dba7d2af0bd1f1f02715b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+84            android:required="false" />
+84-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\a998b89aa33dba7d2af0bd1f1f02715b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+85
+86        <activity
+86-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+87            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+87-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+88            android:exported="false"
+88-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+89            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+89-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\4858ba8f6e273fdf2dcb9d88023c9534\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+90
+91        <meta-data
+91-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+92            android:name="com.google.android.gms.version"
+92-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+93            android:value="@integer/google_play_services_version" />
+93-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Sergio\.gradle\caches\transforms-2\files-2.1\f46279d3478497538e817a8da381f082\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+94    </application>
+95
+96</manifest>
