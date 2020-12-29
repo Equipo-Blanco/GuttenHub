@@ -30,6 +30,7 @@ com/example/main/NuevaCita.java
  com.example.main.NuevaCita$1
 com/example/main/Catalogo.java
  com.example.main.Catalogo
+ com.example.main.Catalogo$1
  com.example.main.Catalogo$MyAdapter
  com.example.main.Catalogo$ViewHolder
 com/example/main/pedidos.java

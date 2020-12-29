@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,15 +17,11 @@ import android.widget.TextView;
 public class Catalogo extends AppCompatActivity {
 
     ListView listView;
-    TextView txv_trad;
-    Button bot_gridV;
+    TextView txv_descrip, txv_prod, txv_prec;
+    ImageView iv_imgProducto;
     String[] productos;
-    String[] traduccRapida;
-   /* int[] imagenes = {R.drawable.esp, R.drawable.eus, R.drawable.ing, R.drawable.ita,
-            R.drawable.nor, R.drawable.ale, R.drawable.chn, R.drawable.jap,
-            R.drawable.isl, R.drawable.fin, R.drawable.rus, R.drawable.est,
-            R.drawable.sue, R.drawable.haw, R.drawable.tur, R.drawable.pol,
-            R.drawable.gre, R.drawable.kor, R.drawable.cat};*/
+    String[] descripciones;
+    int[] imagenes = {R.drawable.falcons_local, R.drawable.falcons_visit};
     int mSelectedItem;
 
 
@@ -36,23 +31,30 @@ public class Catalogo extends AppCompatActivity {
         setContentView(R.layout.activity_catalogo);
 
         listView = findViewById(R.id.lv1_lista);
-        productos = getResources().getStringArray(R.array.productos);
-        //traduccRapida = getResources().getStringArray(R.array.frases);
+        iv_imgProducto = (ImageView) findViewById(R.id.iv_foto);
+        txv_prod = (TextView) findViewById(R.id.tv_prod);
+        txv_descrip = (TextView) findViewById(R.id.tv_descrip);
+        txv_prec = (TextView) findViewById(R.id.tv_precio);
 
-        //txv_trad = (TextView) findViewById(R.id.txv_traduccion);
-        //bot_gridV = (Button) findViewById(R.id.btn_grid);
+        productos = getResources().getStringArray(R.array.productos);
 
         MyAdapter adapter = new MyAdapter(this, productos);
         listView.setAdapter(adapter);
 
-/*        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mSelectedItem = position;
-                txv_trad.setText(traduccRapida[position]);
-
+                //txv_descrip.setText(descripciones[position]);
+                txv_prod.setText(productos[position]);
+                try {
+                    iv_imgProducto.setImageResource(imagenes[position]);
+                }catch (Exception e){
+                    System.out.println("No hay imagen para ese producto");
+                    iv_imgProducto.setImageResource(R.drawable.draft);
+                }
             }
-        });*/
+        });
     }
 
     class MyAdapter extends ArrayAdapter<String> {
@@ -73,6 +75,8 @@ public class Catalogo extends AppCompatActivity {
 
         public MyAdapter(Context c, String[] productos) {
             super(c, R.layout.row, R.id.textView1, productos);
+            this.context = c;
+            this.rTitle = productos;
         }
 
         @NonNull

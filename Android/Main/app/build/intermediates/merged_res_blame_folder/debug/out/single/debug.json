@@ -4,6 +4,10 @@
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_falcons_visit.jpg.flat",
+        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\drawable\\falcons_visit.jpg"
+    },
+    {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
@@ -12,12 +16,12 @@
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
     },
     {
-        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_mapa.xml.flat",
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\layout\\activity_mapa.xml"
+    },
+    {
+        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
@@ -82,6 +86,10 @@
     {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_catalogo.xml.flat",
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\layout\\activity_catalogo.xml"
+    },
+    {
+        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_falcons_local.jpg.flat",
+        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\drawable\\falcons_local.jpg"
     },
     {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",

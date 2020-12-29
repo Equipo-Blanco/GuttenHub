@@ -1604,6 +1604,8 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable draft
+drawable falcons_local
+drawable falcons_visit
 drawable gmail
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -1854,6 +1856,7 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id iv_foto
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -2050,9 +2053,12 @@ id tvDia
 id tvEnvios
 id tvPartners
 id tv_asunto
+id tv_descrip
 id tv_destinatario
 id tv_msg
 id tv_ndelegacion
+id tv_precio
+id tv_prod
 id tv_titulo
 id unchecked
 id uniform
