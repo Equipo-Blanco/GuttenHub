@@ -1,20 +1,32 @@
 package com.example.main;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.CalendarView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.CalendarView;
-import android.widget.TextView;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.text.SimpleDateFormat;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.Calendar;
-import java.util.Locale;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 public class citas extends AppCompatActivity {
 
@@ -24,6 +36,8 @@ public class citas extends AppCompatActivity {
     private String curDate;
     private int dia, mes, anio;
     private String fecha;
+    ListView listView;
+    List<ClaseCita> citasExistentes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +48,14 @@ public class citas extends AppCompatActivity {
         calendario = (CalendarView) findViewById(R.id.viewcalendario);
         bot_nuevo = (FloatingActionButton) findViewById(R.id.BtnNuevo);
         bot_nuevo.setEnabled(false);
+        listView = (ListView) findViewById(R.id.listaCitas);
         Intent intent = new Intent(this, NuevaCita.class);
+
+        XMLPullParserHandler parser = new XMLPullParserHandler();
+        citasExistentes = parser.parseXML(this);
+
+        ArrayAdapter<ClaseCita> adapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1, citasExistentes);
+        listView.setAdapter(adapter);
 
         calendario.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -53,7 +74,7 @@ public class citas extends AppCompatActivity {
         bot_nuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fecha = dia +"/" +mes +"/" +anio;
+                fecha = dia + "/" + mes + "/" + anio;
                 intent.putExtra("fechacita", fecha);
                 startActivity(intent);
             }

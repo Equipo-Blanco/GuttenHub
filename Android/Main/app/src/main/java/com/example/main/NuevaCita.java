@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.lang.reflect.Type;
+import java.util.Scanner;
 
 import static android.content.Intent.ACTION_CREATE_DOCUMENT;
 
@@ -67,8 +70,8 @@ public class NuevaCita extends AppCompatActivity {
                 } else {
                     descrip = "Sin descripción";
                 }
-
-                File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/citas/KheArpehta.xml");
+                Toast.makeText(getApplicationContext(), "Cita guardada", Toast.LENGTH_SHORT).show();
+                File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml");
 
                 if (!newxmlfile.exists()) {
                     newxmlfile.getParentFile().mkdir();
@@ -76,7 +79,7 @@ public class NuevaCita extends AppCompatActivity {
                 try {
                     newxmlfile.createNewFile();
                 } catch (IOException e) {
-                    Log.e("IOException", "Exception in create new File(");
+                    Log.e("IOException", "Exception in create new File");
                 }
 
                 FileOutputStream fileos = null;
@@ -89,8 +92,9 @@ public class NuevaCita extends AppCompatActivity {
                 XmlSerializer serializer = Xml.newSerializer();
 
                 try {
+
                     serializer.setOutput(fileos, "UTF-8");
-                    serializer.startDocument(null, Boolean.valueOf(true));
+                    serializer.startDocument(null, true);
                     serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
 
                     serializer.startTag(null, "citas");
@@ -121,6 +125,7 @@ public class NuevaCita extends AppCompatActivity {
                     Log.e("Exception", "Exception occured in writing");
                 }
             }
+
         });
     }
 }

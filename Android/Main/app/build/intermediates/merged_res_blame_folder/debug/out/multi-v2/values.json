@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-2\\files-2.1\\c63d4a666c0a1ba98c2e2f24b9638d9e\\material-1.2.1\\res\\values\\values.xml",
@@ -23,6 +23,61 @@
                     }
                 },
                 {
+                    "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "7,1,10,16,2,14,8,6,9,5,13,4,3,12,11,15",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "302,17,446,770,61,662,352,237,403,194,617,147,102,552,499,716",
+                        "endColumns": "48,42,51,61,39,52,49,63,41,41,43,45,43,63,51,52",
+                        "endOffsets": "346,55,493,827,96,710,397,296,440,231,656,188,141,611,546,764"
+                    },
+                    "to": {
+                        "startLines": "957,985,988,993,994,1014,1015,1016,1017,1018,1024,1065,1071,1073,1075,1076",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55350,57265,57589,57987,58049,60501,60554,60604,60668,60710,61358,68608,69456,69553,69688,69740",
+                        "endColumns": "48,42,51,61,39,52,49,63,41,41,43,45,43,63,51,52",
+                        "endOffsets": "55394,57303,57636,58044,58084,60549,60599,60663,60705,60747,61397,68649,69495,69612,69735,69788"
+                    }
+                },
+                {
+                    "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "59",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "213"
+                    },
+                    "to": {
+                        "startLines": "4671",
+                        "startColumns": "4",
+                        "startOffsets": "308252",
+                        "endLines": "4674",
+                        "endColumns": "12",
+                        "endOffsets": "308403"
+                    }
+                },
+                {
+                    "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "827"
+                    },
+                    "to": {
+                        "startLines": "3589",
+                        "startColumns": "4",
+                        "startOffsets": "236062",
+                        "endLines": "3601",
+                        "endColumns": "12",
+                        "endOffsets": "236773"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-2\\files-2.1\\43d28a6cb6aa3ef105d8e111681e9af4\\coordinatorlayout-1.1.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,6,16",
@@ -39,25 +94,6 @@
                         "endLines": "47,4670,5948,6037",
                         "endColumns": "60,12,24,24",
                         "endOffsets": "2370,308247,390742,395953"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "827"
-                    },
-                    "to": {
-                        "startLines": "3589",
-                        "startColumns": "4",
-                        "startOffsets": "236062",
-                        "endLines": "3601",
-                        "endColumns": "12",
-                        "endOffsets": "236773"
                     }
                 },
                 {
@@ -118,6 +154,23 @@
                     }
                 },
                 {
+                    "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\debug\\res\\values\\google_maps_api.xml",
+                    "from": {
+                        "startLines": "22",
+                        "startColumns": "4",
+                        "startOffsets": "863",
+                        "endColumns": "137",
+                        "endOffsets": "996"
+                    },
+                    "to": {
+                        "startLines": "1023",
+                        "startColumns": "4",
+                        "startOffsets": "61220",
+                        "endColumns": "137",
+                        "endOffsets": "61353"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-2\\files-2.1\\a998b89aa33dba7d2af0bd1f1f02715b\\jetified-play-services-maps-17.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -137,7 +190,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\values\\colors.xml",
+                    "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
                         "startLines": "7,2,3,4,5,6,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -151,23 +204,6 @@
                         "startOffsets": "18715,25379,25426,25473,26217,26262,26428",
                         "endColumns": "41,46,46,46,44,44,41",
                         "endOffsets": "18752,25421,25468,25515,26257,26302,26465"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\debug\\res\\values\\google_maps_api.xml",
-                    "from": {
-                        "startLines": "22",
-                        "startColumns": "4",
-                        "startOffsets": "863",
-                        "endColumns": "137",
-                        "endOffsets": "996"
-                    },
-                    "to": {
-                        "startLines": "1023",
-                        "startColumns": "4",
-                        "startOffsets": "61220",
-                        "endColumns": "137",
-                        "endOffsets": "61353"
                     }
                 },
                 {
@@ -259,42 +295,6 @@
                         "endLines": "4828,4835,4846,7118,7123",
                         "endColumns": "24,24,24,24,24",
                         "endOffsets": "317483,317868,318465,458435,458705"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "7,1,10,16,2,14,8,6,9,5,13,4,3,12,11,15",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "302,17,446,770,61,662,352,237,403,194,617,147,102,552,499,716",
-                        "endColumns": "48,42,51,61,39,52,49,63,41,41,43,45,43,63,51,52",
-                        "endOffsets": "346,55,493,827,96,710,397,296,440,231,656,188,141,611,546,764"
-                    },
-                    "to": {
-                        "startLines": "957,985,988,993,994,1014,1015,1016,1017,1018,1024,1065,1071,1073,1075,1076",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55350,57265,57589,57987,58049,60501,60554,60604,60668,60710,61358,68608,69456,69553,69688,69740",
-                        "endColumns": "48,42,51,61,39,52,49,63,41,41,43,45,43,63,51,52",
-                        "endOffsets": "55394,57303,57636,58044,58084,60549,60599,60663,60705,60747,61397,68649,69495,69612,69735,69788"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "59",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "213"
-                    },
-                    "to": {
-                        "startLines": "4671",
-                        "startColumns": "4",
-                        "startOffsets": "308252",
-                        "endLines": "4674",
-                        "endColumns": "12",
-                        "endOffsets": "308403"
                     }
                 },
                 {

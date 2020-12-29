@@ -5,10 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".citas">
+
     <LinearLayout
+        android:id="@+id/linlayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <CalendarView
+            android:id="@+id/viewcalendario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvCitas"
@@ -20,29 +27,28 @@
             android:textColor="@color/black"
             android:textSize="25sp" />
 
-        <CalendarView
-            android:id="@+id/viewcalendario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
         <TextView
             android:id="@+id/tvDia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:textAlignment="center"
             android:text="@string/seleccionar_fecha"
+            android:textAlignment="center"
             android:textColor="@color/black" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/BtnNuevo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
             android:layout_gravity="end"
-            app:srcCompat="@android:drawable/ic_input_add"
-            android:contentDescription="TODO" />
+            android:clickable="true"
+            android:contentDescription="TODO"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <ListView
+            android:id="@+id/listaCitas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
