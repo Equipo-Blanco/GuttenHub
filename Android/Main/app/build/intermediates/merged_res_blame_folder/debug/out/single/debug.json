@@ -72,8 +72,16 @@
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\layout\\list_item.xml"
     },
     {
+        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_row.xml.flat",
+        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\layout\\row.xml"
+    },
+    {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_catalogo.xml.flat",
+        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\layout\\activity_catalogo.xml"
     },
     {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",

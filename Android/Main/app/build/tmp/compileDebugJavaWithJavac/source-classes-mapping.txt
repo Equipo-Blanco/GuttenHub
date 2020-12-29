@@ -1,13 +1,3 @@
-com/example/main/BuildConfig.java
- com.example.main.BuildConfig
-com/example/main/mapa.java
- com.example.main.mapa
-com/example/main/pedidos.java
- com.example.main.pedidos
-com/example/main/partners.java
- com.example.main.partners
-com/example/main/envios.java
- com.example.main.envios
 com/example/main/MainActivity.java
  com.example.main.MainActivity
  com.example.main.MainActivity$1
@@ -21,6 +11,16 @@ com/example/main/MainActivity.java
  com.example.main.MainActivity$9
 com/example/main/XMLPullParserHandler.java
  com.example.main.XMLPullParserHandler
+com/example/main/mapa.java
+ com.example.main.mapa
+com/example/main/ClaseCita.java
+ com.example.main.ClaseCita
+com/example/main/partners.java
+ com.example.main.partners
+com/example/main/envios.java
+ com.example.main.envios
+com/example/main/BuildConfig.java
+ com.example.main.BuildConfig
 com/example/main/citas.java
  com.example.main.citas
  com.example.main.citas$1
@@ -28,5 +28,10 @@ com/example/main/citas.java
 com/example/main/NuevaCita.java
  com.example.main.NuevaCita
  com.example.main.NuevaCita$1
-com/example/main/ClaseCita.java
- com.example.main.ClaseCita
+com/example/main/Catalogo.java
+ com.example.main.Catalogo
+ com.example.main.Catalogo$MyAdapter
+ com.example.main.Catalogo$ViewHolder
+com/example/main/pedidos.java
+ com.example.main.pedidos
+ com.example.main.pedidos$1

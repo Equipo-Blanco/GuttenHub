@@ -11,8 +11,13 @@
     <string name="ccitas">Calendario Citas</string>
     <string name="title_activity_mapa">Map</string>
     <string name="seleccionar_fecha">Seleccionar fecha</string>
+    <string name="seleccionar_producto">Seleccionar producto</string>
     <string name="guardar">Guardar</string>
+    <string name="textview"> </string>
     <string name="descripcion">Descripción:</string>
     <string name="titulo_cita">Título cita:</string>
     <string name="cita_para_el_dia">Cita para el dia</string>
+    <string name="subtitulo_descripcion">subtitulo</string>
+    <string name="titulo_principal">titulo</string>
+    <string name="abrir_catalogo">Abrir Catalogo</string>
 </resources>

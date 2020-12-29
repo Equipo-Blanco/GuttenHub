@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
+    <Button
+        android:id="@+id/btn_Catalogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/abrir_catalogo" />
+
     <TabHost
         android:id="@+id/tabhost1"
         android:layout_width="match_parent"

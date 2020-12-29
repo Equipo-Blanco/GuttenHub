@@ -45,6 +45,7 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+array productos
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1748,6 +1749,7 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btn_Catalogo
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -1866,6 +1868,7 @@ id linlayout1
 id listMode
 id list_item
 id listaCitas
+id lv1_lista
 id map
 id masked
 id message
@@ -2126,6 +2129,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_catalogo
 layout activity_citas
 layout activity_envios
 layout activity_main
@@ -2184,6 +2188,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout row
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2233,6 +2238,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string abrir_catalogo
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
@@ -2322,9 +2328,13 @@ string path_password_strike_through
 string pedidos
 string search_menu_title
 string seleccionar_fecha
+string seleccionar_producto
 string status_bar_notification_info_overflow
+string subtitulo_descripcion
+string textview
 string title_activity_mapa
 string titulo_cita
+string titulo_principal
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

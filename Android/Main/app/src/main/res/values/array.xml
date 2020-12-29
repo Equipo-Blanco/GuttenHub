@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="productos">
+        <item>Camiseta Falcons Local</item>
+        <item>Camiseta Falcons Visitante</item>
+        <item>Camiseta Patriots Local</item>
+        <item>Camiseta Falcons Visitante</item>
+        <item>Camiseta Cardinals Local</item>
+        <item>Camiseta Cardinals Visitante</item>
+        <item>Camiseta Lakers Local</item>
+        <item>Camiseta Lakers Visitante</item>
+        <item>Camiseta Celtics Local</item>
+        <item>Camiseta Celtics Visitante</item>
+        <item>Gorra 500 Millas Indianapolis</item>
+        <item>Gorra Andretti Autosport</item>
+    </string-array>
+</resources>

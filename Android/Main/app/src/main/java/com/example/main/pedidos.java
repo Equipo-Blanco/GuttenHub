@@ -2,16 +2,20 @@ package com.example.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TabHost;
 
 public class pedidos extends AppCompatActivity {
+    Button bot_catalogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidos);
-
+        bot_catalogo = (Button) findViewById(R.id.btn_Catalogo);
         TabHost tabs = findViewById(R.id.tabhost1);
         tabs.setup();
 
@@ -25,6 +29,14 @@ public class pedidos extends AppCompatActivity {
         spec2.setIndicator("Pedidos Existentes");
         tabs.addTab(spec2);
 
+        Intent intentCatalogo = new Intent(this, Catalogo.class);
+
+        bot_catalogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentCatalogo);
+            }
+        });
 
     }
 }
