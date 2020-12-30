@@ -5,10 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".partners">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tvPartners"
@@ -19,6 +25,67 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25sp" />
+
+        <ListView
+            android:id="@+id/LvPartners"
+            android:layout_width="match_parent"
+            android:layout_height="354dp" />
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="411dp"
+            android:layout_height="25dp"
+            android:text="@string/partner" />
+
+        <TextView
+            android:id="@+id/tvTfno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/telefono" />
+
+        <TextView
+            android:id="@+id/tvCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/correo" />
+
+        <TextView
+            android:id="@+id/tvComAso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/comercial_asociado" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/BtnDetalles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detalles" />
+
+            <Button
+                android:id="@+id/BtnNuevo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nuevo" />
+
+            <Button
+                android:id="@+id/BtnEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/editar" />
+
+            <Button
+                android:id="@+id/BtnBorrar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/borrar" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

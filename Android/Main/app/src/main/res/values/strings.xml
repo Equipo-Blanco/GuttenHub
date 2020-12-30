@@ -20,4 +20,12 @@
     <string name="subtitulo_descripcion">subtitulo</string>
     <string name="titulo_principal">titulo</string>
     <string name="abrir_catalogo">Abrir Catalogo</string>
+    <string name="partner">Partner:</string>
+    <string name="telefono">Telefono:</string>
+    <string name="comercial_asociado">Comercial asociado:</string>
+    <string name="correo">Correo:</string>
+    <string name="detalles">Detalles</string>
+    <string name="nuevo">Nuevo</string>
+    <string name="borrar">Borrar</string>
+    <string name="editar">Editar</string>
 </resources>
