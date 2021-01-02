@@ -1655,8 +1655,11 @@ drawable tooltip_frame_light
 id ALT
 id BOTTOM_END
 id BOTTOM_START
+id BtnBorrar
 id BtnCitas
 id BtnCorreo
+id BtnDetalles
+id BtnEditar
 id BtnEnvios
 id BtnGuardaCita
 id BtnLlamar
@@ -1667,6 +1670,7 @@ id BtnPedidos
 id CTRL
 id FUNCTION
 id ImgLogo
+id LvPartners
 id META
 id NO_DEBUG
 id SHIFT
@@ -2052,9 +2056,13 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvCitas
+id tvComAso
+id tvCorreo
 id tvDia
 id tvEnvios
+id tvNombre
 id tvPartners
+id tvTfno
 id tv_asunto
 id tv_descrip
 id tv_destinatario
@@ -2163,6 +2171,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout list_item
+layout list_item_partners
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -2250,6 +2259,7 @@ string abc_toolbar_collapse_description
 string abrir_catalogo
 string app_name
 string appbar_scrolling_view_behavior
+string borrar
 string bottom_sheet_behavior
 string ccitas
 string character_counter_content_description
@@ -2259,6 +2269,7 @@ string chip_text
 string cita_para_el_dia
 string citas
 string clear_text_end_icon_content_description
+string comercial_asociado
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -2277,8 +2288,11 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string correo
 string descripcion
+string detalles
 string direccion
+string editar
 string ejemplo_email_com
 string env_os
 string envios
@@ -2328,6 +2342,8 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string nuevo
+string partner
 string partners
 string password_toggle_content_description
 string path_password_eye
@@ -2340,6 +2356,7 @@ string seleccionar_fecha
 string seleccionar_producto
 string status_bar_notification_info_overflow
 string subtitulo_descripcion
+string telefono
 string textview
 string title_activity_mapa
 string titulo_cita

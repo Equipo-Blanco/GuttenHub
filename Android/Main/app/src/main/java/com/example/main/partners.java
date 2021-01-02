@@ -2,6 +2,7 @@ package com.example.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,7 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class partners extends AppCompatActivity {
+public class partners extends AppCompatActivity implements View.OnClickListener{
 
     private ListView LvPartners;
     private TextView tvPartners;
@@ -18,7 +19,6 @@ public class partners extends AppCompatActivity {
     private TextView tvTfno;
     private TextView tvCorreo;
     private TextView tvComAso;
-    private Button BtnDetalles;
     private Button BtnNuevo;
     private Button BtnEditar;
     private Button BtnBorrar;
@@ -40,7 +40,6 @@ public class partners extends AppCompatActivity {
         tvTfno = (TextView) findViewById(R.id.tvTfno);
         tvCorreo = (TextView) findViewById(R.id.tvCorreo);
         tvComAso = (TextView) findViewById(R.id.tvComAso);
-        BtnDetalles = (Button) findViewById(R.id.BtnDetalles);
         BtnNuevo = (Button) findViewById(R.id.BtnNuevo);
         BtnEditar = (Button) findViewById(R.id.BtnEditar);
         BtnBorrar = (Button) findViewById(R.id.BtnBorrar);
@@ -57,6 +56,45 @@ public class partners extends AppCompatActivity {
                 tvComAso.setText("Comerciales asociados: " + comerciales[position]);
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == BtnNuevo.getId()){
+
+        } else if (v.getId() == BtnEditar.getId()){
+
+        } else if(v.getId() == BtnBorrar.getId()){
+
+        }
+
+    }
+
+    public void discord(){
+        Intent carry = new Intent(this, new_edit_partners.class);
+
+        if (t1.length()>0){
+            String texto = t1.getText().toString();
+            System.out.println(texto);
+            carry.putExtra(BOX, texto);
+            startActivity(carry);
+
+        } else {
+            tostada("Introduce texto");
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==7) {
+            if(resultCode== activity2.RESULT_OK){
+                String resultado=data.getStringExtra(BOX);
+                txt.setText(resultado);
+            }
+        }
+
     }
 
 }
