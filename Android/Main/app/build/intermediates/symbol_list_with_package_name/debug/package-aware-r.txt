@@ -1767,6 +1767,7 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btn_agregar
 id btn_confirmar
 id buttonPanel
 id cache_measures
@@ -2083,6 +2084,7 @@ id tv_idpresup
 id tv_msg
 id tv_ndelegacion
 id tv_precio
+id tv_presupuesto
 id tv_prod
 id tv_titpartner
 id tv_titulo

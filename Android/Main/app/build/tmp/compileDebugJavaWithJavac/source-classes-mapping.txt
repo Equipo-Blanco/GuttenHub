@@ -46,3 +46,4 @@ com/example/main/Tab1_NuevoPedido.java
  com.example.main.Tab1_NuevoPedido
  com.example.main.Tab1_NuevoPedido$1
  com.example.main.Tab1_NuevoPedido$2
+ com.example.main.Tab1_NuevoPedido$ProductoPedido
