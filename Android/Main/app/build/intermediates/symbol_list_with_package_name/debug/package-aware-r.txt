@@ -1658,7 +1658,6 @@ id BOTTOM_START
 id BtnBorrar
 id BtnCitas
 id BtnCorreo
-id BtnDetalles
 id BtnEditar
 id BtnEnvios
 id BtnGuardaCita
@@ -1667,7 +1666,12 @@ id BtnMapa
 id BtnNuevo
 id BtnPartners
 id BtnPedidos
+id BtnSave
 id CTRL
+id EteCorreo
+id EtnTfno
+id EttComAso
+id EttNom
 id FUNCTION
 id ImgLogo
 id LvPartners
@@ -1759,6 +1763,7 @@ id blocking
 id bottom
 id bounce
 id btn_Catalogo
+id btn_confirmar
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -1822,7 +1827,9 @@ id end
 id enterAlways
 id enterAlwaysCollapsed
 id et_asunto
+id et_comercial
 id et_descripcion
+id et_partner
 id et_titulo
 id etm_msg
 id existente
@@ -1879,6 +1886,7 @@ id listMode
 id list_item
 id listaCitas
 id lv1_lista
+id lv_productos
 id map
 id masked
 id message
@@ -2027,7 +2035,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id textView1
 id textView2
 id textView3
 id textVw
@@ -2064,12 +2071,15 @@ id tvNombre
 id tvPartners
 id tvTfno
 id tv_asunto
+id tv_comercial
 id tv_descrip
 id tv_destinatario
+id tv_idpresup
 id tv_msg
 id tv_ndelegacion
 id tv_precio
 id tv_prod
+id tv_titpartner
 id tv_titulo
 id unchecked
 id uniform
@@ -2151,6 +2161,7 @@ layout activity_citas
 layout activity_envios
 layout activity_main
 layout activity_mapa
+layout activity_new_edit_partners
 layout activity_nueva_cita
 layout activity_partners
 layout activity_pedidos

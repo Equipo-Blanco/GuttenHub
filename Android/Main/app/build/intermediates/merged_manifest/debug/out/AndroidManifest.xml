@@ -67,6 +67,9 @@
         <activity
             android:name="com.example.main.partners"
             android:parentActivityName="com.example.main.MainActivity" />
+        <activity
+            android:name="com.example.main.new_edit_partners"
+            android:parentActivityName="com.example.main.MainActivity" />
         <activity android:name="com.example.main.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

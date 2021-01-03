@@ -1,3 +1,5 @@
+com/example/main/new_edit_partners.java
+ com.example.main.new_edit_partners
 com/example/main/MainActivity.java
  com.example.main.MainActivity
  com.example.main.MainActivity$1

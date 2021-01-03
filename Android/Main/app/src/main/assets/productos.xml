@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalogo>
+    <producto>
+        <id>1</id>
+        <nombre>Camiseta Falcons Local</nombre>
+        <precio>59.99</precio>
+        <descripcion>Camiseta de los Atlanta Falcons, equipación local en rojo.</descripcion>
+    </producto>
+    <producto>
+        <id>2</id>
+        <nombre>Camiseta Falcons Visitante</nombre>
+        <precio>57.50</precio>
+        <descripcion>Camiseta de los Atlanta Falcons, equipación visitante en negro.</descripcion>
+    </producto>
+    <producto>
+        <id>3</id>
+        <nombre>Camiseta Patriots Local</nombre>
+        <precio>54.99</precio>
+        <descripcion>Camiseta de los New England Patriots, equipación local en azul.</descripcion>
+    </producto>
+    <producto>
+        <id>4</id>
+        <nombre>Camiseta Patriots Visitante</nombre>
+        <precio>52.70</precio>
+        <descripcion>Camiseta de los New England Patriots, equipación visitante en blanco.</descripcion>
+    </producto>
+</catalogo>

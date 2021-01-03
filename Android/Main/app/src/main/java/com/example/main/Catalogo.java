@@ -72,7 +72,7 @@ public class Catalogo extends AppCompatActivity {
         String rTitle[];
 
         public MyAdapter(Context c, String[] productos) {
-            super(c, R.layout.row, R.id.textView1, productos);
+            super(c, R.layout.row, R.id.tv_titpartner, productos);
             this.context = c;
             this.rTitle = productos;
         }
@@ -101,7 +101,7 @@ public class Catalogo extends AppCompatActivity {
         TextView tv1;
 
         public ViewHolder(View itemView) {
-            tv1 = itemView.findViewById(R.id.textView1);
+            tv1 = itemView.findViewById(R.id.tv_titpartner);
         }
     }
 
