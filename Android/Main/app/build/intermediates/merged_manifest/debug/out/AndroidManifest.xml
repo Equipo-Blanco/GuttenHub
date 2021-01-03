@@ -8,14 +8,9 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="30" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the "MyLocation" functionality.
-    -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!-- Include required permissions for Google Maps API to run. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -36,10 +31,15 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Main" >
+        <activity android:name="com.example.main.Tab2_pedidos_hechos" />
+        <activity
+            android:name="com.example.main.Pedidos"
+            android:label="@string/title_activity_pedidos"
+            android:theme="@style/Theme.Main.NoActionBar" />
+        <activity android:name="com.example.main.Tab1_NuevoPedido" />
         <activity
             android:name="com.example.main.Catalogo"
-            android:parentActivityName="com.example.main.pedidos" >
-        </activity>
+            android:parentActivityName="com.example.main.pedidos" />
         <activity
             android:name="com.example.main.NuevaCita"
             android:parentActivityName="com.example.main.citas" />
@@ -54,9 +54,6 @@
         <activity
             android:name="com.example.main.mapa"
             android:label="@string/title_activity_mapa"
-            android:parentActivityName="com.example.main.MainActivity" />
-        <activity
-            android:name="com.example.main.pedidos"
             android:parentActivityName="com.example.main.MainActivity" />
         <activity
             android:name="com.example.main.envios"

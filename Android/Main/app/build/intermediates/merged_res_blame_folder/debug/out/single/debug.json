@@ -36,6 +36,10 @@
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_tab1_nuevo_pedido.xml.flat",
+        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\layout\\tab1_nuevo_pedido.xml"
+    },
+    {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_nueva_cita.xml.flat",
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\layout\\activity_nueva_cita.xml"
     },
@@ -110,6 +114,10 @@
     {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_tab2_pedidos_hechos.xml.flat",
+        "source": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\layout\\tab2_pedidos_hechos.xml"
     },
     {
         "merged": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_new_edit_partners.xml.flat",

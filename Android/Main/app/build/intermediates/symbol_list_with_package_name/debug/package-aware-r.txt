@@ -1218,6 +1218,10 @@ dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen action_bar_size
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
+dimen appbar_padding
+dimen appbar_padding_top
 dimen appcompat_dialog_background_inset
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
@@ -1278,6 +1282,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -1762,7 +1767,6 @@ id beginning
 id blocking
 id bottom
 id bounce
-id btn_Catalogo
 id btn_confirmar
 id buttonPanel
 id cache_measures
@@ -1827,12 +1831,12 @@ id end
 id enterAlways
 id enterAlwaysCollapsed
 id et_asunto
+id et_cantidad
 id et_comercial
 id et_descripcion
 id et_partner
 id et_titulo
 id etm_msg
-id existente
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1886,7 +1890,6 @@ id listMode
 id list_item
 id listaCitas
 id lv1_lista
-id lv_productos
 id map
 id masked
 id message
@@ -1929,7 +1932,6 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
-id nuevo
 id off
 id on
 id outline
@@ -1997,6 +1999,7 @@ id spacer
 id spline
 id split_action_bar
 id spnDelegaciones
+id spn_productos
 id spread
 id spread_inside
 id square
@@ -2014,7 +2017,7 @@ id stretch
 id submenuarrow
 id submit_area
 id tabMode
-id tabhost1
+id tabs
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -2037,7 +2040,7 @@ id textStart
 id textView
 id textView2
 id textView3
-id textVw
+id textView5
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2071,7 +2074,9 @@ id tvNombre
 id tvPartners
 id tvTfno
 id tv_asunto
+id tv_cantidad
 id tv_comercial
+id tv_coste
 id tv_descrip
 id tv_destinatario
 id tv_idpresup
@@ -2087,6 +2092,7 @@ id unlabeled
 id up
 id useLogo
 id view_offset_helper
+id view_pager
 id viewcalendario
 id visible
 id wide
@@ -2222,6 +2228,8 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout tab1_nuevo_pedido
+layout tab2_pedidos_hechos
 layout test_action_chip
 layout test_chip_zero_corner_radius
 layout test_design_checkbox
@@ -2367,9 +2375,12 @@ string seleccionar_fecha
 string seleccionar_producto
 string status_bar_notification_info_overflow
 string subtitulo_descripcion
+string tab_text_1
+string tab_text_2
 string telefono
 string textview
 string title_activity_mapa
+string title_activity_pedidos
 string titulo_cita
 string titulo_principal
 style AlertDialog_AppCompat
@@ -2785,6 +2796,9 @@ style Theme_Design_Light_BottomSheetDialog
 style Theme_Design_Light_NoActionBar
 style Theme_Design_NoActionBar
 style Theme_Main
+style Theme_Main_AppBarOverlay
+style Theme_Main_NoActionBar
+style Theme_Main_PopupOverlay
 style Theme_MaterialComponents
 style Theme_MaterialComponents_BottomSheetDialog
 style Theme_MaterialComponents_Bridge

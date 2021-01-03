@@ -1,113 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    tools:context=".Pedidos">
 
-    <Button
-        android:id="@+id/btn_Catalogo"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/abrir_catalogo" />
+        android:theme="@style/Theme.Main.AppBarOverlay">
 
-    <TabHost
-        android:id="@+id/tabhost1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="?actionBarSize"
+            android:padding="@dimen/appbar_padding"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
 
-        <LinearLayout
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:visibility="visible"
-                tools:visibility="visible" />
-
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/nuevo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="10dp"
-                    android:paddingVertical="0dp">
-
-                    <TextView
-                        android:id="@+id/tv_titpartner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Partner" />
-
-                    <EditText
-                        android:id="@+id/et_partner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Nombre Partner"
-                        android:inputType="textPersonName" />
-
-                    <TextView
-                        android:id="@+id/tv_comercial"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Comercial" />
-
-                    <EditText
-                        android:id="@+id/et_comercial"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Comercial"
-                        android:inputType="textPersonName" />
-
-                    <TextView
-                        android:id="@+id/tv_idpresup"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="ID Presupuesto: " />
-
-                    <ListView
-                        android:id="@+id/lv_productos"
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp">
-
-                    </ListView>
-
-                    <Button
-                        android:id="@+id/btn_confirmar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Confirmar Presupuesto"
-                        app:backgroundTint="#5FAC7B" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/existente"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingVertical="0dp">
-
-                    <TextView
-                        android:id="@+id/textVw"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Comercial" />
-                </LinearLayout>
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

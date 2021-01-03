@@ -10,10 +10,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Main">
-        <activity android:name=".NuevoPedido"></activity>
+        <activity android:name=".Tab2_pedidos_hechos"></activity>
+        <activity
+            android:name=".Pedidos"
+            android:label="@string/title_activity_pedidos"
+            android:theme="@style/Theme.Main.NoActionBar" />
+        <activity android:name=".Tab1_NuevoPedido" />
         <activity
             android:name=".Catalogo"
-            android:parentActivityName=".pedidos"></activity>
+            android:parentActivityName=".pedidos" />
         <activity
             android:name=".NuevaCita"
             android:parentActivityName=".citas" />
@@ -28,9 +33,6 @@
         <activity
             android:name=".mapa"
             android:label="@string/title_activity_mapa"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".pedidos"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".envios"
@@ -56,11 +58,6 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the "MyLocation" functionality.
-    -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 

@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intentPartner = new Intent(this, partners.class);
         Intent intentCitas = new Intent(this, citas.class);
         Intent intentEnvios = new Intent(this, envios.class);
-        Intent intentPedidos = new Intent(this, pedidos.class);
+        Intent intentPedidos = new Intent(this, Pedidos.class);
         Intent intentMaps = new Intent(this, mapa.class);
 
         pidePermisos();

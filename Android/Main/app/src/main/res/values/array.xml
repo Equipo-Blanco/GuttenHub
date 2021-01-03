@@ -16,9 +16,17 @@
     </string-array>
 
     <string-array name="precios">
-        <item>59,90€</item>
-        <item>59,90€</item>
-        <item>68,50€</item>
-        <item>62,20€</item>
+        <item>69.00</item>
+        <item>59.90</item>
+        <item>68.50</item>
+        <item>64.20</item>
+        <item>65.50</item>
+        <item>62.50</item>
+        <item>76.40</item>
+        <item>71.40</item>
+        <item>74.50</item>
+        <item>72.50</item>
+        <item>49.00</item>
+        <item>44.50</item>
     </string-array>
 </resources>
