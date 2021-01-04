@@ -27,7 +27,10 @@ import org.xmlpull.v1.XmlSerializer;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Tab1_NuevoPedido extends Fragment {
     private static final String TAG = "Tab1Fragment";
@@ -36,6 +39,8 @@ public class Tab1_NuevoPedido extends Fragment {
     Spinner listaProds;
     TextView tvCoste, tvPresupuesto;
     EditText etCantidad;
+    EditText etComercial;
+    EditText etPartner;
     String[] productos;
     String[] precios;
     int cantidad;
@@ -55,6 +60,8 @@ public class Tab1_NuevoPedido extends Fragment {
         tvCoste = view.findViewById(R.id.tv_coste);
         etCantidad = view.findViewById(R.id.et_cantidad);
         tvPresupuesto = view.findViewById(R.id.tv_presupuesto);
+        etComercial = view.findViewById(R.id.et_comercial);
+        etPartner = view.findViewById(R.id.et_partner);
 
         productos = getResources().getStringArray(R.array.productos);
         precios = getResources().getStringArray(R.array.precios);
@@ -113,7 +120,6 @@ public class Tab1_NuevoPedido extends Fragment {
             for (ProductoPedido a : productosPresupuesto) {
                 System.out.println(a);
             }
-
             generaPresupuesto();
         });
 
@@ -131,32 +137,56 @@ public class Tab1_NuevoPedido extends Fragment {
         return view;
     }
 
+    public String obtieneDato(EditText view) {
+        String texto;
+
+        if (view.length() > 0) {
+            texto = view.getText().toString();
+        } else {
+            texto = "Sin especificar";
+        }
+
+        return texto;
+    }
+
     public void generaPresupuesto() {
-        File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/DraftPresupuestos/presupuesto.xml");
+
+        String comercial, partner;
+        String nombrePresup;
+        comercial = obtieneDato(etComercial);
+        partner = obtieneDato(etPartner);
+        DateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        String fecha = df.format(Calendar.getInstance().getTime());
+        int id = (int) (Math.random() * 50)-1;
+        nombrePresup = fecha + partner + "-" + id;
+
+        File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/DraftPresupuestos/" + nombrePresup + ".xml");
         XmlSerializer serializer = Xml.newSerializer();
         FileOutputStream fileos = null;
 
         newxmlfile.getParentFile().mkdir();
-        System.out.println("CREANDO FILE **************************************************>");
 
         try {
             fileos = new FileOutputStream(newxmlfile);
-            System.out.println("A **************************************************>");
             newxmlfile.createNewFile();
-            System.out.println("B **************************************************>");
             serializer.setOutput(fileos, "UTF-8");
-            System.out.println("C **************************************************>");
             serializer.startDocument(null, true);
-            System.out.println("D **************************************************>");
             serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
 
-            System.out.println("***************************************************<PRESUPUESTO>");
             serializer.startTag(null, "presupuesto");
 
+            serializer.startTag(null, "partner");
+            serializer.text(partner);
+            serializer.endTag(null, "partner");
+
+            serializer.startTag(null, "comercial");
+            serializer.text(comercial);
+            serializer.endTag(null, "comercial");
+
             for (int i = 0; i < productosPresupuesto.size(); i++) {
+                serializer.startTag(null, "articulo");
                 serializer.startTag(null, "producto");
                 serializer.text(productosPresupuesto.get(i).getNombreProd());
-                System.out.println("ASDAS*****************************ASDSA" + productosPresupuesto.get(i).getNombreProd());
                 serializer.endTag(null, "producto");
 
                 serializer.startTag(null, "cantidad");
@@ -171,6 +201,7 @@ public class Tab1_NuevoPedido extends Fragment {
                 serializer.startTag(null, "coste");
                 serializer.text("" + productosPresupuesto.get(i).getCoste());
                 serializer.endTag(null, "coste");
+                serializer.endTag(null, "articulo");
             }
 
             serializer.endTag(null, "presupuesto");
@@ -182,7 +213,6 @@ public class Tab1_NuevoPedido extends Fragment {
             Log.e("IOException", "Excepción al crear nuevo archivo");
         }
     }
-
 
     class ProductoPedido {
         String nombreProd;

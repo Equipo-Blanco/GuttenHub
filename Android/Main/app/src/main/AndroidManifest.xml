@@ -10,15 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Main">
-        <activity android:name=".Tab2_pedidos_hechos"></activity>
+
+        <activity android:name=".DetallePresupuesto"
+            android:parentActivityName=".Pedidos"></activity>
+
         <activity
             android:name=".Pedidos"
             android:label="@string/title_activity_pedidos"
-            android:theme="@style/Theme.Main.NoActionBar" />
-        <activity android:name=".Tab1_NuevoPedido" />
+            android:theme="@style/Theme.Main.NoActionBar"
+            android:parentActivityName=".MainActivity"/>
+
         <activity
-            android:name=".Catalogo"
-            android:parentActivityName=".pedidos" />
+            android:name=".Catalogo" />
         <activity
             android:name=".NuevaCita"
             android:parentActivityName=".citas" />
@@ -58,9 +61,9 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>

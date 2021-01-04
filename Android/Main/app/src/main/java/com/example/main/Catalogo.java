@@ -24,7 +24,6 @@ public class Catalogo extends AppCompatActivity {
     String[] precios;
     int[] imagenes = {R.drawable.falcons_local, R.drawable.falcons_visit,
             R.drawable.patriots_local, R.drawable.patriots_visit};
-    int mSelectedItem;
 
 
     @Override
@@ -47,7 +46,7 @@ public class Catalogo extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mSelectedItem = position;
+
                 //txv_descrip.setText(descripciones[position]);
                 txv_prod.setText(productos[position]);
                 try {
