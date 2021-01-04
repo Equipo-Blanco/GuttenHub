@@ -19,10 +19,15 @@
 
             <Button
                 android:id="@+id/btn_actualizar"
-                android:layout_width="65dp"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                app:cornerRadius="40dp"
-                app:icon="@android:drawable/ic_popup_sync" />
+                android:text="s"
+                android:textAlignment="textStart"
+                app:backgroundTint="#FF6F00"
+                app:cornerRadius="45dp"
+                app:icon="@android:drawable/ic_popup_sync"
+                app:iconGravity="textStart"
+                app:iconPadding="3dp" />
 
             <TextView
                 android:id="@+id/tv_titulo_presupuestos"
