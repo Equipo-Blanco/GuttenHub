@@ -23,7 +23,7 @@ public class Pedidos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidos);
-        Log.d(TAG, "OnCreate: Starting.");
+        Log.d(TAG, "creado");
         bot_catalogo = (Button) findViewById(R.id.btn_catalogo);
 
         Intent intento = new Intent(this, Catalogo.class);

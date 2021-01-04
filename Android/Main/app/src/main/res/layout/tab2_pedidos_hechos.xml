@@ -12,15 +12,33 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <TextView
-            android:id="@+id/tv_titulo_presupuestos"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Presupuestos realizados:" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_titulo_presupuestos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Presupuestos realizados:       "
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_actualizar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actualizar" />
+
+        </LinearLayout>
 
         <ListView
             android:id="@+id/lv_presupuestos"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+        </ListView>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
