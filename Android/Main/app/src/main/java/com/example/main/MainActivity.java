@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import java.io.File;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -79,9 +81,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         Object item = parent.getItemAtPosition(position);
-                            mail.setText(correos[position]);
-                            telf.setText(telefonos[position]);
+                        mail.setText(correos[position]);
+                        telf.setText(telefonos[position]);
                     }
+
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
                     }
@@ -102,16 +105,25 @@ public class MainActivity extends AppCompatActivity {
         bot_correo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent intent = new Intent(android.content.Intent.ACTION_SEND);
-                intent.setType("text/plain");
+                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"DRAFT@draftBCN.com"});
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Comercial DRAFT SL");
+                intent.putExtra(Intent.EXTRA_TEXT, "Buenos días, esto es un mensaje automático del comercial");
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                intent.setType("vnd.android.cursor.dir/email");
                 final PackageManager pm = getPackageManager();
                 final List<ResolveInfo> matches = pm.queryIntentActivities(intent, 0);
                 ResolveInfo best = null;
                 for (final ResolveInfo info : matches)
                     if (info.activityInfo.packageName.endsWith(".gm") ||
                             info.activityInfo.name.toLowerCase().contains("gmail")) best = info;
-                if (best != null)
+                if (best != null) {
                     intent.setClassName(best.activityInfo.packageName, best.activityInfo.name);
+                }
+                String r = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml";
+                Uri a = Uri.parse(r);
+                intent.putExtra(Intent.EXTRA_STREAM, a);
                 startActivity(intent);
             }
         });

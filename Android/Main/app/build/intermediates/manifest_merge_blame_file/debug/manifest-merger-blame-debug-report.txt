@@ -17,8 +17,8 @@
 12-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:65:5-81
 12-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:65:22-78
 13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-13-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:67:5-79
-13-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:67:22-76
+13-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:66:5-79
+13-->F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:66:22-76
 14
 15    <!-- Include required permissions for Google Maps API to run. -->
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
