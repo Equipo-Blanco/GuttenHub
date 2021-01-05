@@ -116,7 +116,7 @@ ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:28:13-48
 	android:name
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:27:13-38
-activity#com.example.main.mapa
+activity#com.example.main.Mapa
 ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:37:9-40:58
 	android:parentActivityName
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:40:13-55
@@ -124,7 +124,7 @@ ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:39:13-56
 	android:name
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:38:13-33
-activity#com.example.main.envios
+activity#com.example.main.Envios
 ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:41:9-47:20
 	android:parentActivityName
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:43:13-55

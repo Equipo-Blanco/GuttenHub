@@ -121,6 +121,10 @@ public class Tab1_NuevoPedido extends Fragment {
                 System.out.println(a);
             }
             generaPresupuesto();
+
+            //Recarga la actividad por el problema del array
+            getActivity().finish();
+            startActivity(getActivity().getIntent());
         });
 
         btnAgregar.setOnClickListener((view1) -> {
@@ -155,7 +159,7 @@ public class Tab1_NuevoPedido extends Fragment {
         String nombrePresup;
         comercial = obtieneDato(etComercial);
         partner = obtieneDato(etPartner);
-        DateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String fecha = df.format(Calendar.getInstance().getTime());
         int id = (int) (Math.random() * 50)-1;
         nombrePresup = fecha + partner + "-" + id;

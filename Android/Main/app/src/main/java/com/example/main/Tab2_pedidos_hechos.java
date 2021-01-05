@@ -56,6 +56,7 @@ public class Tab2_pedidos_hechos extends Fragment {
         bot_actualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getContext(), "Lista actualizada", Toast.LENGTH_SHORT).show();
                 getActivity().finish();
                 startActivity(getActivity().getIntent());
             }

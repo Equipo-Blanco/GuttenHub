@@ -33,10 +33,8 @@ public class MainActivity extends AppCompatActivity {
     Spinner spin_delegaciones;
     static final int REQUEST_CODE = 123;
     String email;
-    String subject;
-    String message;
-    Uri URI = null;
-    private static final int PICK_FROM_GALLERY = 101;
+    String asunto;
+    String mensaje;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,19 +56,20 @@ public class MainActivity extends AppCompatActivity {
         //Intents para moverse por la app
         Intent intentPartner = new Intent(this, partners.class);
         Intent intentCitas = new Intent(this, citas.class);
-        Intent intentEnvios = new Intent(this, envios.class);
+        Intent intentEnvios = new Intent(this, Envios.class);
         Intent intentPedidos = new Intent(this, Pedidos.class);
-        Intent intentMaps = new Intent(this, mapa.class);
+        Intent intentMaps = new Intent(this, Mapa.class);
 
         pidePermisos();
 
         final String[] datos = new String[]{"Gipuzkoa", "Bizkaia", "Araba", "Malaga", "Madrid", "Barcelona"};
         final String[] telefonos = new String[]{"943123456", "946881171", "945007660", "951926010", "915094134", "932075839"};
         final String[] correos = new String[]{"draftgipuzkoa@draft.com", "draftbizkaia@draft.com", "draftaraba@draft.com", "draftmalaga@draft.com", "draftmadrid@draft.com", "draftbarcelona@draft.com"};
+
         //Elemento ArrayAdapter, que permite coger un Array como fuente de información
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
-        //Creamos nuestro Spinner
 
+        //Creamos nuestro Spinner
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin_delegaciones.setAdapter(adaptador);
 
@@ -103,10 +102,7 @@ public class MainActivity extends AppCompatActivity {
         bot_correo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFolder();
-                sendEmail();
-                
-
+                enviaMail();
             }
         });
 
@@ -145,15 +141,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentPedidos);
             }
         });
-    }
-
-
-    public void openFolder() {
-        Intent intent = new Intent();
-        intent.setType("text/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        intent.putExtra(String.valueOf(URI), true);
-        startActivityForResult(Intent.createChooser(intent, "Complete action using"), PICK_FROM_GALLERY);
     }
 
     public void pidePermisos() {
@@ -197,22 +184,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void sendEmail() {
+    public void enviaMail() {
         try {
             email = "mail@draft.com";
-            subject = "Asunto mail";
-            message = "Hola buenos dias";
+            asunto = "Asunto mail";
+            mensaje = "Hola buenos dias";
             final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
             emailIntent.setType("plain/text");
             emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{email});
-            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
-            if (URI != null) {
-                emailIntent.putExtra(Intent.EXTRA_STREAM, URI);
-            }
-            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, message);
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, asunto);
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, mensaje);
             this.startActivity(Intent.createChooser(emailIntent, "Sending email..."));
         } catch (Throwable t) {
-            Toast.makeText(this, "Request failed try again: "+ t.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Ha ocurrido un error, vuelve a intentarlo: " + t.toString(), Toast.LENGTH_LONG).show();
         }
     }
 }

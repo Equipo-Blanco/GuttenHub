@@ -35,11 +35,11 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
-            android:name=".mapa"
+            android:name=".Mapa"
             android:label="@string/title_activity_mapa"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".envios"
+            android:name=".Envios"
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

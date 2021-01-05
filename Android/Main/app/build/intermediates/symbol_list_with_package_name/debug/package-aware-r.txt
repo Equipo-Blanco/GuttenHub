@@ -1767,8 +1767,8 @@ id beginning
 id blocking
 id bottom
 id bounce
-id btAttachment
-id btSend
+id btnAdjuntar
+id btnEnviar
 id btn_actualizar
 id btn_agregar
 id btn_catalogo
@@ -1835,9 +1835,9 @@ id edit_query
 id end
 id enterAlways
 id enterAlwaysCollapsed
-id etMessage
-id etSubject
-id etTo
+id etAsunto
+id etDestinatario
+id etMensaje
 id et_cantidad
 id et_comercial
 id et_descripcion
@@ -2047,7 +2047,11 @@ id textStart
 id textView
 id textView2
 id textView3
+id textView4
 id textView5
+id textView6
+id textView7
+id textView8
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2072,7 +2076,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tvAttachment
+id tvAdjunto
 id tvCitas
 id tvComAso
 id tvCorreo
