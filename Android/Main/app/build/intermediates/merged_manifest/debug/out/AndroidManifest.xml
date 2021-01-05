@@ -8,13 +8,11 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="30" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <!-- Include required permissions for Google Maps API to run. -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -31,15 +29,15 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Main" >
-        <activity android:name="com.example.main.Tab2_pedidos_hechos" />
+        <activity
+            android:name="com.example.main.DetallePresupuesto"
+            android:parentActivityName="com.example.main.Pedidos" />
         <activity
             android:name="com.example.main.Pedidos"
             android:label="@string/title_activity_pedidos"
+            android:parentActivityName="com.example.main.MainActivity"
             android:theme="@style/Theme.Main.NoActionBar" />
-        <activity android:name="com.example.main.Tab1_NuevoPedido" />
-        <activity
-            android:name="com.example.main.Catalogo"
-            android:parentActivityName="com.example.main.pedidos" />
+        <activity android:name="com.example.main.Catalogo" />
         <activity
             android:name="com.example.main.NuevaCita"
             android:parentActivityName="com.example.main.citas" />
@@ -52,12 +50,16 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
-            android:name="com.example.main.mapa"
+            android:name="com.example.main.Mapa"
             android:label="@string/title_activity_mapa"
             android:parentActivityName="com.example.main.MainActivity" />
         <activity
-            android:name="com.example.main.envios"
-            android:parentActivityName="com.example.main.MainActivity" />
+            android:name="com.example.main.Envios"
+            android:parentActivityName="com.example.main.MainActivity" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.example.main.citas"
             android:parentActivityName="com.example.main.MainActivity" />

@@ -1,11 +1,9 @@
 package com.example.main;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -17,13 +15,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     TextView telf, mail;
     Spinner spin_delegaciones;
     static final int REQUEST_CODE = 123;
+    String email;
+    String asunto;
+    String mensaje;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,19 +56,20 @@ public class MainActivity extends AppCompatActivity {
         //Intents para moverse por la app
         Intent intentPartner = new Intent(this, partners.class);
         Intent intentCitas = new Intent(this, citas.class);
-        Intent intentEnvios = new Intent(this, envios.class);
+        Intent intentEnvios = new Intent(this, Envios.class);
         Intent intentPedidos = new Intent(this, Pedidos.class);
-        Intent intentMaps = new Intent(this, mapa.class);
+        Intent intentMaps = new Intent(this, Mapa.class);
 
         pidePermisos();
 
         final String[] datos = new String[]{"Gipuzkoa", "Bizkaia", "Araba", "Malaga", "Madrid", "Barcelona"};
         final String[] telefonos = new String[]{"943123456", "946881171", "945007660", "951926010", "915094134", "932075839"};
         final String[] correos = new String[]{"draftgipuzkoa@draft.com", "draftbizkaia@draft.com", "draftaraba@draft.com", "draftmalaga@draft.com", "draftmadrid@draft.com", "draftbarcelona@draft.com"};
+
         //Elemento ArrayAdapter, que permite coger un Array como fuente de información
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
-        //Creamos nuestro Spinner
 
+        //Creamos nuestro Spinner
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin_delegaciones.setAdapter(adaptador);
 
@@ -79,9 +78,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         Object item = parent.getItemAtPosition(position);
-                            mail.setText(correos[position]);
-                            telf.setText(telefonos[position]);
+                        mail.setText(correos[position]);
+                        telf.setText(telefonos[position]);
                     }
+
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
                     }
@@ -102,17 +102,7 @@ public class MainActivity extends AppCompatActivity {
         bot_correo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent intent = new Intent(android.content.Intent.ACTION_SEND);
-                intent.setType("text/plain");
-                final PackageManager pm = getPackageManager();
-                final List<ResolveInfo> matches = pm.queryIntentActivities(intent, 0);
-                ResolveInfo best = null;
-                for (final ResolveInfo info : matches)
-                    if (info.activityInfo.packageName.endsWith(".gm") ||
-                            info.activityInfo.name.toLowerCase().contains("gmail")) best = info;
-                if (best != null)
-                    intent.setClassName(best.activityInfo.packageName, best.activityInfo.name);
-                startActivity(intent);
+                enviaMail();
             }
         });
 
@@ -136,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentEnvios);
             }
         });
+
 
         bot_citas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,6 +181,22 @@ public class MainActivity extends AppCompatActivity {
         } else {
             //Cuando los permisos ya están concedidos
             //Toast.makeText(getApplicationContext(), "Ya tienes permisos", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void enviaMail() {
+        try {
+            email = "mail@draft.com";
+            asunto = "Asunto mail";
+            mensaje = "Hola buenos dias";
+            final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("plain/text");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{email});
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, asunto);
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, mensaje);
+            this.startActivity(Intent.createChooser(emailIntent, "Sending email..."));
+        } catch (Throwable t) {
+            Toast.makeText(this, "Ha ocurrido un error, vuelve a intentarlo: " + t.toString(), Toast.LENGTH_LONG).show();
         }
     }
 }
