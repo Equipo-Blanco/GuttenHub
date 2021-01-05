@@ -51,53 +51,43 @@ public class partners extends AppCompatActivity implements View.OnClickListener 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item_partners, partners);
         LvPartners.setAdapter(adapter);
 
-        LvPartners.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                tvNombre.setText(LvPartners.getItemAtPosition(position).toString());
-                tvTfno.setText("Telefono: " + telefonos[position]);
-                tvCorreo.setText("Correo: " + correos[position]);
-                tvComAso.setText("Comerciales asociados: " + comerciales[position]);
-            }
+        LvPartners.setOnItemClickListener((parent, view, position, id) -> {
+            tvNombre.setText(LvPartners.getItemAtPosition(position).toString());
+            tvTfno.setText("Telefono: " + telefonos[position]);
+            tvCorreo.setText("Correo: " + correos[position]);
+            tvComAso.setText("Comerciales asociados: " + comerciales[position]);
         });
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == BtnNuevo.getId()) {
-
+            discord();
         } else if (v.getId() == BtnEditar.getId()) {
-
+            int i = LvPartners.getCheckedItemPosition();
+            String nombre=partners[i];
+            String telefono=telefonos[i];
+            String correo = correos[i];
+            String comercial=comerciales[i];
+            discord(nombre, telefono, correo, comercial);
         } else if (v.getId() == BtnBorrar.getId()) {
 
         }
 
     }
 
-  /*  public void discord(){
+    public void discord(){
         Intent carry = new Intent(this, new_edit_partners.class);
-
-        if (t1.length()>0){
-            String texto = t1.getText().toString();
-            System.out.println(texto);
-            carry.putExtra(BOX, texto);
-            startActivity(carry);
-
-        } else {
-            tostada("Introduce texto");
-        }
+        startActivity(carry);
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void discord(String nombre, String telefono, String correo, String comercial){
+        Intent carry = new Intent(this, new_edit_partners.class);
+        carry.putExtra("nombre", nombre);
+        carry.putExtra("telefono", telefono);
+        carry.putExtra("correo", correo);
+        carry.putExtra("comercial", comercial);
+        startActivity(carry);
+    }
 
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode==7) {
-            if(resultCode== activity2.RESULT_OK){
-                String resultado=data.getStringExtra(BOX);
-                txt.setText(resultado);
-            }
-          }
-        }
-*/
 }
