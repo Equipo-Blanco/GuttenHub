@@ -83,12 +83,14 @@ public class NuevaCita extends AppCompatActivity {
                 } else {
                     descrip = "Sin descripción";
                 }
-                File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml");
+               // File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml");
+                File newxmlfile = new File(Environment.getExternalStorageDirectory() + "/Draft/citasGuardadas.xml");
                 XmlSerializer serializer = Xml.newSerializer();
                 FileOutputStream fileos = null;
 
                 //Necesario para el DOM:
-                String filePath = "/storage/emulated/0/Draft/citasGuardadas.xml";
+               // String filePath = "/storage/emulated/0/Draft/citasGuardadas.xml";
+                String filePath = Environment.getExternalStorageDirectory() + "/Draft/citasGuardadas.xml";
                 System.out.println(filePath);
                 //File xmlFile = new File(filePath);
                 DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -159,7 +161,8 @@ public class NuevaCita extends AppCompatActivity {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml"));
+        //StreamResult result = new StreamResult(new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml"));
+        StreamResult result = new StreamResult(new File(Environment.getExternalStorageDirectory() + "/Draft/citasGuardadas.xml"));
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.transform(source, result);
         Toast.makeText(this, "Se ha actualizado correctamente el XML", Toast.LENGTH_SHORT).show();

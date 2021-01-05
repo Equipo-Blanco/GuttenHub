@@ -1,14 +1,11 @@
 package com.example.main;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,14 +15,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
-import java.io.File;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
     TextView telf, mail;
     Spinner spin_delegaciones;
     static final int REQUEST_CODE = 123;
+    String email;
+    String subject;
+    String message;
+    Uri URI = null;
+    private static final int PICK_FROM_GALLERY = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,26 +103,10 @@ public class MainActivity extends AppCompatActivity {
         bot_correo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"DRAFT@draftBCN.com"});
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Comercial DRAFT SL");
-                intent.putExtra(Intent.EXTRA_TEXT, "Buenos días, esto es un mensaje automático del comercial");
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                intent.setType("vnd.android.cursor.dir/email");
-                final PackageManager pm = getPackageManager();
-                final List<ResolveInfo> matches = pm.queryIntentActivities(intent, 0);
-                ResolveInfo best = null;
-                for (final ResolveInfo info : matches)
-                    if (info.activityInfo.packageName.endsWith(".gm") ||
-                            info.activityInfo.name.toLowerCase().contains("gmail")) best = info;
-                if (best != null) {
-                    intent.setClassName(best.activityInfo.packageName, best.activityInfo.name);
-                }
-                String r = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml";
-                Uri a = Uri.parse(r);
-                intent.putExtra(Intent.EXTRA_STREAM, a);
-                startActivity(intent);
+                openFolder();
+                sendEmail();
+                
+
             }
         });
 
@@ -149,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         bot_citas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,6 +145,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentPedidos);
             }
         });
+    }
+
+
+    public void openFolder() {
+        Intent intent = new Intent();
+        intent.setType("text/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.putExtra(String.valueOf(URI), true);
+        startActivityForResult(Intent.createChooser(intent, "Complete action using"), PICK_FROM_GALLERY);
     }
 
     public void pidePermisos() {
@@ -202,6 +194,25 @@ public class MainActivity extends AppCompatActivity {
         } else {
             //Cuando los permisos ya están concedidos
             //Toast.makeText(getApplicationContext(), "Ya tienes permisos", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void sendEmail() {
+        try {
+            email = "mail@draft.com";
+            subject = "Asunto mail";
+            message = "Hola buenos dias";
+            final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+            emailIntent.setType("plain/text");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{email});
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+            if (URI != null) {
+                emailIntent.putExtra(Intent.EXTRA_STREAM, URI);
+            }
+            emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, message);
+            this.startActivity(Intent.createChooser(emailIntent, "Sending email..."));
+        } catch (Throwable t) {
+            Toast.makeText(this, "Request failed try again: "+ t.toString(), Toast.LENGTH_LONG).show();
         }
     }
 }

@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Main">
 
+
         <activity android:name=".DetallePresupuesto"
             android:parentActivityName=".Pedidos"></activity>
 
@@ -39,7 +40,11 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".envios"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".citas"
             android:parentActivityName=".MainActivity" />
@@ -52,7 +57,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -64,5 +68,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>
