@@ -36,8 +36,7 @@ public class Tab2_pedidos_hechos extends Fragment {
 
 
         File rutaPresupuestos = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/DraftPresupuestos");
-        List<String> archiv;
-        archiv = Arrays.asList(rutaPresupuestos.list());
+        List<String> archiv = Arrays.asList(rutaPresupuestos.list());
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_expandable_list_item_1, archiv);
         listaPresupuestos.setAdapter(adapter);
 

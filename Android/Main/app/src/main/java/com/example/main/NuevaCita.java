@@ -83,13 +83,13 @@ public class NuevaCita extends AppCompatActivity {
                 } else {
                     descrip = "Sin descripción";
                 }
-               // File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml");
+                // File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml");
                 File newxmlfile = new File(Environment.getExternalStorageDirectory() + "/Draft/citasGuardadas.xml");
                 XmlSerializer serializer = Xml.newSerializer();
                 FileOutputStream fileos = null;
 
                 //Necesario para el DOM:
-               // String filePath = "/storage/emulated/0/Draft/citasGuardadas.xml";
+                // String filePath = "/storage/emulated/0/Draft/citasGuardadas.xml";
                 String filePath = Environment.getExternalStorageDirectory() + "/Draft/citasGuardadas.xml";
                 System.out.println(filePath);
                 //File xmlFile = new File(filePath);
@@ -127,7 +127,8 @@ public class NuevaCita extends AppCompatActivity {
                         serializer.endDocument();
                         serializer.flush();
                         fileos.close();
-                        Toast.makeText(getApplicationContext(), "Cita y XML Creados", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Datos creados", Toast.LENGTH_SHORT).show();
+                        finish();
                     } catch (IOException e) {
                         Log.e("IOException", "Excepción al crear nuevo archivo");
                     }
@@ -142,7 +143,8 @@ public class NuevaCita extends AppCompatActivity {
                         System.out.println("Paso 3 **************************************************>");
                         addElement(doc, fecha, titulo, descrip);
                         writeXMLFile(doc);
-                        Toast.makeText(getApplicationContext(), "XML ACTUALIZADO", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Información actualizada", Toast.LENGTH_SHORT).show();
+                        finish();
                     } catch (ParserConfigurationException e) {
                         e.printStackTrace();
                     } catch (IOException e) {

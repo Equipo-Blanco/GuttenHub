@@ -136,13 +136,13 @@ category#android.intent.category.LAUNCHER
 ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:45:17-77
 	android:name
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:45:27-74
-activity#com.example.main.citas
+activity#com.example.main.Citas
 ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:48:9-50:58
 	android:parentActivityName
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:50:13-55
 	android:name
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:49:13-34
-activity#com.example.main.partners
+activity#com.example.main.Partners
 ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:51:9-53:58
 	android:parentActivityName
 		ADDED from F:\Users\Sergio\Documents\GitHub\GuttenHub\Android\Main\app\src\main\AndroidManifest.xml:53:13-55

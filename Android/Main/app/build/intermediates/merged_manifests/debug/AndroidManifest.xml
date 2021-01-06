@@ -40,7 +40,7 @@
         <activity android:name="com.example.main.Catalogo" />
         <activity
             android:name="com.example.main.NuevaCita"
-            android:parentActivityName="com.example.main.citas" />
+            android:parentActivityName="com.example.main.Citas" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -61,10 +61,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.main.citas"
+            android:name="com.example.main.Citas"
             android:parentActivityName="com.example.main.MainActivity" />
         <activity
-            android:name="com.example.main.partners"
+            android:name="com.example.main.Partners"
             android:parentActivityName="com.example.main.MainActivity" />
         <activity
             android:name="com.example.main.new_edit_partners"

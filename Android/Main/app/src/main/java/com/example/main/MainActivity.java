@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         spin_delegaciones = (Spinner) findViewById(R.id.spnDelegaciones);
 
         //Intents para moverse por la app
-        Intent intentPartner = new Intent(this, partners.class);
-        Intent intentCitas = new Intent(this, citas.class);
+        Intent intentPartner = new Intent(this, Partners.class);
+        Intent intentCitas = new Intent(this, Citas.class);
         Intent intentEnvios = new Intent(this, Envios.class);
         Intent intentPedidos = new Intent(this, Pedidos.class);
         Intent intentMaps = new Intent(this, Mapa.class);
