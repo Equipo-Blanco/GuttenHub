@@ -63,12 +63,7 @@ public class Partners extends AppCompatActivity {
         });
 
         Intent intent = new Intent(this, new_edit_partners.class);
-        bot_Nuevo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent);
-            }
-        });
+        bot_Nuevo.setOnClickListener(view -> startActivity(intent));
 
     }
 }
