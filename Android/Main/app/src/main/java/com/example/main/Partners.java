@@ -36,13 +36,13 @@ public class Partners extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partners);
 
-        LvPartners = (ListView) findViewById(R.id.lvPartners);
-        tvTfno = (TextView) findViewById(R.id.tvTfno);
-        tvCorreo = (TextView) findViewById(R.id.tvCorreo);
-        tvComAso = (TextView) findViewById(R.id.tvComAso);
-        bot_Nuevo = (Button) findViewById(R.id.btnNuevo);
-        bot_Editar = (Button) findViewById(R.id.btnEditar);
-        tvNombrePartner = (TextView) findViewById(R.id.tv_nombrePartner);
+        LvPartners = findViewById(R.id.lvPartners);
+        tvTfno = findViewById(R.id.tvTfno);
+        tvCorreo = findViewById(R.id.tvCorreo);
+        tvComAso = findViewById(R.id.tvComAso);
+        bot_Nuevo = findViewById(R.id.btnNuevo);
+        bot_Editar = findViewById(R.id.btnEditar);
+        tvNombrePartner = findViewById(R.id.tv_nombrePartner);
 
         XMLPPPartners parser = new XMLPPPartners();
         ListPartners = parser.parseXML(this);
