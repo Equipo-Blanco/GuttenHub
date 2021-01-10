@@ -1,5 +1,6 @@
 package com.example.main;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -101,6 +102,7 @@ public class NuevaCita extends AppCompatActivity {
                     System.out.println("CREANDO FILE **************************************************>");
 
                     try {
+                        fileos = new FileOutputStream(newxmlfile);
                         newxmlfile.createNewFile();
                         serializer.setOutput(fileos, "UTF-8");
                         serializer.startDocument(null, true);
@@ -128,7 +130,8 @@ public class NuevaCita extends AppCompatActivity {
                         serializer.flush();
                         fileos.close();
                         Toast.makeText(getApplicationContext(), "Datos creados", Toast.LENGTH_SHORT).show();
-                        finish();
+                        Intent regresar = new Intent(getApplicationContext() , Citas.class);
+                        startActivity(regresar);
                     } catch (IOException e) {
                         Log.e("IOException", "Excepción al crear nuevo archivo");
                     }
@@ -144,7 +147,8 @@ public class NuevaCita extends AppCompatActivity {
                         addElement(doc, fecha, titulo, descrip);
                         writeXMLFile(doc);
                         Toast.makeText(getApplicationContext(), "Información actualizada", Toast.LENGTH_SHORT).show();
-                        finish();
+                        Intent regresar = new Intent(getApplicationContext() , Citas.class);
+                        startActivity(regresar);
                     } catch (ParserConfigurationException e) {
                         e.printStackTrace();
                     } catch (IOException e) {

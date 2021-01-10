@@ -21,6 +21,7 @@ public class XMLPPHPresupuestos {
     private static final String PRESUP_COSTE = "coste";
     private static final String PRESUP_PARTNER = "partner";
     private static final String PRESUP_COMERCIAL = "comercial";
+    private static final String PRESUP_ID = "id";
 
 
     private clasePresupuesto presupActual = null;
@@ -69,6 +70,8 @@ public class XMLPPHPresupuestos {
                 presupActual.setPartner(xmlText);
             }else if (currentTag.equals(PRESUP_COMERCIAL)){
                 presupActual.setComercial(xmlText);
+            }else if (currentTag.equals(PRESUP_ID)){
+                presupActual.setId(xmlText);
             }
         }
     }

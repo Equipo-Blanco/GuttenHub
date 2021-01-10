@@ -10,7 +10,9 @@
         android:id="@+id/linlayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <CalendarView
             android:id="@+id/viewcalendario"
@@ -48,7 +50,8 @@
         <ListView
             android:id="@+id/listaCitas"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:longClickable="true" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,12 +19,14 @@
             android:id="@+id/tv_comercial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Comercial" />
+            android:text="Comercial"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/et_comercial"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:background="#E3F2FD"
             android:ems="10"
             android:hint="Comercial"
             android:inputType="textPersonName" />
@@ -33,12 +35,14 @@
             android:id="@+id/tv_titpartner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Partner" />
+            android:text="Partner"
+            android:textColor="#000000" />
 
         <EditText
             android:id="@+id/et_partner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:background="#E3F2FD"
             android:ems="10"
             android:hint="Nombre Partner"
             android:inputType="textPersonName" />
@@ -48,7 +52,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
-            android:text="Seleccionar Artículo y cantidad:" />
+            android:text="Seleccionar Artículo y cantidad:"
+            android:textColor="#000000" />
 
         <Spinner
             android:id="@+id/spn_productos"
@@ -64,13 +69,15 @@
                 android:id="@+id/tv_cantidad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cantidad:" />
+                android:text="Cantidad:"
+                android:textColor="#000000" />
 
             <EditText
                 android:id="@+id/et_cantidad"
                 android:layout_width="62dp"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_weight="0"
+                android:background="#E3F2FD"
                 android:ems="10"
                 android:inputType="number" />
 
@@ -79,7 +86,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Coste:" />
+                android:text="Coste:"
+                android:textColor="#000000" />
         </LinearLayout>
 
         <Button
@@ -93,7 +101,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
-            android:text="ID Presupuesto: " />
+            android:text="Presupuesto: "
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/tv_presupuesto"

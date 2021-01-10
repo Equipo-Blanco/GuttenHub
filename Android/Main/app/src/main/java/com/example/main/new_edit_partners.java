@@ -191,7 +191,7 @@ public class new_edit_partners extends AppCompatActivity {
         if (etxt.length() > 0) {
             dato = etxt.getText().toString();
         } else {
-            dato = "";
+            dato = "Sin Especificar";
         }
         return dato;
     }

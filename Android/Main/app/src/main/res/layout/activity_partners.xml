@@ -32,7 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="#E2E9EC"
-            android:cacheColorHint="#988D8D">
+            android:cacheColorHint="#988D8D"
+            android:longClickable="true">
 
         </ListView>
 
@@ -82,13 +83,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="@string/nuevo" />
-
-            <Button
-                android:id="@+id/btnEditar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="@string/editar" />
 
         </LinearLayout>
 

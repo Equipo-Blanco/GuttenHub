@@ -19,29 +19,34 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class DetallePresupuesto extends AppCompatActivity {
 
     List<clasePresupuesto> datosPresupuesto;
-    TextView tvInfoPresupuesto, tvPresPartner, tvPresComercial;
-    String cabecera[] = new String[2];
+    TextView tvInfoPresupuesto, tvPresPartner, tvPresComercial,tvTotal, tvTitulo;
+    String cabecera[] = new String[3];
+    float totalPresupuesto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_presupuesto);
 
+        totalPresupuesto = 0.0f;
         tvInfoPresupuesto = (TextView) findViewById(R.id.tv_datos_presupuesto);
+        tvTitulo = (TextView) findViewById(R.id.tv_titulo_detalle_presup);
         tvPresComercial = (TextView) findViewById(R.id.tv_pres_comercial);
         tvPresPartner = (TextView) findViewById(R.id.tv_pres_partner);
+        tvTotal = (TextView) findViewById(R.id.tv_total);
         String archivoPresup;
 
         Bundle extras = getIntent().getExtras();
         archivoPresup = extras.getString("nombrexml");
 
-        getCabecera(archivoPresup); //Obtiene Partner y Comercial y los almacena en el array
+        getCabecera(archivoPresup); //Obtiene ID, Partner y Comercial y los almacena en el array
 
         XMLPPHPresupuestos parser = new XMLPPHPresupuestos();
         datosPresupuesto = parser.parseXML(this, archivoPresup);
 
         String contenido = "***************************\n";
         for (clasePresupuesto info : datosPresupuesto) {
+            totalPresupuesto = totalPresupuesto + info.getCoste();
             contenido = contenido + info + "\n";
             System.out.println("*************************" + contenido);
         }
@@ -49,8 +54,10 @@ public class DetallePresupuesto extends AppCompatActivity {
         contenido = contenido + "\n***************************";
 
         tvInfoPresupuesto.setText(contenido);
+        tvTitulo.setText("ID Presupuesto: " +cabecera[2]);
         tvPresPartner.setText("Partner: " +cabecera[0]);
         tvPresComercial.setText("Comercial: "+cabecera[1]);
+        tvTotal.setText("TOTAL: " +totalPresupuesto +"€");
 
     }
 
@@ -71,6 +78,7 @@ public class DetallePresupuesto extends AppCompatActivity {
                     Element eElement = (Element) nNode;
                     cabecera[0] = eElement.getElementsByTagName("partner").item(0).getTextContent();
                     cabecera[1] = eElement.getElementsByTagName("comercial").item(0).getTextContent();
+                    cabecera[2] = eElement.getElementsByTagName("id").item(0).getTextContent();
                 }
             }
         } catch (Exception e) {

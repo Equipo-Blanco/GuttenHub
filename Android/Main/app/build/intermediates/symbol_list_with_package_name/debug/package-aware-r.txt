@@ -1574,6 +1574,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable agenda
 drawable avd_hide_password
 drawable avd_show_password
 drawable btn_checkbox_checked_mtrl
@@ -1621,6 +1622,8 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable mail
+drawable map
 drawable maps
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1759,7 +1762,6 @@ id blocking
 id bottom
 id bounce
 id btnAdjuntar
-id btnEditar
 id btnEnviar
 id btnNuevo
 id btn_actualizar
@@ -2100,6 +2102,9 @@ id tv_titpartner
 id tv_titulo
 id tv_titulo_detalle_presup
 id tv_titulo_presupuestos
+id tv_total
+id tv_version
+id tv_version_hz
 id unchecked
 id uniform
 id unlabeled

@@ -8,14 +8,16 @@ public class clasePresupuesto {
     private float coste;
     private String comercial;
     private String partner;
+    private String id;
 
-    public clasePresupuesto(String producto, int cantidad, float precio, float coste, String comercial, String partner) {
+    public clasePresupuesto(String producto, int cantidad, float precio, float coste, String comercial, String partner, String id) {
         this.producto = producto;
         this.cantidad = cantidad;
         this.precio = precio;
         this.coste = coste;
         this.comercial = comercial;
         this.partner = partner;
+        this.id = id;
     }
 
     public clasePresupuesto() {
@@ -68,6 +70,14 @@ public class clasePresupuesto {
 
     public String getComercial() {
         return comercial;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     @Override

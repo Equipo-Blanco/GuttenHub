@@ -21,9 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Presupuesto"
-            android:textSize="30dp"
             android:textColor="@color/black"
-            android:textAlignment="center"/>
+            android:textSize="30dp" />
 
         <TextView
             android:id="@+id/tv_asteriscos"
@@ -56,5 +55,14 @@
             android:text="TextView"
             android:textSize="20sp"
             android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total: "
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="viewEnd" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

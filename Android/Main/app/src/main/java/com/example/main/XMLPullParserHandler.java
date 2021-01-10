@@ -1,6 +1,7 @@
 package com.example.main;
 
 import android.content.Context;
+import android.os.Environment;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -30,7 +31,8 @@ public class XMLPullParserHandler {
             XmlPullParser xpp = factory.newPullParser();
 
             //InputStream stream = context.getAssets().open("citasGuardadas.xml");
-            InputStream stream = new FileInputStream(new File( "/storage/emulated/0/Draft/citasGuardadas.xml"));
+            //InputStream stream = new FileInputStream(new File( "/storage/emulated/0/Draft/citasGuardadas.xml"));
+            InputStream stream = new FileInputStream(new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Draft/citasGuardadas.xml"));
             xpp.setInput(stream, null);
 
             int eventType = xpp.getEventType();

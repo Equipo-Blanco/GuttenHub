@@ -1,18 +1,36 @@
 package com.example.main;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Arrays;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import java.io.File;
 import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 public class Partners extends AppCompatActivity {
 
@@ -22,14 +40,7 @@ public class Partners extends AppCompatActivity {
     private TextView tvCorreo;
     private TextView tvComAso;
     private Button bot_Nuevo;
-    private Button bot_Editar;
     List<clasePartner> ListPartners;
-
-    private String partners[] = {"DECATHLON", "Sport4U", "FORUM", "Murica Sports", "Deportes Manolo", "EA Sports", "Touchdown SL"};
-    private String telefonos[] = {"681393521", "681393522", "681393523", "681393524", "681393525", "681393526", "681393527"};
-    private String correos[] = {"sergio@draft.com", "hodei@draft.com", "edgar@draft.com", "lovecraft@draft.com", "roland@draft.com", "rita@draft.com", "jackson@draft.com"};
-    private String comerciales[] = {"Sergio Luhía", "Hodei Aguirre", "Edgar Allan Poe", "H.P. Lovecraft", "Roland Banks", "Rita Young", "Jackson Teller"};
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +52,14 @@ public class Partners extends AppCompatActivity {
         tvCorreo = (TextView) findViewById(R.id.tvCorreo);
         tvComAso = (TextView) findViewById(R.id.tvComAso);
         bot_Nuevo = (Button) findViewById(R.id.btnNuevo);
-        bot_Editar = (Button) findViewById(R.id.btnEditar);
         tvNombrePartner = (TextView) findViewById(R.id.tv_nombrePartner);
 
         XMLPPPartners parser = new XMLPPPartners();
         ListPartners = parser.parseXML(this);
 
-        for (clasePartner p : ListPartners){
-            System.out.println("****************************A*******************");
+        //debugs de prueba
+        for (clasePartner p : ListPartners) {
+            System.out.println("*****************Lista Partners*****************************");
             System.out.println(p.toString());
         }
 
@@ -62,6 +73,42 @@ public class Partners extends AppCompatActivity {
             tvComAso.setText(ListPartners.get(position).getnComercial());
         });
 
+        LvPartners.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int position, long id) {
+                //ListPartners.remove(position);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(Partners.this);
+                builder.setTitle("Eliminar Partner");
+                builder.setMessage("¿Deseas eliminar el partner seleccionado?");
+                builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        try {
+                            String nombrePartner = ListPartners.get(position).getnPartner();
+                            System.out.println("Nombre Partner " + nombrePartner);
+                            eliminaPartner(nombrePartner);
+                            Toast.makeText(getApplicationContext(), "Partner Eliminado", Toast.LENGTH_SHORT).show();
+
+                            //Tras eliminar hay que recargar la activity por la lista
+                            Intent recargar = new Intent(getApplicationContext(), Partners.class);
+                            startActivity(recargar);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Ha ocurrido un error al intentar eliminar el partner seleccionado", Toast.LENGTH_LONG).show();
+                        }
+                        Toast.makeText(getApplicationContext(), "Partner Eliminado", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("Cancelar", null);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
+                return true;
+            }
+        });
+
         Intent intent = new Intent(this, new_edit_partners.class);
         bot_Nuevo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +116,37 @@ public class Partners extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
+    private static void eliminaPartner(String nombreXml) {
+        File xmlFile = new File(Environment.getExternalStorageDirectory() + "/Draft/partnersGuardados.xml");
+        //System.out.println(xmlFile);
+        try {
+            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            Document document = documentBuilder.parse(xmlFile);
+            NodeList partnersXml = document.getElementsByTagName("partner");
+            for (int i = 0; i < partnersXml.getLength(); i++) {
+                Element nombre = (Element) partnersXml.item(i);
+                Element etiquetaNombre = (Element) nombre.getElementsByTagName("nombre").item(0);
+                if (etiquetaNombre.getTextContent().equals(nombreXml)) {
+                    etiquetaNombre.getParentNode().getParentNode().removeChild(partnersXml.item(i));
+                    break;
+                }
+            }
+            guardarXML(document, xmlFile);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    private static void guardarXML(Document document, File xmlFile) throws TransformerFactoryConfigurationError, TransformerException {
+        document.getDocumentElement().normalize();
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource domSource = new DOMSource(document);
+        StreamResult streamResult = new StreamResult(new File(Environment.getExternalStorageDirectory() + "/Draft/partnersGuardados.xml"));
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.transform(domSource, streamResult);
     }
 }

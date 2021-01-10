@@ -18,10 +18,17 @@
 
         <ImageView
             android:id="@+id/ImgLogo"
-            android:layout_width="202dp"
+            android:layout_width="match_parent"
             android:layout_height="183dp"
-            app:srcCompat="@drawable/draft"
-            android:contentDescription="TODO" />
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/draft" />
+
+        <TextView
+            android:id="@+id/tv_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="v1.0"
+            android:textAlignment="center" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,59 +55,57 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/BtnCorreo"
                 style="@android:style/Widget.ImageButton"
-                android:layout_width="98dp"
-                android:layout_height="68dp"
-                android:layout_marginEnd="10dp"
+                android:layout_width="80dp"
+                android:layout_height="75dp"
                 android:contentDescription="TODO"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/gmail" />
+                app:srcCompat="@drawable/mail" />
 
             <ImageButton
                 android:id="@+id/BtnLlamar"
                 style="@android:style/Widget.ImageButton"
-                android:layout_width="85dp"
+                android:layout_width="80dp"
                 android:layout_height="75dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
                 android:contentDescription="TODO"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/phone" />
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/agenda" />
 
             <ImageButton
                 android:id="@+id/BtnMapa"
                 style="@android:style/Widget.ImageButton"
-                android:layout_width="103dp"
+                android:layout_width="80dp"
                 android:layout_height="75dp"
-                android:layout_marginStart="10dp"
                 android:contentDescription="TODO"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/maps" />
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/map" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center|left"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <TextView
                 android:id="@+id/TxEmail"
-                android:layout_width="39dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/ejemplo_email_com" />
 
             <TextView
                 android:id="@+id/TxTel"
-                android:layout_width="7dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/_681393521" />

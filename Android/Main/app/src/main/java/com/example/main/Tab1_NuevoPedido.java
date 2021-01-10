@@ -161,7 +161,7 @@ public class Tab1_NuevoPedido extends Fragment {
         partner = obtieneDato(etPartner);
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String fecha = df.format(Calendar.getInstance().getTime());
-        int id = (int) (Math.random() * 50)-1;
+        int id = (int) (Math.random() * 5000)-1;
         nombrePresup = fecha + partner + "-" + id;
 
         File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/DraftPresupuestos/" + nombrePresup + ".xml");
@@ -186,6 +186,10 @@ public class Tab1_NuevoPedido extends Fragment {
             serializer.startTag(null, "comercial");
             serializer.text(comercial);
             serializer.endTag(null, "comercial");
+
+            serializer.startTag(null, "id");
+            serializer.text(String.valueOf(id));
+            serializer.endTag(null, "id");
 
             for (int i = 0; i < productosPresupuesto.size(); i++) {
                 serializer.startTag(null, "articulo");
