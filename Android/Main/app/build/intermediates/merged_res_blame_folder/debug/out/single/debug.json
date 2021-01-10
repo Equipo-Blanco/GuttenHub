@@ -12,12 +12,12 @@
         "source": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_patriots_local.jpg.flat",
-        "source": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\drawable\\patriots_local.jpg"
-    },
-    {
         "merged": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_agenda.png.flat",
         "source": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\drawable-v24\\agenda.png"
+    },
+    {
+        "merged": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_patriots_local.jpg.flat",
+        "source": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\src\\main\\res\\drawable\\patriots_local.jpg"
     },
     {
         "merged": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\res\\merged\\debug\\layout-land_activity_main.xml.flat",
