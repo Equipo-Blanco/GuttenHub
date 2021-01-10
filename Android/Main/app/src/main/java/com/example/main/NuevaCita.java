@@ -99,7 +99,7 @@ public class NuevaCita extends AppCompatActivity {
 
                 if (!newxmlfile.exists()) {
                     newxmlfile.getParentFile().mkdir();
-                    System.out.println("CREANDO FILE **************************************************>");
+                    //System.out.println("CREANDO FILE **************************************************>");
 
                     try {
                         fileos = new FileOutputStream(newxmlfile);
@@ -137,13 +137,13 @@ public class NuevaCita extends AppCompatActivity {
                     }
                 } else {
                     try {
-                        System.out.println("MODIFICANDO FILE **************************************************>");
+                       // System.out.println("MODIFICANDO FILE **************************************************>");
                         dBuilder = dbFactory.newDocumentBuilder();
-                        System.out.println("Paso 1 **************************************************>");
+                       // System.out.println("Paso 1 **************************************************>");
                         Document doc = dBuilder.parse(newxmlfile);
-                        System.out.println("Paso 2 **************************************************>");
+                       // System.out.println("Paso 2 **************************************************>");
                         doc.getDocumentElement().normalize();
-                        System.out.println("Paso 3 **************************************************>");
+                       // System.out.println("Paso 3 **************************************************>");
                         addElement(doc, fecha, titulo, descrip);
                         writeXMLFile(doc);
                         Toast.makeText(getApplicationContext(), "Información actualizada", Toast.LENGTH_SHORT).show();

@@ -20,7 +20,7 @@ public class Catalogo extends AppCompatActivity {
     TextView txv_descrip, txv_prod, txv_prec;
     ImageView iv_imgProducto;
     String[] productos;
-    String[] descripciones;
+    //String[] descripciones;
     String[] precios;
     int[] imagenes = {R.drawable.falcons_local, R.drawable.falcons_visit,
             R.drawable.patriots_local, R.drawable.patriots_visit};
