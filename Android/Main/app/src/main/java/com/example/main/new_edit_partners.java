@@ -60,7 +60,7 @@ public class new_edit_partners extends AppCompatActivity {
                 String telefono;
 
                 //Validamos datos y asignamos valores
-                partner=getDatos(et_partner);;
+                partner=getDatos(et_partner);
                 comercial= getDatos(et_comercial);
                 mail= getDatos(et_mailComerc);
                 telefono= getDatos(et_telefono);

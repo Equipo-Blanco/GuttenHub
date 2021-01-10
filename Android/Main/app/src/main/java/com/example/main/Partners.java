@@ -76,7 +76,6 @@ public class Partners extends AppCompatActivity {
         LvPartners.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int position, long id) {
-                //ListPartners.remove(position);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(Partners.this);
                 builder.setTitle("Eliminar Partner");
@@ -90,7 +89,7 @@ public class Partners extends AppCompatActivity {
                             eliminaPartner(nombrePartner);
                             Toast.makeText(getApplicationContext(), "Partner Eliminado", Toast.LENGTH_SHORT).show();
 
-                            //Tras eliminar hay que recargar la activity por la lista
+                            //Tras eliminar hay que recargar la activity para actualizar la lista
                             Intent recargar = new Intent(getApplicationContext(), Partners.class);
                             startActivity(recargar);
 
@@ -110,12 +109,7 @@ public class Partners extends AppCompatActivity {
         });
 
         Intent intent = new Intent(this, new_edit_partners.class);
-        bot_Nuevo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intent);
-            }
-        });
+        bot_Nuevo.setOnClickListener(view -> startActivity(intent));
     }
 
     private static void eliminaPartner(String nombreXml) {
