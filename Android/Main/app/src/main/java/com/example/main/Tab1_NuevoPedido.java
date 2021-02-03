@@ -155,6 +155,18 @@ public class Tab1_NuevoPedido extends Fragment {
 
     public void generaPresupuesto() {
 
+        //SENTENCIAS SQL:
+
+        //INSERT INTO CABECERA_ALBARANES (ID_ALBARANCABECERA, ID_PARTNER, ID_COMERCIAL) VALUES(1, 1, 1)
+        //INSERT INTO LINEAS_ALBARAN (ID_ALBARANLINEA, ID_ARTICULO, CANTIDAD, PRECIO, ID_ALBARANCABECERA, IMPORTE) VALUES(1, 1, 10, 5, 1, 50)
+
+        //Obtener los valores de variables e insertar en las sentencias SQL
+
+        //Agregar Fechas del pedido!
+
+
+        //LO DE ABAJO VA A SOBRAR -  ES PARA XML
+
         String comercial, partner;
         String nombrePresup;
         comercial = obtieneDato(etComercial);

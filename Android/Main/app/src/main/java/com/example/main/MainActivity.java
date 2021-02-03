@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -52,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         telf = (TextView) findViewById(R.id.TxTel);
         mail = (TextView) findViewById(R.id.TxEmail);
         spin_delegaciones = (Spinner) findViewById(R.id.spnDelegaciones);
+
+        //SQL: creación de tablas
+        tablasSQLHelper miDb = new tablasSQLHelper(this, "DBDraft", null, 1);
+        SQLiteDatabase db = miDb.getWritableDatabase();
+
 
         //Intents para moverse por la app
         Intent intentPartner = new Intent(this, Partners.class);
@@ -109,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
         bot_mapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intentMaps);
+                db.execSQL("INSERT INTO CATEGORIAS VALUES (10, 'C', 'Camisetas')");
+                //startActivity(intentMaps);
             }
         });
 
