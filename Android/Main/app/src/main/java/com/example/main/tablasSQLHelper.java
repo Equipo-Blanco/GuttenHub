@@ -26,6 +26,13 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
             "                         CODIGO TEXT," +
             "                         EMAIL TEXT)";
 
+    String sqlCreateLogin = "CREATE TABLE LOGINUSUARIOS(ID_COMERCIAL INTEGER PRIMARY KEY, " +
+                             " NOMBRE TEXT," +
+                             " CONTRASEN TEXT, " +
+                             " EMAIL TEXT, " +
+                             " FOREIGN KEY (ID_COMERCIAL) REFERENCES COMERCIALES(ID_COMERCIAL))";
+
+
     String sqlCreateCategorias = "CREATE TABLE IF NOT EXISTS CATEGORIAS (ID_CATEGORIA INTEGER NOT NULL UNIQUE PRIMARY KEY," +
             "CODIGO TEXT NOT NULL," +
             "DESCRIPCION TEXT)";
@@ -40,6 +47,7 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
             "STOCK_MINIMO INTEGER," +
             "FOTOS TEXT," +
             "FOREIGN KEY (ID_CATEGORIA) REFERENCES CATEGORIAS(ID_CATEGORIA))";
+
     String sqlCreateCabeceraAlbaranes = "CREATE TABLE IF NOT EXISTS CABECERA_ALBARANES (" +
             "ID_ALBARANCABECERA INTEGER NOT NULL UNIQUE PRIMARY KEY," +
             "ID_PARTNER INTEGER NOT NULL," +
@@ -78,6 +86,7 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCreatePartners);
         db.execSQL(sqlCreateCabeceraAlbaranes);
         db.execSQL(sqlCreateLineasAlbaran);
+        db.execSQL(sqlCreateLogin);
     }
 
     @Override
@@ -103,5 +112,6 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCreatePartners);
         db.execSQL(sqlCreateCabeceraAlbaranes);
         db.execSQL(sqlCreateLineasAlbaran);
+        db.execSQL(sqlCreateLogin);
     }
 }

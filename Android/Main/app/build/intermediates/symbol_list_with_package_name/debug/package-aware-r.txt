@@ -1843,6 +1843,8 @@ id et_comercial
 id et_descripcion
 id et_partner
 id et_titulo
+id etxtContacto
+id etxtDireccion
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2046,6 +2048,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView10
 id textView2
 id textView3
 id textView4
@@ -2053,6 +2056,7 @@ id textView5
 id textView6
 id textView7
 id textView8
+id textView9
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter

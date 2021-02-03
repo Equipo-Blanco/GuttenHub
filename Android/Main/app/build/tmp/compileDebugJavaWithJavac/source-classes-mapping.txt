@@ -1,13 +1,21 @@
-com/example/main/new_edit_partners.java
- com.example.main.new_edit_partners
- com.example.main.new_edit_partners$1
+com/example/main/ClaseCita.java
+ com.example.main.ClaseCita
 com/example/main/Tab2_pedidos_hechos.java
  com.example.main.Tab2_pedidos_hechos
  com.example.main.Tab2_pedidos_hechos$1
  com.example.main.Tab2_pedidos_hechos$2
  com.example.main.Tab2_pedidos_hechos$3
-com/example/main/ClaseCita.java
- com.example.main.ClaseCita
+com/example/main/MainActivity.java
+ com.example.main.MainActivity
+ com.example.main.MainActivity$1
+ com.example.main.MainActivity$2
+ com.example.main.MainActivity$3
+ com.example.main.MainActivity$4
+ com.example.main.MainActivity$5
+ com.example.main.MainActivity$6
+ com.example.main.MainActivity$7
+ com.example.main.MainActivity$8
+ com.example.main.MainActivity$9
 com/example/main/Catalogo.java
  com.example.main.Catalogo
  com.example.main.Catalogo$1
@@ -38,10 +46,8 @@ com/example/main/XMLPPPartners.java
  com.example.main.XMLPPPartners
 com/example/main/clasePresupuesto.java
  com.example.main.clasePresupuesto
-com/example/main/Partners.java
- com.example.main.Partners
- com.example.main.Partners$1
- com.example.main.Partners$1$1
+com/example/main/tablasSQLHelper.java
+ com.example.main.tablasSQLHelper
 com/example/main/DetallePresupuesto.java
  com.example.main.DetallePresupuesto
 com/example/main/Envios.java
@@ -57,16 +63,10 @@ com/example/main/XMLPullParserHandler.java
 com/example/main/Pedidos.java
  com.example.main.Pedidos
  com.example.main.Pedidos$1
-com/example/main/MainActivity.java
- com.example.main.MainActivity
- com.example.main.MainActivity$1
- com.example.main.MainActivity$2
- com.example.main.MainActivity$3
- com.example.main.MainActivity$4
- com.example.main.MainActivity$5
- com.example.main.MainActivity$6
- com.example.main.MainActivity$7
- com.example.main.MainActivity$8
- com.example.main.MainActivity$9
-com/example/main/tablasSQLHelper.java
- com.example.main.tablasSQLHelper
+com/example/main/new_edit_partners.java
+ com.example.main.new_edit_partners
+ com.example.main.new_edit_partners$1
+com/example/main/Partners.java
+ com.example.main.Partners
+ com.example.main.Partners$1
+ com.example.main.Partners$1$1

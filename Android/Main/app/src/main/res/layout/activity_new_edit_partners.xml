@@ -38,7 +38,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre y Apellidos"
+            android:hint="Empresa"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección" />
+
+        <EditText
+            android:id="@+id/etxtDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Dirección"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre Contacto" />
+
+        <EditText
+            android:id="@+id/etxtContacto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre Contacto"
             android:inputType="textPersonName" />
 
         <TextView
@@ -80,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nombre y Apellidos"
+            android:hint="SPINNER CON COMERCIALES PARA EL ID"
             android:inputType="textPersonName" />
 
         <Button

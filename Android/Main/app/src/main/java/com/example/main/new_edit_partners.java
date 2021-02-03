@@ -1,6 +1,9 @@
 package com.example.main;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -22,6 +25,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import java.sql.*;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -39,6 +44,8 @@ public class new_edit_partners extends AppCompatActivity {
     EditText et_comercial;
     EditText et_telefono;
     EditText et_mailComerc;
+    EditText et_Contacto;
+    EditText et_Direccion;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,22 +56,64 @@ public class new_edit_partners extends AppCompatActivity {
         et_partner = (EditText) findViewById(R.id.etNombre);
         et_comercial = (EditText) findViewById(R.id.etNomComercial);
         et_telefono = (EditText) findViewById(R.id.etTelefono);
-        et_mailComerc = (EditText)findViewById(R.id.etMail);
+        et_mailComerc = (EditText) findViewById(R.id.etMail);
+        et_Contacto = (EditText) findViewById(R.id.etxtContacto);
+        et_Direccion = (EditText) findViewById(R.id.etxtDireccion);
 
         bot_guardaPartner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String partner ;
+                String partner;
                 String comercial;
                 String mail;
                 String telefono;
+                String contacto;
+                String direccion;
 
                 //Validamos datos y asignamos valores
-                partner=getDatos(et_partner);
-                comercial= getDatos(et_comercial);
-                mail= getDatos(et_mailComerc);
-                telefono= getDatos(et_telefono);
+                partner = getDatos(et_partner);
+                comercial = getDatos(et_comercial);
+                mail = getDatos(et_mailComerc);
+                telefono = getDatos(et_telefono);
+                contacto = getDatos(et_Contacto);
+                direccion = getDatos(et_Direccion);
+                // Parte SQL
 
+                tablasSQLHelper usdbh = new tablasSQLHelper(getApplicationContext(), "DBDraft", null, 1);
+                SQLiteDatabase db = usdbh.getWritableDatabase();
+                String resultado = "";
+                if (db != null) {
+
+                    //HAY QUE CAMBIAR EL FORMULARIO, PEDIR MAS CAMPOS
+                    //Insertamos los datos en la tabla Usuarios
+                    try {
+                        int maximo = 0;
+
+                        Cursor c = db.rawQuery("SELECT MAX(ID_PARTNER) AS MAXIMO FROM PARTNERS", null);
+                        //Nos aseguramos de que existe al menos un registro
+                        if (c.moveToFirst()) {
+                            //Recorremos el cursor hasta que no haya más registros
+                            do {
+                                maximo = c.getInt(0);
+                                //System.out.println(codigo + " " +nombre);
+                            } while (c.moveToNext());
+                        }
+
+                        maximo = maximo + 1;
+
+                        db.execSQL("INSERT INTO PARTNERS (ID_PARTNER, ID_COMERCIAL, EMPRESA, DIRECCION, CONTACTO, TELEFONO, EMAIL) " +
+                                "                 VALUES ("+ maximo +", 1, '" + partner + "', '" + direccion + "', '" + contacto + "', " + telefono + ", '" + mail + "')");
+
+                        Toast.makeText(getApplicationContext(), "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+                //Cerramos la base de datos
+                db.close();
+
+
+                //Parte XML
                 File newxmlfile = new File(Environment.getExternalStorageDirectory() + "/Draft/partnersGuardados.xml");
                 XmlSerializer serializer = Xml.newSerializer();
                 FileOutputStream fileos = null;
@@ -136,8 +185,14 @@ public class new_edit_partners extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                Toast.makeText(getApplicationContext(), "Partner almacenado correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(
+
+                        getApplicationContext(), "Partner almacenado correctamente", Toast.LENGTH_SHORT).
+
+                        show();
+
                 Intent volver = new Intent(getApplicationContext(), Partners.class);
+
                 startActivity(volver);
             }
         });
