@@ -55,6 +55,14 @@
             android:textSize="17sp"/>
 
         <TextView
+            android:id="@+id/tvDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/direcci_n"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
             android:id="@+id/tvCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
