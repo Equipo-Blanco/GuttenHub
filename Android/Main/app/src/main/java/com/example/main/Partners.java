@@ -131,13 +131,15 @@ public class Partners extends AppCompatActivity {
         LvPartners.setAdapter(adapter);
 
         LvPartners.setOnItemClickListener((parent, view, position, id) -> {
+            //Reinicio/limpiado de los campos de texto
             tvDirecc.setText("");
             tvNombrePartner.setText("");
             tvCorreo.setText("");
             tvTfno.setText("");
             tvComAso.setText("");
 
-            System.out.println("++++++++++++++++++++++++++++++" + LvPartners.getItemAtPosition(position) + "*****************************");
+            //Debugeo informativo en consola
+            System.out.println(LvPartners.getItemAtPosition(position) + "*****************************");
 
             try {
                 int pos = 0;
