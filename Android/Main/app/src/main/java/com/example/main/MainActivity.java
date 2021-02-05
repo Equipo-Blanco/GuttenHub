@@ -115,8 +115,7 @@ public class MainActivity extends AppCompatActivity {
         bot_mapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.execSQL("INSERT INTO CATEGORIAS VALUES (10, 'C', 'Camisetas')");
-                //startActivity(intentMaps);
+                startActivity(intentMaps);
             }
         });
 

@@ -26,6 +26,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import java.sql.*;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -60,6 +61,8 @@ public class new_edit_partners extends AppCompatActivity {
         et_Contacto = (EditText) findViewById(R.id.etxtContacto);
         et_Direccion = (EditText) findViewById(R.id.etxtDireccion);
 
+        cargaComerciales();
+
         bot_guardaPartner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,14 +80,13 @@ public class new_edit_partners extends AppCompatActivity {
                 telefono = getDatos(et_telefono);
                 contacto = getDatos(et_Contacto);
                 direccion = getDatos(et_Direccion);
+
                 // Parte SQL
 
                 tablasSQLHelper usdbh = new tablasSQLHelper(getApplicationContext(), "DBDraft", null, 1);
                 SQLiteDatabase db = usdbh.getWritableDatabase();
                 String resultado = "";
                 if (db != null) {
-
-                    //HAY QUE CAMBIAR EL FORMULARIO, PEDIR MAS CAMPOS
                     //Insertamos los datos en la tabla Usuarios
                     try {
                         int maximo = 0;
@@ -102,7 +104,7 @@ public class new_edit_partners extends AppCompatActivity {
                         maximo = maximo + 1;
 
                         db.execSQL("INSERT INTO PARTNERS (ID_PARTNER, ID_COMERCIAL, EMPRESA, DIRECCION, CONTACTO, TELEFONO, EMAIL) " +
-                                "                 VALUES ("+ maximo +", 1, '" + partner + "', '" + direccion + "', '" + contacto + "', " + telefono + ", '" + mail + "')");
+                                "                 VALUES (" + maximo + ", 1, '" + partner + "', '" + direccion + "', '" + contacto + "', " + telefono + ", '" + mail + "')");
 
                         Toast.makeText(getApplicationContext(), "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
                     } catch (SQLException e) {
@@ -186,16 +188,49 @@ public class new_edit_partners extends AppCompatActivity {
                     }
                 }
                 Toast.makeText(
-
-                        getApplicationContext(), "Partner almacenado correctamente", Toast.LENGTH_SHORT).
-
-                        show();
-
+                        getApplicationContext(), "Partner almacenado correctamente", Toast.LENGTH_SHORT).show();
                 Intent volver = new Intent(getApplicationContext(), Partners.class);
 
                 startActivity(volver);
             }
         });
+    }
+
+    private void cargaComerciales() {
+        tablasSQLHelper usdbh = new tablasSQLHelper(getApplicationContext(), "DBDraft", null, 1);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+        String resultado = "";
+        if (db != null) {
+
+            //HAY QUE CAMBIAR EL FORMULARIO, PEDIR MAS CAMPOS
+            //Insertamos los datos en la tabla Usuarios
+            try {
+                int pos = 0;
+                Cursor c = db.rawQuery("SELECT COUNT(ID_PARTNER) AS TOTAL FROM PARTNERS", null);
+                //Nos aseguramos de que existe al menos un registro
+                if (c.moveToFirst()) {
+                    //Recorremos el cursor hasta que no haya más registros
+                    do {
+                         pos = c.getInt(0);
+
+                        //System.out.println(codigo + " " +nombre);
+                    } while (c.moveToNext());
+                }
+
+                System.out.println(pos + "********************************************************************");
+
+                Cursor c2 = db.rawQuery("SELECT ID_COMERCIAL, EMPRESA FROM PARTNERS", null);
+
+                //db.execSQL("");
+
+                Toast.makeText(getApplicationContext(), "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        //Cerramos la base de datos
+        db.close();
+
     }
 
     private void escribirXML(Document doc) throws TransformerFactoryConfigurationError, TransformerException {
