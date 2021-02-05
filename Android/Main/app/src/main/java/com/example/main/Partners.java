@@ -2,6 +2,9 @@ package com.example.main;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -54,23 +57,27 @@ public class Partners extends AppCompatActivity {
         bot_Nuevo = (Button) findViewById(R.id.btnNuevo);
         tvNombrePartner = (TextView) findViewById(R.id.tv_nombrePartner);
 
-        XMLPPPartners parser = new XMLPPPartners();
-        ListPartners = parser.parseXML(this);
+        List<String> ListaPartners = null;
+        cargaComerciales(ListaPartners);
 
-        //debugs de prueba
-        for (clasePartner p : ListPartners) {
-            System.out.println("*****************Lista Partners*****************************");
-            System.out.println(p.toString());
-        }
+        //XMLPPPartners parser = new XMLPPPartners();
+        //ListPartners = parser.parseXML(this);
 
-        ArrayAdapter<clasePartner> adapter = new ArrayAdapter<clasePartner>(this, android.R.layout.simple_expandable_list_item_1, ListPartners);
+
+        //Rellenar Lista desde XML
+        //for (clasePartner p : ListPartners) {
+        //    System.out.println("*****************Lista Partners*****************************");
+        //    System.out.println(p.toString());
+        // }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, ListaPartners);
         LvPartners.setAdapter(adapter);
 
         LvPartners.setOnItemClickListener((parent, view, position, id) -> {
-            tvNombrePartner.setText(ListPartners.get(position).getnPartner());
-            tvCorreo.setText(ListPartners.get(position).getnMail());
-            tvTfno.setText(ListPartners.get(position).getnTelefono());
-            tvComAso.setText(ListPartners.get(position).getnComercial());
+            // tvNombrePartner.setText(ListPartners.get(position).getnPartner());
+            // tvCorreo.setText(ListPartners.get(position).getnMail());
+            // tvTfno.setText(ListPartners.get(position).getnTelefono());
+            // tvComAso.setText(ListPartners.get(position).getnComercial());
         });
 
         LvPartners.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -110,6 +117,54 @@ public class Partners extends AppCompatActivity {
 
         Intent intent = new Intent(this, new_edit_partners.class);
         bot_Nuevo.setOnClickListener(view -> startActivity(intent));
+    }
+
+    private void cargaComerciales(List<String> lisPartn) {
+        tablasSQLHelper usdbh = new tablasSQLHelper(getApplicationContext(), "DBDraft", null, 1);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+        String resultado = "";
+        if (db != null) {
+
+            //Insertamos los datos en la tabla Usuarios
+            try {
+                int pos = 0;
+                Cursor c = db.rawQuery("SELECT COUNT(ID_PARTNER) AS TOTAL FROM PARTNERS", null);
+                //Nos aseguramos de que existe al menos un registro
+                if (c.moveToFirst()) {
+                    //Recorremos el cursor hasta que no haya más registros
+                    do {
+                        pos = c.getInt(0);
+
+                        //System.out.println(codigo + " " +nombre);
+                    } while (c.moveToNext());
+                }
+
+                System.out.println(pos + "********************************************************************");
+                int i = 0;
+                int[] idcomercial = new int[pos];
+                String[] empresa = new String[pos];
+
+
+                Cursor c2 = db.rawQuery("SELECT ID_COMERCIAL, EMPRESA FROM PARTNERS", null);
+
+                if (c2.moveToFirst()) {
+                    do {
+                        idcomercial[i] = c2.getInt(0);
+                        System.out.println(c2.getString(1) + "************************************");
+                        empresa[i] = c2.getString(1);
+                        i++;
+                    } while (c2.moveToNext());
+                }
+
+                //db.execSQL("");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        //Cerramos la base de datos
+        db.close();
+
     }
 
     private static void eliminaPartner(String nombreXml) {

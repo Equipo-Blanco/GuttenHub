@@ -61,8 +61,6 @@ public class new_edit_partners extends AppCompatActivity {
         et_Contacto = (EditText) findViewById(R.id.etxtContacto);
         et_Direccion = (EditText) findViewById(R.id.etxtDireccion);
 
-        cargaComerciales();
-
         bot_guardaPartner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -196,42 +194,7 @@ public class new_edit_partners extends AppCompatActivity {
         });
     }
 
-    private void cargaComerciales() {
-        tablasSQLHelper usdbh = new tablasSQLHelper(getApplicationContext(), "DBDraft", null, 1);
-        SQLiteDatabase db = usdbh.getWritableDatabase();
-        String resultado = "";
-        if (db != null) {
 
-            //HAY QUE CAMBIAR EL FORMULARIO, PEDIR MAS CAMPOS
-            //Insertamos los datos en la tabla Usuarios
-            try {
-                int pos = 0;
-                Cursor c = db.rawQuery("SELECT COUNT(ID_PARTNER) AS TOTAL FROM PARTNERS", null);
-                //Nos aseguramos de que existe al menos un registro
-                if (c.moveToFirst()) {
-                    //Recorremos el cursor hasta que no haya más registros
-                    do {
-                         pos = c.getInt(0);
-
-                        //System.out.println(codigo + " " +nombre);
-                    } while (c.moveToNext());
-                }
-
-                System.out.println(pos + "********************************************************************");
-
-                Cursor c2 = db.rawQuery("SELECT ID_COMERCIAL, EMPRESA FROM PARTNERS", null);
-
-                //db.execSQL("");
-
-                Toast.makeText(getApplicationContext(), "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        //Cerramos la base de datos
-        db.close();
-
-    }
 
     private void escribirXML(Document doc) throws TransformerFactoryConfigurationError, TransformerException {
         doc.getDocumentElement().normalize();
