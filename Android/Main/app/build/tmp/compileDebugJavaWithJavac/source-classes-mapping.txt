@@ -30,11 +30,8 @@ com/example/main/Citas.java
  com.example.main.Citas$3
  com.example.main.Citas$3$1
  com.example.main.Citas$4
-com/example/main/Tab1_NuevoPedido.java
- com.example.main.Tab1_NuevoPedido
- com.example.main.Tab1_NuevoPedido$1
- com.example.main.Tab1_NuevoPedido$2
- com.example.main.Tab1_NuevoPedido$ProductoPedido
+com/example/main/XMLPullParserHandler.java
+ com.example.main.XMLPullParserHandler
 com/example/main/BuildConfig.java
  com.example.main.BuildConfig
 com/example/main/clasePartner.java
@@ -58,11 +55,6 @@ com/example/main/Mapa.java
  com.example.main.Mapa
 com/example/main/SectionsPageAdapter.java
  com.example.main.SectionsPageAdapter
-com/example/main/XMLPullParserHandler.java
- com.example.main.XMLPullParserHandler
-com/example/main/Pedidos.java
- com.example.main.Pedidos
- com.example.main.Pedidos$1
 com/example/main/new_edit_partners.java
  com.example.main.new_edit_partners
  com.example.main.new_edit_partners$1
@@ -71,3 +63,11 @@ com/example/main/Partners.java
  com.example.main.Partners
  com.example.main.Partners$1
  com.example.main.Partners$1$1
+com/example/main/Pedidos.java
+ com.example.main.Pedidos
+ com.example.main.Pedidos$1
+com/example/main/Tab1_NuevoPedido.java
+ com.example.main.Tab1_NuevoPedido
+ com.example.main.Tab1_NuevoPedido$1
+ com.example.main.Tab1_NuevoPedido$2
+ com.example.main.Tab1_NuevoPedido$LineasAlbaran

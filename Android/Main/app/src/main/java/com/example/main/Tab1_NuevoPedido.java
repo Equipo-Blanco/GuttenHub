@@ -1,6 +1,8 @@
 package com.example.main;
 
-import android.os.Build;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.Editable;
@@ -19,7 +21,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import org.xmlpull.v1.XmlSerializer;
@@ -48,7 +49,7 @@ public class Tab1_NuevoPedido extends Fragment {
     String presupuestoA = ""; //El presupuesto sin guardar aún
     String productoSeleccionado;
     float total;
-    ArrayList<ProductoPedido> productosPresupuesto = new ArrayList<ProductoPedido>();
+    ArrayList<LineasAlbaran> productosPresupuesto = new ArrayList<LineasAlbaran>();
 
     @Nullable
     @Override
@@ -117,7 +118,7 @@ public class Tab1_NuevoPedido extends Fragment {
         btnConfirmar.setOnClickListener((view1) -> {
             Toast.makeText(getActivity(), "Presupuesto generado", Toast.LENGTH_SHORT).show();
 
-            for (ProductoPedido a : productosPresupuesto) {
+            for (LineasAlbaran a : productosPresupuesto) {
                 System.out.println(a);
             }
             generaPresupuesto();
@@ -133,7 +134,7 @@ public class Tab1_NuevoPedido extends Fragment {
             presupuestoA = presupuestoA + linea + "\n";
             tvPresupuesto.setText(presupuestoA);
 
-            ProductoPedido prod1 = new ProductoPedido(productoSeleccionado, cantidad, precio, total);
+            LineasAlbaran prod1 = new LineasAlbaran(productoSeleccionado, cantidad, precio, total);
             System.out.println(prod1);
             productosPresupuesto.add(prod1);
         });
@@ -160,12 +161,46 @@ public class Tab1_NuevoPedido extends Fragment {
         //INSERT INTO CABECERA_ALBARANES (ID_ALBARANCABECERA, ID_PARTNER, ID_COMERCIAL) VALUES(1, 1, 1)
         //INSERT INTO LINEAS_ALBARAN (ID_ALBARANLINEA, ID_ARTICULO, CANTIDAD, PRECIO, ID_ALBARANCABECERA, IMPORTE) VALUES(1, 1, 10, 5, 1, 50)
 
-        //Obtener los valores de variables e insertar en las sentencias SQL
+        //Obtener los valores de variables e insertar en las sentencias SQL aprovechando una instancia del ArrayList de clase LineasAlbaran
 
         //Agregar Fechas del pedido!
+        tablasSQLHelper usdbh = new tablasSQLHelper(getContext(), "DBDraft", null, 1);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+        if (db != null) {
+            //Insertamos los datos en la tabla Usuarios
+            try {
+                int idAlbaran = 0; //Inicializar a 0
+
+                Cursor c = db.rawQuery("SELECT MAX(ID_ALBARANCABECERA) AS MAXIMO FROM CABECERA_ALBARANES", null);
+                //Nos aseguramos de que existe al menos un registro
+                if (c.moveToFirst()) {
+                    //Recorremos el cursor hasta que no haya más registros
+                    do {
+                        idAlbaran = c.getInt(0);
+                        //System.out.println(codigo + " " +nombre);
+                    } while (c.moveToNext());
+                }
+
+                idAlbaran = idAlbaran + 1;
+
+                //Inserción del pedido - Parte 1: CABECERA ALBARÁN
+                db.execSQL("INSERT INTO CABECERA_ALBARANES " +
+                        "                 VALUES (" + idAlbaran + ", 'FALTA SPINNER PARTNER', 'FALTA SPINNER COMERCIAL', 'FECHA ALBARAN', 'FECHA ENVIO 2 dias mas que fecAlb', 'fecEntrega 7 dias', 'Dirección envio', 'Total Factura' )");
+
+                //Inserción del pedido - Parte 2 : LINEAS ALBARÁN
+                //Incorporar Lista con un bucle ir leyendo e insertando
+                db.execSQL("");
+
+                Toast.makeText(getContext(), "Pedido Creado correctamente", Toast.LENGTH_SHORT).show();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        //Cerramos la conexión con la base de datos
+        db.close();
 
 
-        //LO DE ABAJO VA A SOBRAR -  ES PARA XML
+        //LO DE ABAJO ES PARA XML
 
         String comercial, partner;
         String nombrePresup;
@@ -173,7 +208,7 @@ public class Tab1_NuevoPedido extends Fragment {
         partner = obtieneDato(etPartner);
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String fecha = df.format(Calendar.getInstance().getTime());
-        int id = (int) (Math.random() * 5000)-1;
+        int id = (int) (Math.random() * 5000) - 1;
         nombrePresup = fecha + partner + "-" + id;
 
         File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/DraftPresupuestos/" + nombrePresup + ".xml");
@@ -234,17 +269,33 @@ public class Tab1_NuevoPedido extends Fragment {
         }
     }
 
-    class ProductoPedido {
+    class LineasAlbaran {
+        //Esto consolida las líneas de albarán
         String nombreProd;
+        int idLinea;
         int cantidad;
+        int idArticulo;
+        int idAlbaran;
         float precioUnitario;
         float coste;
+        final int IVA = 21;
 
-        public ProductoPedido(String nombre, int cant, float pUnitario, float cost) {
+        //Constructor empleado para el XML
+        public LineasAlbaran(String nombre, int cant, float pUnitario, float cost) {
             this.nombreProd = nombre;
             this.cantidad = cant;
             this.precioUnitario = pUnitario;
             this.coste = cost;
+        }
+
+        //Constructor empleado para la Base de Datos, con más detalle
+        public LineasAlbaran(int _idLinea, int _idArticulo, int cant, float pUnitario, float cost, int _idAlb) {
+            this.idLinea = _idLinea;
+            this.idArticulo = _idArticulo;
+            this.cantidad = cant;
+            this.precioUnitario = pUnitario;
+            this.coste = cost; //Importe precio X cantidad con IVA aplicado
+            this.idAlbaran = _idAlb;
         }
 
         public String getNombreProd() {
