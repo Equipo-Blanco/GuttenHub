@@ -27,10 +27,10 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
             "                         EMAIL TEXT)";
 
     String sqlCreateLogin = "CREATE TABLE LOGINUSUARIOS(ID_COMERCIAL INTEGER PRIMARY KEY, " +
-                             " NOMBRE TEXT," +
-                             " CONTRASEN TEXT, " +
-                             " EMAIL TEXT, " +
-                             " FOREIGN KEY (ID_COMERCIAL) REFERENCES COMERCIALES(ID_COMERCIAL))";
+            " NOMBRE TEXT," +
+            " CONTRASEN TEXT, " +
+            " EMAIL TEXT, " +
+            " FOREIGN KEY (ID_COMERCIAL) REFERENCES COMERCIALES(ID_COMERCIAL))";
 
 
     String sqlCreateCategorias = "CREATE TABLE IF NOT EXISTS CATEGORIAS (ID_CATEGORIA INTEGER NOT NULL UNIQUE PRIMARY KEY," +
@@ -71,6 +71,14 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
             "FOREIGN KEY (ID_ARTICULO) REFERENCES ARTICULOS(ID_ARTICULO)," +
             "FOREIGN KEY (ID_ALBARANCABECERA) REFERENCES CABECERA_ALBARANES(ID_ALBARANCABECERA))";
 
+    //Inserción de los comerciales predefinidos
+    String sqlComercial1 = "INSERT INTO COMERCIALES " +
+            "              VALUES(1, 'Sergio', 'Luhía Davila', 'DraftSL', 'Calle principal', 'Poligono 27', 696747474, 1, 'sergio@draft.com')";
+    String sqlComercial2 = "INSERT INTO COMERCIALES " +
+            "              VALUES(2, 'Hodei', 'Aguirre Barros', 'DraftSL', 'Calle Mayor', 'Poligono 27', 696121212, 2, 'hodei@draft.com')";
+    String sqlComercial3 = "INSERT INTO COMERCIALES " +
+            "              VALUES(3, 'Pepe', 'Marcos Torres', 'Enterprise', 'Avenida Siete', 'Poligono 27', 696111111, 3, 'pepe@enterprise.com')";
+
     public tablasSQLHelper(Context contexto, String nombre,
                            CursorFactory factory, int version) {
         super(contexto, nombre, factory, version);
@@ -87,6 +95,9 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCreateCabeceraAlbaranes);
         db.execSQL(sqlCreateLineasAlbaran);
         db.execSQL(sqlCreateLogin);
+        db.execSQL(sqlComercial1);
+        db.execSQL(sqlComercial2);
+        db.execSQL(sqlComercial3);
     }
 
     @Override
@@ -113,5 +124,8 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCreateCabeceraAlbaranes);
         db.execSQL(sqlCreateLineasAlbaran);
         db.execSQL(sqlCreateLogin);
+        db.execSQL(sqlComercial1);
+        db.execSQL(sqlComercial2);
+        db.execSQL(sqlComercial3);
     }
 }

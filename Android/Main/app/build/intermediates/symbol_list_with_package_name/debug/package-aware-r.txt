@@ -1835,7 +1835,6 @@ id etAsunto
 id etDestinatario
 id etMail
 id etMensaje
-id etNomComercial
 id etNombre
 id etTelefono
 id et_cantidad
@@ -2006,6 +2005,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id spin_partners
 id spline
 id split_action_bar
 id spnDelegaciones

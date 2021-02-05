@@ -5,9 +5,17 @@ com/example/main/Tab2_pedidos_hechos.java
  com.example.main.Tab2_pedidos_hechos$1
  com.example.main.Tab2_pedidos_hechos$2
  com.example.main.Tab2_pedidos_hechos$3
-com/example/main/Pedidos.java
- com.example.main.Pedidos
- com.example.main.Pedidos$1
+com/example/main/MainActivity.java
+ com.example.main.MainActivity
+ com.example.main.MainActivity$1
+ com.example.main.MainActivity$2
+ com.example.main.MainActivity$3
+ com.example.main.MainActivity$4
+ com.example.main.MainActivity$5
+ com.example.main.MainActivity$6
+ com.example.main.MainActivity$7
+ com.example.main.MainActivity$8
+ com.example.main.MainActivity$9
 com/example/main/Catalogo.java
  com.example.main.Catalogo
  com.example.main.Catalogo$1
@@ -52,20 +60,13 @@ com/example/main/SectionsPageAdapter.java
  com.example.main.SectionsPageAdapter
 com/example/main/XMLPullParserHandler.java
  com.example.main.XMLPullParserHandler
+com/example/main/Pedidos.java
+ com.example.main.Pedidos
+ com.example.main.Pedidos$1
 com/example/main/new_edit_partners.java
  com.example.main.new_edit_partners
  com.example.main.new_edit_partners$1
-com/example/main/MainActivity.java
- com.example.main.MainActivity
- com.example.main.MainActivity$1
- com.example.main.MainActivity$2
- com.example.main.MainActivity$3
- com.example.main.MainActivity$4
- com.example.main.MainActivity$5
- com.example.main.MainActivity$6
- com.example.main.MainActivity$7
- com.example.main.MainActivity$8
- com.example.main.MainActivity$9
+ com.example.main.new_edit_partners$2
 com/example/main/Partners.java
  com.example.main.Partners
  com.example.main.Partners$1

@@ -9,8 +9,11 @@ import android.os.Environment;
 import android.util.Log;
 import android.util.Xml;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,9 +27,6 @@ import org.xmlpull.v1.XmlSerializer;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
-import java.sql.*;
-import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -42,11 +42,15 @@ import javax.xml.transform.stream.StreamResult;
 public class new_edit_partners extends AppCompatActivity {
     Button bot_guardaPartner;
     EditText et_partner;
-    EditText et_comercial;
     EditText et_telefono;
     EditText et_mailComerc;
     EditText et_Contacto;
     EditText et_Direccion;
+    Spinner sp_partners;
+
+    int[] idComercial; //Almacenará los id de comercial para su uso con el Spinner
+    String[] nombreComercial; //Almacenará los nombres de Comerciales para su uso con Spinner
+    int comercial; //Almacenará el id de comercial que se insertará en la BDD
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,35 +59,96 @@ public class new_edit_partners extends AppCompatActivity {
 
         bot_guardaPartner = (Button) findViewById(R.id.btn_guardaPartner);
         et_partner = (EditText) findViewById(R.id.etNombre);
-        et_comercial = (EditText) findViewById(R.id.etNomComercial);
         et_telefono = (EditText) findViewById(R.id.etTelefono);
         et_mailComerc = (EditText) findViewById(R.id.etMail);
         et_Contacto = (EditText) findViewById(R.id.etxtContacto);
         et_Direccion = (EditText) findViewById(R.id.etxtDireccion);
+        sp_partners = (Spinner) findViewById(R.id.spin_partners);
 
+
+        //volcar datos de Partners en el Spinner
+        tablasSQLHelper usdbh = new tablasSQLHelper(getApplicationContext(), "DBDraft", null, 1);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+        if (db != null) {
+            try {
+                int pos = 0;
+                //Contabilizar el numero de partners, para inicializar el array que los recogerá
+                //Esto ofrece gran compatibilidad de cara al futuro, ya que si se insertasen mas comerciales, al ejecutar esta
+                //sentencia, serviría para incluir los nuevos sin modificar el código
+                Cursor c = db.rawQuery("SELECT COUNT(ID_COMERCIAL) AS TOTAL FROM COMERCIALES", null);
+                //Nos aseguramos de que existe al menos un registro
+                if (c.moveToFirst()) {
+                    //Recorremos el cursor hasta que no haya más registros
+                    do {
+                        pos = c.getInt(0);
+                        //System.out.println(codigo + " " +nombre);
+                    } while (c.moveToNext());
+                }
+                System.out.println(pos + "********************************************************************");
+                int i = 0;
+                idComercial = new int[pos];
+                nombreComercial = new String[pos];
+
+                Cursor c2 = db.rawQuery("SELECT ID_COMERCIAL, NOMBRE, APELLIDOS, EMPRESA FROM COMERCIALES", null);
+
+                if (c2.moveToFirst()) {
+                    do {
+                        idComercial[i] = c2.getInt(0);
+                        System.out.println(c2.getString(1) + "************************************");
+                        nombreComercial[i] = c2.getString(1) + " " + c2.getString(2) + " - " + c2.getString(3);
+                        i++;
+                    } while (c2.moveToNext());
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        //Elemento ArrayAdapter, que permite coger un Array como fuente de información
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nombreComercial);
+
+        //Creamos nuestro Spinner
+        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_partners.setAdapter(adaptador);
+
+        sp_partners.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        Object item = parent.getItemAtPosition(position);
+                        comercial = idComercial[position];
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                }
+        );
+
+
+        //Almacenar información al rellenar el formulario
         bot_guardaPartner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String partner;
-                String comercial;
                 String mail;
                 String telefono;
                 String contacto;
                 String direccion;
 
                 //Validamos datos y asignamos valores
-                partner = getDatos(et_partner);
-                comercial = getDatos(et_comercial);
-                mail = getDatos(et_mailComerc);
-                telefono = getDatos(et_telefono);
-                contacto = getDatos(et_Contacto);
-                direccion = getDatos(et_Direccion);
+                partner = getDatos(et_partner);  //Empresa Partner
+                mail = getDatos(et_mailComerc); // Mail
+                telefono = getDatos(et_telefono); // Teléfono del partner
+                contacto = getDatos(et_Contacto); //Nombre de la persona de contacto
+                direccion = getDatos(et_Direccion); // Dirección de la empresa Partner
+
 
                 // Parte SQL
-
                 tablasSQLHelper usdbh = new tablasSQLHelper(getApplicationContext(), "DBDraft", null, 1);
                 SQLiteDatabase db = usdbh.getWritableDatabase();
-                String resultado = "";
                 if (db != null) {
                     //Insertamos los datos en la tabla Usuarios
                     try {
@@ -102,18 +167,18 @@ public class new_edit_partners extends AppCompatActivity {
                         maximo = maximo + 1;
 
                         db.execSQL("INSERT INTO PARTNERS (ID_PARTNER, ID_COMERCIAL, EMPRESA, DIRECCION, CONTACTO, TELEFONO, EMAIL) " +
-                                "                 VALUES (" + maximo + ", 1, '" + partner + "', '" + direccion + "', '" + contacto + "', " + telefono + ", '" + mail + "')");
+                                "                 VALUES (" + maximo + ", " + comercial + ", '" + partner + "', '" + direccion + "', '" + contacto + "', " + telefono + ", '" + mail + "')");
 
                         Toast.makeText(getApplicationContext(), "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
                 }
-                //Cerramos la base de datos
+                //Cerramos la conexión con la base de datos
                 db.close();
 
 
-                //Parte XML
+                //Parte XML, en principio la dejamos por los xml que hay que exportar para Visual Studio
                 File newxmlfile = new File(Environment.getExternalStorageDirectory() + "/Draft/partnersGuardados.xml");
                 XmlSerializer serializer = Xml.newSerializer();
                 FileOutputStream fileos = null;
@@ -152,7 +217,7 @@ public class new_edit_partners extends AppCompatActivity {
                         serializer.endTag(null, "telefono");
 
                         serializer.startTag(null, "comercial");
-                        serializer.text(comercial);
+                        serializer.text(String.valueOf(comercial));
                         serializer.endTag(null, "comercial");
 
                         serializer.endTag(null, "partner");
@@ -173,7 +238,7 @@ public class new_edit_partners extends AppCompatActivity {
                         System.out.println("Paso 2 **************************************************>");
                         doc.getDocumentElement().normalize();
                         System.out.println("Paso 3 **************************************************>");
-                        aniadirElementos(doc, partner, mail, telefono, comercial);
+                        aniadirElementos(doc, partner, mail, telefono, String.valueOf(comercial));
                         escribirXML(doc);
                         //Toast.makeText(getApplicationContext(), "Información actualizada", Toast.LENGTH_SHORT).show();
                         finish();
@@ -193,7 +258,6 @@ public class new_edit_partners extends AppCompatActivity {
             }
         });
     }
-
 
 
     private void escribirXML(Document doc) throws TransformerFactoryConfigurationError, TransformerException {

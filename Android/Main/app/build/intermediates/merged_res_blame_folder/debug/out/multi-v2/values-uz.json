@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+            "outputFile": "F:\\Users\\Sergio\\Documents\\GitHub\\GuttenHub\\Android\\Main\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Sergio\\.gradle\\caches\\transforms-2\\files-2.1\\bfa69299c70613d916dc093c901431a2\\jetified-play-services-base-17.0.0\\res\\values-uz\\values.xml",

@@ -81,10 +81,8 @@ public class Partners extends AppCompatActivity {
         String resultado = "";
         ArrayList<String> ListaPartners = new ArrayList<>();
         if (db != null) {
-            //Insertamos los datos en la tabla Usuarios
             try {
                 int pos = 0;
-
                 //Contabilizar el numero de partners, para inicializar el array que los recogerá
                 Cursor c = db.rawQuery("SELECT COUNT(ID_PARTNER) AS TOTAL FROM PARTNERS", null);
                 //Nos aseguramos de que existe al menos un registro
@@ -101,7 +99,6 @@ public class Partners extends AppCompatActivity {
                 idcomercial = new int[pos];
                 empresa = new String[pos];
 
-                //Meter en un array los datos para la lista
                 Cursor c2 = db.rawQuery("SELECT ID_COMERCIAL, EMPRESA FROM PARTNERS", null);
 
                 if (c2.moveToFirst()) {
