@@ -1838,9 +1838,7 @@ id etMensaje
 id etNombre
 id etTelefono
 id et_cantidad
-id et_comercial
 id et_descripcion
-id et_partner
 id et_titulo
 id etxtContacto
 id etxtDireccion
@@ -2009,6 +2007,8 @@ id spin_partners
 id spline
 id split_action_bar
 id spnDelegaciones
+id spn_comerciales
+id spn_partners
 id spn_productos
 id spread
 id spread_inside
@@ -2049,6 +2049,7 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView10
+id textView11
 id textView2
 id textView3
 id textView4
@@ -2090,6 +2091,7 @@ id tvDireccion
 id tvNombre
 id tvPartners
 id tvTfno
+id tv_DatosPartner
 id tv_asteriscos
 id tv_cantidad
 id tv_comercial

@@ -38,18 +38,25 @@ public class Tab1_NuevoPedido extends Fragment {
     Button btnConfirmar;
     Button btnAgregar;
     Spinner listaProds;
-    TextView tvCoste, tvPresupuesto;
+    TextView tvCoste, tvPresupuesto, tvDatosPartner;
     EditText etCantidad;
-    EditText etComercial;
-    EditText etPartner;
+    Spinner spComerciales;
+    Spinner spPartners;
+
     String[] productos;
     String[] precios;
-    int cantidad;
+    String[] partners;
+    String[] comerciales;
+    int cantidad, idPartner, idComercial, idArtic;
+    int idLinea = 0;
     float precio;
+    float totAlb=0;
     String presupuestoA = ""; //El presupuesto sin guardar aún
     String productoSeleccionado;
+    String direccionEnvio;
     float total;
     ArrayList<LineasAlbaran> productosPresupuesto = new ArrayList<LineasAlbaran>();
+    ArrayList<LineasAlbaran> lineasAlbaranSQL = new ArrayList<LineasAlbaran>();
 
     @Nullable
     @Override
@@ -59,10 +66,11 @@ public class Tab1_NuevoPedido extends Fragment {
         btnAgregar = view.findViewById(R.id.btn_agregar);
         listaProds = view.findViewById(R.id.spn_productos);
         tvCoste = view.findViewById(R.id.tv_coste);
+        tvDatosPartner = view.findViewById(R.id.tv_DatosPartner);
         etCantidad = view.findViewById(R.id.et_cantidad);
         tvPresupuesto = view.findViewById(R.id.tv_presupuesto);
-        etComercial = view.findViewById(R.id.et_comercial);
-        etPartner = view.findViewById(R.id.et_partner);
+        spComerciales = view.findViewById(R.id.spn_comerciales);
+        spPartners = view.findViewById(R.id.spn_partners);
 
         productos = getResources().getStringArray(R.array.productos);
         precios = getResources().getStringArray(R.array.precios);
@@ -71,6 +79,136 @@ public class Tab1_NuevoPedido extends Fragment {
         adaptador1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tvCoste.setText("Coste: 69.00€");
         etCantidad.setText("1");
+
+        insertaProductosXML();  //Método que recorre el XML catálogo y los inserta en la BDD
+
+
+        //Inicialización y creación de los Arrays empleados en los Spinner mediante sendas consultas a la base de datos
+
+        tablasSQLHelper usdbh = new tablasSQLHelper(getContext(), "DBDraft", null, 1);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+        if (db != null) {
+            try {
+                int pos = 0;
+                //Contabilizar el numero de partners, para inicializar el array que los recogerá
+                //Esto ofrece gran compatibilidad de cara al futuro, ya que si se insertasen mas comerciales, al ejecutar esta
+                //sentencia, serviría para incluir los nuevos sin modificar el código
+                Cursor c = db.rawQuery("SELECT COUNT(ID_COMERCIAL) AS TOTAL FROM COMERCIALES", null);
+                //Nos aseguramos de que existe al menos un registro
+                if (c.moveToFirst()) {
+                    //Recorremos el cursor hasta que no haya más registros
+                    do {
+                        pos = c.getInt(0);
+                        //System.out.println(codigo + " " +nombre);
+                    } while (c.moveToNext());
+                }
+                System.out.println(pos + "********************************************************************");
+                int i = 0;
+                comerciales = new String[pos];
+
+                //Extraer los comerciales para pasarlos al array y luego cargarlos en el Spinner
+                Cursor c2 = db.rawQuery("SELECT ID_COMERCIAL, NOMBRE, APELLIDOS, EMPRESA FROM COMERCIALES", null);
+
+                if (c2.moveToFirst()) {
+                    do {
+                        System.out.println(c2.getString(1) + "************************************");
+                        comerciales[i] = c2.getString(1) + " " + c2.getString(2) + " - " + c2.getString(3);
+                        i++;
+                    } while (c2.moveToNext());
+                }
+
+                //Contar los partners para inicializar el array
+                Cursor c3 = db.rawQuery("SELECT COUNT(ID_PARTNER) FROM PARTNERS", null);
+                i = 0;
+                if (c3.moveToFirst()) {
+                    do {
+                        // System.out.println(c3.getString(1) + "************************************");
+                        pos = c3.getInt(0);
+                        i++;
+                    } while (c3.moveToNext());
+                }
+                partners = new String[pos];
+
+                Cursor c4 = db.rawQuery("SELECT EMPRESA FROM PARTNERS", null);
+                i = 0;
+                if (c4.moveToFirst()) {
+                    do {
+                        System.out.println(c4.getString(0) + "********************************");
+                        partners[i] = c4.getString(0);
+                        i++;
+                    } while (c4.moveToNext());
+                }
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        //Cargar y mostrar los datos extraídos de la BDD en el Spinner de Comerciales
+
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, comerciales);
+
+        //Creamos nuestro Spinner
+        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spComerciales.setAdapter(adaptador);
+
+        spComerciales.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        Object item = parent.getItemAtPosition(position);
+                        idComercial = position + 1;
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                }
+        );
+
+
+        //Cargar y mostrar los datos extraídos de la BDD en el Spinner de Partners
+
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, partners);
+
+        //Creamos nuestro Spinner
+        adaptador2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spPartners.setAdapter(adaptador2);
+
+        spPartners.setOnItemSelectedListener(
+                new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        Object item = parent.getItemAtPosition(position);
+                        idPartner = position + 1;
+                        String info = "";
+                        try {
+                            Cursor c5 = db.rawQuery("SELECT CONTACTO, DIRECCION, TELEFONO, EMAIL FROM PARTNERS WHERE ID_PARTNER = " + (position + 1), null);
+                            int i = 0;
+                            if (c5.moveToFirst()) {
+                                do {
+                                    info = "Contacto: " + c5.getString(0) + "\n" +
+                                            "Dirección: " + c5.getString(1) + "\n" +
+                                            "Teléfono: " + c5.getInt(2) + "\n" +
+                                            "Email: " + c5.getString(3);
+                                    direccionEnvio = c5.getString(1);
+                                    tvDatosPartner.setText(info);
+                                } while (c5.moveToNext());
+                            }
+
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                    }
+                }
+        );
+
 
         listaProds.setAdapter(adaptador1);
         listaProds.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -81,6 +219,7 @@ public class Tab1_NuevoPedido extends Fragment {
                 if (i < precios.length) {
                     precio = Float.parseFloat(precios[i]);
                     productoSeleccionado = productos[i];
+                    idArtic = i + 1;
                 } else {
                     precio = 1.0f;
                 }
@@ -134,14 +273,43 @@ public class Tab1_NuevoPedido extends Fragment {
             presupuestoA = presupuestoA + linea + "\n";
             tvPresupuesto.setText(presupuestoA);
 
+            //Versión del ArrayList para XML, más simple
             LineasAlbaran prod1 = new LineasAlbaran(productoSeleccionado, cantidad, precio, total);
             System.out.println(prod1);
             productosPresupuesto.add(prod1);
+
+            idLinea++;
+
+            //Versión del ArrayList para SQL, más completa public LineasAlbaran(int _idLinea, int _idArticulo, int cant, float pUnitario, float cost)
+            LineasAlbaran prodSQL = new LineasAlbaran(idLinea, idArtic, cantidad, precio, total);
+            lineasAlbaranSQL.add(prodSQL);
         });
 
         return view;
     }
 
+    //Método que recorre el XML catálogo y los inserta en la BDD
+    private void insertaProductosXML() {
+        tablasSQLHelper usdbh = new tablasSQLHelper(getContext(), "DBDraft", null, 1);
+        SQLiteDatabase db = usdbh.getWritableDatabase();
+        if (db != null) {
+            //Insertamos los datos tomados del XML Catalogo en la tabla ARTICULOS
+            try {
+                for (int i = 0; i < productos.length; i++) {
+                    db.execSQL("INSERT INTO ARTICULOS " +
+                            " VALUES (" + (i + 1) + ", '" + productos[i] + "', 1, " + Float.parseFloat(precios[i]) + ", " + (Float.parseFloat(precios[i]) * 1.20) + ", 100, 10, 'imagen.jpg')");
+                }
+
+                Toast.makeText(getContext(), "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        //Cerramos la conexión con la base de datos
+        //db.close();
+    }
+
+    //Método que valida campos de texto / EditText
     public String obtieneDato(EditText view) {
         String texto;
 
@@ -155,15 +323,11 @@ public class Tab1_NuevoPedido extends Fragment {
     }
 
     public void generaPresupuesto() {
-
-        //SENTENCIAS SQL:
-
-        //INSERT INTO CABECERA_ALBARANES (ID_ALBARANCABECERA, ID_PARTNER, ID_COMERCIAL) VALUES(1, 1, 1)
-        //INSERT INTO LINEAS_ALBARAN (ID_ALBARANLINEA, ID_ARTICULO, CANTIDAD, PRECIO, ID_ALBARANCABECERA, IMPORTE) VALUES(1, 1, 10, 5, 1, 50)
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        String fecha = df.format(Calendar.getInstance().getTime());
 
         //Obtener los valores de variables e insertar en las sentencias SQL aprovechando una instancia del ArrayList de clase LineasAlbaran
 
-        //Agregar Fechas del pedido!
         tablasSQLHelper usdbh = new tablasSQLHelper(getContext(), "DBDraft", null, 1);
         SQLiteDatabase db = usdbh.getWritableDatabase();
         if (db != null) {
@@ -184,12 +348,25 @@ public class Tab1_NuevoPedido extends Fragment {
                 idAlbaran = idAlbaran + 1;
 
                 //Inserción del pedido - Parte 1: CABECERA ALBARÁN
-                db.execSQL("INSERT INTO CABECERA_ALBARANES " +
-                        "                 VALUES (" + idAlbaran + ", 'FALTA SPINNER PARTNER', 'FALTA SPINNER COMERCIAL', 'FECHA ALBARAN', 'FECHA ENVIO 2 dias mas que fecAlb', 'fecEntrega 7 dias', 'Dirección envio', 'Total Factura' )");
+                db.execSQL("INSERT INTO CABECERA_ALBARANES (ID_ALBARANCABECERA, ID_PARTNER, ID_COMERCIAL, FECHA_ALBARAN, DIRECCION_ENVIO, TOTAL_FACTURA) " +
+                        "     VALUES (" + idAlbaran + ", " + idPartner + ", " + idComercial + ", '" + fecha + "', '" + direccionEnvio + "', 0 )");
 
                 //Inserción del pedido - Parte 2 : LINEAS ALBARÁN
                 //Incorporar Lista con un bucle ir leyendo e insertando
-                db.execSQL("");
+                for (int i = 0; i < lineasAlbaranSQL.size(); i++) {
+                    lineasAlbaranSQL.get(i).setIdAlbaran(idAlbaran);
+                    int idLinea = i + 1;
+                    int iva = lineasAlbaranSQL.get(i).getIVA();
+                    int idart = lineasAlbaranSQL.get(i).getIdArticulo();
+                    int cant = lineasAlbaranSQL.get(i).getCantidad();
+                    float prec = lineasAlbaranSQL.get(i).getPrecioUnitario();
+                    float impte = lineasAlbaranSQL.get(i).getCoste();
+                    totAlb = totAlb + impte;
+
+                    db.execSQL("INSERT INTO LINEAS_ALBARAN VALUES (" + idLinea + ", " + iva + ", " + idart + ", "+ cant +", "+ prec +", "+ idAlbaran+", "+ impte +")");
+
+                }
+                    db.execSQL("UPDATE CABECERA_ALBARANES SET TOTAL_FACTURA =" +totAlb +" WHERE ID_ALBARANCABECERA =" +idAlbaran);
 
                 Toast.makeText(getContext(), "Pedido Creado correctamente", Toast.LENGTH_SHORT).show();
             } catch (SQLException e) {
@@ -197,17 +374,16 @@ public class Tab1_NuevoPedido extends Fragment {
             }
         }
         //Cerramos la conexión con la base de datos
-        db.close();
+        // db.close();
 
 
         //LO DE ABAJO ES PARA XML
 
         String comercial, partner;
         String nombrePresup;
-        comercial = obtieneDato(etComercial);
-        partner = obtieneDato(etPartner);
-        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        String fecha = df.format(Calendar.getInstance().getTime());
+        comercial = ""; // *************************************************************************
+        partner = "";  // **************************************************************************
+
         int id = (int) (Math.random() * 5000) - 1;
         nombrePresup = fecha + partner + "-" + id;
 
@@ -289,21 +465,29 @@ public class Tab1_NuevoPedido extends Fragment {
         }
 
         //Constructor empleado para la Base de Datos, con más detalle
-        public LineasAlbaran(int _idLinea, int _idArticulo, int cant, float pUnitario, float cost, int _idAlb) {
+        public LineasAlbaran(int _idLinea, int _idArticulo, int cant, float pUnitario, float cost) {
             this.idLinea = _idLinea;
             this.idArticulo = _idArticulo;
             this.cantidad = cant;
             this.precioUnitario = pUnitario;
             this.coste = cost; //Importe precio X cantidad con IVA aplicado
-            this.idAlbaran = _idAlb;
+            this.idAlbaran = 0;
         }
 
         public String getNombreProd() {
             return nombreProd;
         }
 
+        public int getIdArticulo() {
+            return idArticulo;
+        }
+
         public int getCantidad() {
             return cantidad;
+        }
+
+        public int getIVA() {
+            return IVA;
         }
 
         public float getPrecioUnitario() {
@@ -312,6 +496,10 @@ public class Tab1_NuevoPedido extends Fragment {
 
         public float getCoste() {
             return coste;
+        }
+
+        public void setIdAlbaran(int idalb) {
+            this.idAlbaran = idalb;
         }
 
         @Override

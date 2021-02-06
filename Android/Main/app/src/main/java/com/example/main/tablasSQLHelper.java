@@ -1,9 +1,13 @@
 package com.example.main;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class tablasSQLHelper extends SQLiteOpenHelper {
 
@@ -61,13 +65,14 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
             "FOREIGN KEY (ID_COMERCIAL) REFERENCES COMERCIALES(ID_COMERCIAL))";
 
     String sqlCreateLineasAlbaran = "CREATE TABLE IF NOT EXISTS LINEAS_ALBARAN (" +
-            "ID_ALBARANLINEA INTEGER NOT NULL UNIQUE PRIMARY KEY," +
+            "ID_ALBARANLINEA INTEGER NOT NULL," +
             "IVA INTEGER," +
             "ID_ARTICULO INT NOT NULL," +
             "CANTIDAD INTEGER," +
             "PRECIO FLOAT," +
             "ID_ALBARANCABECERA INTEGER NOT NULL," +
             "IMPORTE FLOAT," +
+            "PRIMARY KEY (ID_ALBARANLINEA, ID_ALBARANCABECERA)," +
             "FOREIGN KEY (ID_ARTICULO) REFERENCES ARTICULOS(ID_ARTICULO)," +
             "FOREIGN KEY (ID_ALBARANCABECERA) REFERENCES CABECERA_ALBARANES(ID_ALBARANCABECERA))";
 
@@ -79,10 +84,16 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
     String sqlComercial3 = "INSERT INTO COMERCIALES " +
             "              VALUES(3, 'Pepe', 'Marcos Torres', 'Enterprise', 'Avenida Siete', 'Poligono 27', 696111111, 3, 'pepe@enterprise.com')";
 
+    //Inserción de las categorías
+    String sqlCategoria1 = "INSERT INTO CATEGORIAS VALUES (1, 'C', 'CAMISETAS')";
+    String sqlCategoria2 = "INSERT INTO CATEGORIAS VALUES (2, 'P', 'COMPLEMENTOS')";
+
+
     public tablasSQLHelper(Context contexto, String nombre,
                            CursorFactory factory, int version) {
         super(contexto, nombre, factory, version);
     }
+
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -98,6 +109,8 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
         db.execSQL(sqlComercial1);
         db.execSQL(sqlComercial2);
         db.execSQL(sqlComercial3);
+        db.execSQL(sqlCategoria1);
+        db.execSQL(sqlCategoria2);
     }
 
     @Override
@@ -127,5 +140,9 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
         db.execSQL(sqlComercial1);
         db.execSQL(sqlComercial2);
         db.execSQL(sqlComercial3);
+        db.execSQL(sqlCategoria1);
+        db.execSQL(sqlCategoria2);
     }
 }
+
+

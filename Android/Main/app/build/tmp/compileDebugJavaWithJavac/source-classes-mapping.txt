@@ -1,21 +1,12 @@
-com/example/main/ClaseCita.java
- com.example.main.ClaseCita
+com/example/main/XMLPullParserHandler.java
+ com.example.main.XMLPullParserHandler
 com/example/main/Tab2_pedidos_hechos.java
  com.example.main.Tab2_pedidos_hechos
  com.example.main.Tab2_pedidos_hechos$1
  com.example.main.Tab2_pedidos_hechos$2
  com.example.main.Tab2_pedidos_hechos$3
-com/example/main/MainActivity.java
- com.example.main.MainActivity
- com.example.main.MainActivity$1
- com.example.main.MainActivity$2
- com.example.main.MainActivity$3
- com.example.main.MainActivity$4
- com.example.main.MainActivity$5
- com.example.main.MainActivity$6
- com.example.main.MainActivity$7
- com.example.main.MainActivity$8
- com.example.main.MainActivity$9
+com/example/main/ClaseCita.java
+ com.example.main.ClaseCita
 com/example/main/Catalogo.java
  com.example.main.Catalogo
  com.example.main.Catalogo$1
@@ -30,8 +21,8 @@ com/example/main/Citas.java
  com.example.main.Citas$3
  com.example.main.Citas$3$1
  com.example.main.Citas$4
-com/example/main/XMLPullParserHandler.java
- com.example.main.XMLPullParserHandler
+com/example/main/SectionsPageAdapter.java
+ com.example.main.SectionsPageAdapter
 com/example/main/BuildConfig.java
  com.example.main.BuildConfig
 com/example/main/clasePartner.java
@@ -43,22 +34,31 @@ com/example/main/XMLPPPartners.java
  com.example.main.XMLPPPartners
 com/example/main/clasePresupuesto.java
  com.example.main.clasePresupuesto
-com/example/main/tablasSQLHelper.java
- com.example.main.tablasSQLHelper
+com/example/main/Mapa.java
+ com.example.main.Mapa
 com/example/main/DetallePresupuesto.java
  com.example.main.DetallePresupuesto
 com/example/main/Envios.java
  com.example.main.Envios
  com.example.main.Envios$1
  com.example.main.Envios$2
-com/example/main/Mapa.java
- com.example.main.Mapa
-com/example/main/SectionsPageAdapter.java
- com.example.main.SectionsPageAdapter
 com/example/main/new_edit_partners.java
  com.example.main.new_edit_partners
  com.example.main.new_edit_partners$1
  com.example.main.new_edit_partners$2
+com/example/main/MainActivity.java
+ com.example.main.MainActivity
+ com.example.main.MainActivity$1
+ com.example.main.MainActivity$2
+ com.example.main.MainActivity$3
+ com.example.main.MainActivity$4
+ com.example.main.MainActivity$5
+ com.example.main.MainActivity$6
+ com.example.main.MainActivity$7
+ com.example.main.MainActivity$8
+ com.example.main.MainActivity$9
+com/example/main/tablasSQLHelper.java
+ com.example.main.tablasSQLHelper
 com/example/main/Partners.java
  com.example.main.Partners
  com.example.main.Partners$1
@@ -70,4 +70,6 @@ com/example/main/Tab1_NuevoPedido.java
  com.example.main.Tab1_NuevoPedido
  com.example.main.Tab1_NuevoPedido$1
  com.example.main.Tab1_NuevoPedido$2
+ com.example.main.Tab1_NuevoPedido$3
+ com.example.main.Tab1_NuevoPedido$4
  com.example.main.Tab1_NuevoPedido$LineasAlbaran

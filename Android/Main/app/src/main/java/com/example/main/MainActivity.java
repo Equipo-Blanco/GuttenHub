@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     String asunto;
     String mensaje;
 
+    String [] productos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         telf = (TextView) findViewById(R.id.TxTel);
         mail = (TextView) findViewById(R.id.TxEmail);
         spin_delegaciones = (Spinner) findViewById(R.id.spnDelegaciones);
+
+
 
         //SQL: creación de tablas
         tablasSQLHelper miDb = new tablasSQLHelper(this, "DBDraft", null, 1);

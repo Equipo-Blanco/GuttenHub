@@ -64,7 +64,9 @@ public class Catalogo extends AppCompatActivity {
                 }
             }
         });
+
     }
+
 
     class MyAdapter extends ArrayAdapter<String> {
         Context context;

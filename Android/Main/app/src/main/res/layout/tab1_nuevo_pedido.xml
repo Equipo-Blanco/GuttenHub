@@ -22,14 +22,10 @@
             android:text="Comercial"
             android:textColor="#000000" />
 
-        <EditText
-            android:id="@+id/et_comercial"
+        <Spinner
+            android:id="@+id/spn_comerciales"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:background="#E3F2FD"
-            android:ems="10"
-            android:hint="Comercial"
-            android:inputType="textPersonName" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tv_titpartner"
@@ -38,14 +34,25 @@
             android:text="Partner"
             android:textColor="#000000" />
 
-        <EditText
-            android:id="@+id/et_partner"
+        <Spinner
+            android:id="@+id/spn_partners"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:background="#E3F2FD"
-            android:ems="10"
-            android:hint="Nombre Partner"
-            android:inputType="textPersonName" />
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Información pedido:" />
+
+        <TextView
+            android:id="@+id/tv_DatosPartner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:text="TextView" />
 
         <TextView
             android:id="@+id/textView5"
