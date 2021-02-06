@@ -2,6 +2,7 @@ package com.example.main;
 
 public class clasePresupuesto {
 
+    //Atributos empleados para ayudar al PullParser a leer el XML creando lista de objetos de esta clase
     private String producto;
     private int cantidad;
     private float precio;
@@ -9,8 +10,9 @@ public class clasePresupuesto {
     private String comercial;
     private String partner;
     private String id;
+    private String fecha;
 
-    public clasePresupuesto(String producto, int cantidad, float precio, float coste, String comercial, String partner, String id) {
+    public clasePresupuesto(String producto, int cantidad, float precio, float coste, String comercial, String partner, String id, String _fecha) {
         this.producto = producto;
         this.cantidad = cantidad;
         this.precio = precio;
@@ -18,6 +20,7 @@ public class clasePresupuesto {
         this.comercial = comercial;
         this.partner = partner;
         this.id = id;
+        this.fecha = _fecha;
     }
 
     public clasePresupuesto() {
@@ -80,8 +83,16 @@ public class clasePresupuesto {
         this.id = id;
     }
 
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
     @Override
-    public String toString() { //FALTA MOSTRAR EL COMERCIAL Y PARTNER
+    public String toString() {
         return "\nArtículo: " + producto + "\n  - Precio: " + precio + "€\n  - Cantidad: " + cantidad + "uds.\n  - Coste: " + coste + "€";
     }
 }

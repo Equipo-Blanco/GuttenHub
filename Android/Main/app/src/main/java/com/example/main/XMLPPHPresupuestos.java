@@ -15,13 +15,16 @@ import java.util.List;
 
 public class XMLPPHPresupuestos {
 
+    //Constantes con los nombres de Etiquetas que tomará del XML
     private static final String PRESUP_PRODUCTO = "producto";
-    private static final String PREUSP_CANTIDAD = "cantidad";
+    private static final String PRESUP_CANTIDAD = "cantidad";
     private static final String PRESUP_PRECIO = "precio";
     private static final String PRESUP_COSTE = "coste";
     private static final String PRESUP_PARTNER = "partner";
     private static final String PRESUP_COMERCIAL = "comercial";
     private static final String PRESUP_ID = "id";
+    private static final String PRESUP_FECHA = "fecha";
+
 
 
     private clasePresupuesto presupActual = null;
@@ -60,7 +63,7 @@ public class XMLPPHPresupuestos {
         if (presupActual != null && currentTag != null) {
             if (currentTag.equals(PRESUP_PRODUCTO)) {
                 presupActual.setProducto(xmlText);
-            } else if (currentTag.equals(PREUSP_CANTIDAD)) {
+            } else if (currentTag.equals(PRESUP_CANTIDAD)) {
                 presupActual.setCantidad(Integer.parseInt(xmlText));
             } else if (currentTag.equals(PRESUP_PRECIO)) {
                 presupActual.setPrecio(Float.parseFloat(xmlText));
@@ -68,6 +71,8 @@ public class XMLPPHPresupuestos {
                 presupActual.setCoste(Float.parseFloat(xmlText));
             }else if (currentTag.equals(PRESUP_PARTNER)){
                 presupActual.setPartner(xmlText);
+            }else if (currentTag.equals(PRESUP_FECHA)){
+                presupActual.setFecha(xmlText);
             }else if (currentTag.equals(PRESUP_COMERCIAL)){
                 presupActual.setComercial(xmlText);
             }else if (currentTag.equals(PRESUP_ID)){

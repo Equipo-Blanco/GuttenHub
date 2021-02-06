@@ -2092,6 +2092,7 @@ id tvNombre
 id tvPartners
 id tvTfno
 id tv_DatosPartner
+id tv_Fecha
 id tv_asteriscos
 id tv_cantidad
 id tv_comercial

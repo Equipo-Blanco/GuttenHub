@@ -9,8 +9,10 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.Text;
 
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -19,8 +21,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class DetallePresupuesto extends AppCompatActivity {
 
     List<clasePresupuesto> datosPresupuesto;
-    TextView tvInfoPresupuesto, tvPresPartner, tvPresComercial,tvTotal, tvTitulo;
-    String cabecera[] = new String[3];
+    TextView tvInfoPresupuesto, tvPresPartner, tvPresComercial,tvTotal, tvTitulo, tvFecha;
+    String cabecera[] = new String[4];
     float totalPresupuesto;
 
     @Override
@@ -29,11 +31,14 @@ public class DetallePresupuesto extends AppCompatActivity {
         setContentView(R.layout.activity_detalle_presupuesto);
 
         totalPresupuesto = 0.0f;
+        DecimalFormat df = new DecimalFormat("#.##");
         tvInfoPresupuesto = (TextView) findViewById(R.id.tv_datos_presupuesto);
         tvTitulo = (TextView) findViewById(R.id.tv_titulo_detalle_presup);
         tvPresComercial = (TextView) findViewById(R.id.tv_pres_comercial);
         tvPresPartner = (TextView) findViewById(R.id.tv_pres_partner);
         tvTotal = (TextView) findViewById(R.id.tv_total);
+        tvFecha = (TextView) findViewById(R.id.tv_Fecha);
+
         String archivoPresup;
 
         Bundle extras = getIntent().getExtras();
@@ -54,10 +59,11 @@ public class DetallePresupuesto extends AppCompatActivity {
         contenido = contenido + "\n***************************";
 
         tvInfoPresupuesto.setText(contenido);
-        tvTitulo.setText("ID Presupuesto: " +cabecera[2]);
+        tvTitulo.setText("ID Albarán: " +cabecera[2]);
         tvPresPartner.setText("Partner: " +cabecera[0]);
         tvPresComercial.setText("Comercial: "+cabecera[1]);
-        tvTotal.setText("TOTAL: " +totalPresupuesto +"€");
+        tvTotal.setText("TOTAL: " + df.format(totalPresupuesto) +"€");
+        tvFecha.setText("Fecha Albarán: " +cabecera[3]);
 
     }
 
@@ -79,6 +85,7 @@ public class DetallePresupuesto extends AppCompatActivity {
                     cabecera[0] = eElement.getElementsByTagName("partner").item(0).getTextContent();
                     cabecera[1] = eElement.getElementsByTagName("comercial").item(0).getTextContent();
                     cabecera[2] = eElement.getElementsByTagName("id").item(0).getTextContent();
+                    cabecera[3] = eElement.getElementsByTagName("fecha").item(0).getTextContent();
                 }
             }
         } catch (Exception e) {

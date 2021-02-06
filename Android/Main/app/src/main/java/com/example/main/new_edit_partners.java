@@ -6,6 +6,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Xml;
 import android.view.View;
@@ -21,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 import org.xmlpull.v1.XmlSerializer;
 
@@ -51,6 +54,7 @@ public class new_edit_partners extends AppCompatActivity {
     int[] idComercial; //Almacenará los id de comercial para su uso con el Spinner
     String[] nombreComercial; //Almacenará los nombres de Comerciales para su uso con Spinner
     int comercial; //Almacenará el id de comercial que se insertará en la BDD
+    boolean[] camposRellenos = new boolean[]{false, false, false, false, false};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,8 @@ public class new_edit_partners extends AppCompatActivity {
         et_Direccion = (EditText) findViewById(R.id.etxtDireccion);
         sp_partners = (Spinner) findViewById(R.id.spin_partners);
 
+
+        bot_guardaPartner.setEnabled(false);
 
         //volcar datos de Partners en el Spinner
         tablasSQLHelper usdbh = new tablasSQLHelper(getApplicationContext(), "DBDraft", null, 1);
@@ -127,6 +133,116 @@ public class new_edit_partners extends AppCompatActivity {
                 }
         );
 
+
+        et_partner.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (et_partner.getText().length() > 0) {
+                    camposRellenos[0] = true;
+                } else {
+                    camposRellenos[0] = false;
+                }
+                compruebaCampos(camposRellenos);
+            }
+        });
+        et_telefono.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (et_telefono.getText().length() > 0) {
+                    camposRellenos[1] = true;
+                } else {
+                    camposRellenos[1] = false;
+                    bot_guardaPartner.setEnabled(false);
+                }
+                compruebaCampos(camposRellenos);
+            }
+        });
+        et_mailComerc.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (et_mailComerc.getText().length() > 0) {
+                    camposRellenos[2] = true;
+                } else {
+                    camposRellenos[2] = false;
+                    bot_guardaPartner.setEnabled(false);
+                }
+                compruebaCampos(camposRellenos);
+            }
+        });
+        et_Contacto.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (et_Contacto.getText().length() > 0) {
+                    camposRellenos[3] = true;
+                } else {
+                    camposRellenos[3] = false;
+                    bot_guardaPartner.setEnabled(false);
+                }
+                compruebaCampos(camposRellenos);
+            }
+        });
+        et_Direccion.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (et_Direccion.getText().length() > 0) {
+                    camposRellenos[4] = true;
+                } else {
+                    bot_guardaPartner.setEnabled(false);
+                    camposRellenos[4] = false;
+                }
+                compruebaCampos(camposRellenos);
+            }
+        });
 
         //Almacenar información al rellenar el formulario
         bot_guardaPartner.setOnClickListener(new View.OnClickListener() {
@@ -259,6 +375,29 @@ public class new_edit_partners extends AppCompatActivity {
         });
     }
 
+    private void compruebaCampos(boolean[] camposRellenos) {
+        int camposOk = 0;
+        boolean faltaAlguno = false;
+
+        for (int i = 0; i < camposRellenos.length; i++) {
+            if (camposRellenos[i] == false) {
+                faltaAlguno = true;
+            } else {
+
+            }
+        }
+
+        System.out.println("**********************************-----" + camposOk + "***************");
+
+        if (faltaAlguno == false){
+            //Todos los campos han sido rellenados
+            bot_guardaPartner.setEnabled(true);
+        } else {
+            //Toast.makeText(this, "Falta algún campo por rellenar", Toast.LENGTH_SHORT).show();
+            bot_guardaPartner.setEnabled(false);
+        }
+    }
+
 
     private void escribirXML(Document doc) throws TransformerFactoryConfigurationError, TransformerException {
         doc.getDocumentElement().normalize();
@@ -300,6 +439,7 @@ public class new_edit_partners extends AppCompatActivity {
 
 
     }
+
 
     //Obtiene texto de los campos y valida
     public String getDatos(EditText etxt) {

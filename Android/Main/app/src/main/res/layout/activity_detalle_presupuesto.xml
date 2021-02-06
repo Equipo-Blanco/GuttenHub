@@ -25,6 +25,14 @@
             android:textSize="30dp" />
 
         <TextView
+            android:id="@+id/tv_Fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="TextView" />
+
+        <TextView
             android:id="@+id/tv_asteriscos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -49,8 +49,9 @@ public class Tab1_NuevoPedido extends Fragment {
     String[] comerciales;
     int cantidad, idPartner, idComercial, idArtic;
     int idLinea = 0;
+    int idAlbaran = 0;
     float precio;
-    float totAlb=0;
+    float totAlb = 0;
     String presupuestoA = ""; //El presupuesto sin guardar aún
     String productoSeleccionado;
     String direccionEnvio;
@@ -77,11 +78,38 @@ public class Tab1_NuevoPedido extends Fragment {
 
         ArrayAdapter<String> adaptador1 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, productos);
         adaptador1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tvCoste.setText("Coste: 69.00€");
-        etCantidad.setText("1");
+        etCantidad.setText("");
+
+        btnAgregar.setEnabled(false);
+        btnConfirmar.setEnabled(false);
 
         insertaProductosXML();  //Método que recorre el XML catálogo y los inserta en la BDD
 
+        etCantidad.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (etCantidad.getText().length() > 0) {  //Validar que haya algo escrito
+                    if (Integer.parseInt(String.valueOf(etCantidad.getText())) > 0) { //Validar que sea mayor que 0
+                        btnAgregar.setEnabled(true);
+                    } else{
+                        btnAgregar.setEnabled(false);
+                    }
+                } else{
+                    btnAgregar.setEnabled(false);
+                }
+            }
+        });
 
         //Inicialización y creación de los Arrays empleados en los Spinner mediante sendas consultas a la base de datos
 
@@ -215,7 +243,7 @@ public class Tab1_NuevoPedido extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 tvCoste.setText("Coste: " + precios[i] + "€");
-                etCantidad.setText("1");
+
                 if (i < precios.length) {
                     precio = Float.parseFloat(precios[i]);
                     productoSeleccionado = productos[i];
@@ -272,6 +300,7 @@ public class Tab1_NuevoPedido extends Fragment {
             String linea = productoSeleccionado + " x" + cantidad + " - " + total;
             presupuestoA = presupuestoA + linea + "\n";
             tvPresupuesto.setText(presupuestoA);
+            btnConfirmar.setEnabled(true);
 
             //Versión del ArrayList para XML, más simple
             LineasAlbaran prod1 = new LineasAlbaran(productoSeleccionado, cantidad, precio, total);
@@ -331,9 +360,7 @@ public class Tab1_NuevoPedido extends Fragment {
         tablasSQLHelper usdbh = new tablasSQLHelper(getContext(), "DBDraft", null, 1);
         SQLiteDatabase db = usdbh.getWritableDatabase();
         if (db != null) {
-            //Insertamos los datos en la tabla Usuarios
             try {
-                int idAlbaran = 0; //Inicializar a 0
 
                 Cursor c = db.rawQuery("SELECT MAX(ID_ALBARANCABECERA) AS MAXIMO FROM CABECERA_ALBARANES", null);
                 //Nos aseguramos de que existe al menos un registro
@@ -341,7 +368,6 @@ public class Tab1_NuevoPedido extends Fragment {
                     //Recorremos el cursor hasta que no haya más registros
                     do {
                         idAlbaran = c.getInt(0);
-                        //System.out.println(codigo + " " +nombre);
                     } while (c.moveToNext());
                 }
 
@@ -363,28 +389,25 @@ public class Tab1_NuevoPedido extends Fragment {
                     float impte = lineasAlbaranSQL.get(i).getCoste();
                     totAlb = totAlb + impte;
 
-                    db.execSQL("INSERT INTO LINEAS_ALBARAN VALUES (" + idLinea + ", " + iva + ", " + idart + ", "+ cant +", "+ prec +", "+ idAlbaran+", "+ impte +")");
+                    db.execSQL("INSERT INTO LINEAS_ALBARAN VALUES (" + idLinea + ", " + iva + ", " + idart + ", " + cant + ", " + prec + ", " + idAlbaran + ", " + impte + ")");
 
                 }
-                    db.execSQL("UPDATE CABECERA_ALBARANES SET TOTAL_FACTURA =" +totAlb +" WHERE ID_ALBARANCABECERA =" +idAlbaran);
+                db.execSQL("UPDATE CABECERA_ALBARANES SET TOTAL_FACTURA =" + totAlb + " WHERE ID_ALBARANCABECERA =" + idAlbaran);
 
                 Toast.makeText(getContext(), "Pedido Creado correctamente", Toast.LENGTH_SHORT).show();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        //Cerramos la conexión con la base de datos
-        // db.close();
 
-
-        //LO DE ABAJO ES PARA XML
+        // PARA XML:
 
         String comercial, partner;
         String nombrePresup;
-        comercial = ""; // *************************************************************************
-        partner = "";  // **************************************************************************
+        comercial = comerciales[(idComercial - 1)];
+        partner = partners[(idPartner - 1)];
 
-        int id = (int) (Math.random() * 5000) - 1;
+        int id = idAlbaran;
         nombrePresup = fecha + partner + "-" + id;
 
         File newxmlfile = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/DraftPresupuestos/" + nombrePresup + ".xml");
@@ -401,6 +424,11 @@ public class Tab1_NuevoPedido extends Fragment {
             serializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
 
             serializer.startTag(null, "presupuesto");
+
+
+            serializer.startTag(null, "fecha");
+            serializer.text(fecha);
+            serializer.endTag(null, "fecha");
 
             serializer.startTag(null, "partner");
             serializer.text(partner);

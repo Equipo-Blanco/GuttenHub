@@ -93,6 +93,7 @@
             android:id="@+id/etMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autoText="false"
             android:ems="10"
             android:hint="example@example.com"
             android:inputType="textEmailAddress" />
