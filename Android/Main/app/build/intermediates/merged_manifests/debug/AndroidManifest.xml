@@ -8,11 +8,11 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="30" />
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -29,13 +29,13 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Main" >
+        <activity android:name="com.example.main.login_act" />
         <activity
             android:name="com.example.main.DetallePresupuesto"
             android:parentActivityName="com.example.main.Pedidos" />
         <activity
             android:name="com.example.main.Pedidos"
             android:label="@string/title_activity_pedidos"
-            android:parentActivityName="com.example.main.MainActivity"
             android:theme="@style/Theme.Main.NoActionBar" />
         <activity android:name="com.example.main.Catalogo" />
         <activity
@@ -51,24 +51,15 @@
         -->
         <activity
             android:name="com.example.main.Mapa"
-            android:label="@string/title_activity_mapa"
-            android:parentActivityName="com.example.main.MainActivity" />
-        <activity
-            android:name="com.example.main.Envios"
-            android:parentActivityName="com.example.main.MainActivity" >
+            android:label="@string/title_activity_mapa" />
+        <activity android:name="com.example.main.Envios" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.main.Citas"
-            android:parentActivityName="com.example.main.MainActivity" />
-        <activity
-            android:name="com.example.main.Partners"
-            android:parentActivityName="com.example.main.MainActivity" />
-        <activity
-            android:name="com.example.main.new_edit_partners"
-            android:parentActivityName="com.example.main.MainActivity" />
+        <activity android:name="com.example.main.Citas" />
+        <activity android:name="com.example.main.Partners" />
+        <activity android:name="com.example.main.new_edit_partners" />
         <activity android:name="com.example.main.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

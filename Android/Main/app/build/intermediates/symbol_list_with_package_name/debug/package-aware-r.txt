@@ -1622,6 +1622,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable login
 drawable mail
 drawable map
 drawable maps
@@ -1763,6 +1764,8 @@ id bottom
 id bounce
 id btnAdjuntar
 id btnEnviar
+id btnLog
+id btnLogin
 id btnNuevo
 id btn_actualizar
 id btn_agregar
@@ -1836,7 +1839,9 @@ id etDestinatario
 id etMail
 id etMensaje
 id etNombre
+id etPwd
 id etTelefono
+id etUsr
 id et_cantidad
 id et_descripcion
 id et_titulo
@@ -1875,6 +1880,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imgLogo
 id info
 id invisible
 id italic
@@ -2050,6 +2056,7 @@ id textStart
 id textView
 id textView10
 id textView11
+id textView12
 id textView2
 id textView3
 id textView4
@@ -2193,6 +2200,7 @@ layout activity_catalogo
 layout activity_citas
 layout activity_detalle_presupuesto
 layout activity_envios
+layout activity_login_act
 layout activity_main
 layout activity_mapa
 layout activity_new_edit_partners
@@ -2335,6 +2343,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string contrase_a
 string correo
 string descripcion
 string detalles
@@ -2352,6 +2361,7 @@ string google_maps_key
 string guardar
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string iniciar_sesion
 string item_view_role_description
 string material_slider_range_end
 string material_slider_range_start
@@ -2390,6 +2400,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string nombre_de_usuario
 string nuevo
 string partner
 string partners

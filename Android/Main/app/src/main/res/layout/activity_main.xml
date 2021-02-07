@@ -60,6 +60,16 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/btnLogin"
+                style="@android:style/Widget.DeviceDefault.Light.ImageButton"
+                android:layout_width="80dp"
+                android:layout_height="75dp"
+                android:contentDescription="TODO"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/login"
+                tools:srcCompat="@drawable/login" />
+
+            <ImageButton
                 android:id="@+id/BtnCorreo"
                 style="@android:style/Widget.ImageButton"
                 android:layout_width="80dp"

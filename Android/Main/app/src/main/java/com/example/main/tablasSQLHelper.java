@@ -82,11 +82,16 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
     String sqlComercial2 = "INSERT INTO COMERCIALES " +
             "              VALUES(2, 'Hodei', 'Aguirre Barros', 'DraftSL', 'Calle Mayor', 'Poligono 27', 696121212, 2, 'hodei@draft.com')";
     String sqlComercial3 = "INSERT INTO COMERCIALES " +
-            "              VALUES(3, 'Pepe', 'Marcos Torres', 'Enterprise', 'Avenida Siete', 'Poligono 27', 696111111, 3, 'pepe@enterprise.com')";
+            "              VALUES(3, 'Javi', 'Javi Seara', 'Cebanc', 'Calle 1', 'Paseo 2', 696111111, 3, 'javi@cebanc.com')";
 
     //Inserción de las categorías
     String sqlCategoria1 = "INSERT INTO CATEGORIAS VALUES (1, 'C', 'CAMISETAS')";
     String sqlCategoria2 = "INSERT INTO CATEGORIAS VALUES (2, 'P', 'COMPLEMENTOS')";
+
+    //Inserción de los usuarios y contraseñas
+    String sqlNuevoUsuario = "INSERT INTO LOGINUSUARIOS VALUES(2, 'Hodei', 'Hodei727', 'hodei@draft.com')";
+    String sqlNuevoUsuario2 = "INSERT INTO LOGINUSUARIOS VALUES(1, 'Sergio', 'luhia', 'sergio@draft.com')";
+    String sqlNuevoUsuario3 = "INSERT INTO LOGINUSUARIOS VALUES(3, 'javi', 'seara', 'javi@cebanc.com')";
 
 
     public tablasSQLHelper(Context contexto, String nombre,
@@ -106,11 +111,17 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCreateCabeceraAlbaranes);
         db.execSQL(sqlCreateLineasAlbaran);
         db.execSQL(sqlCreateLogin);
+
         db.execSQL(sqlComercial1);
         db.execSQL(sqlComercial2);
         db.execSQL(sqlComercial3);
+
         db.execSQL(sqlCategoria1);
         db.execSQL(sqlCategoria2);
+
+        db.execSQL(sqlNuevoUsuario);
+        db.execSQL(sqlNuevoUsuario2);
+        db.execSQL(sqlNuevoUsuario3);
     }
 
     @Override
@@ -137,11 +148,17 @@ public class tablasSQLHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCreateCabeceraAlbaranes);
         db.execSQL(sqlCreateLineasAlbaran);
         db.execSQL(sqlCreateLogin);
+
         db.execSQL(sqlComercial1);
         db.execSQL(sqlComercial2);
         db.execSQL(sqlComercial3);
+
         db.execSQL(sqlCategoria1);
         db.execSQL(sqlCategoria2);
+
+        db.execSQL(sqlNuevoUsuario);
+        db.execSQL(sqlNuevoUsuario2);
+        db.execSQL(sqlNuevoUsuario3);
     }
 }
 

@@ -329,7 +329,6 @@ public class Tab1_NuevoPedido extends Fragment {
                             " VALUES (" + (i + 1) + ", '" + productos[i] + "', 1, " + Float.parseFloat(precios[i]) + ", " + (Float.parseFloat(precios[i]) * 1.20) + ", 100, 10, 'imagen.jpg')");
                 }
 
-                Toast.makeText(getContext(), "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -399,6 +398,8 @@ public class Tab1_NuevoPedido extends Fragment {
                 e.printStackTrace();
             }
         }
+
+
 
         // PARA XML:
 

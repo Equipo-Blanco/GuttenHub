@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Button bot_citas;
     Button bot_pedidos;
     Button bot_envios;
+    ImageButton bot_Login;
     ImageButton bot_mapa;
     ImageButton bot_correo;
     ImageButton bot_llamada;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     String asunto;
     String mensaje;
 
-    String [] productos;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
         telf = (TextView) findViewById(R.id.TxTel);
         mail = (TextView) findViewById(R.id.TxEmail);
         spin_delegaciones = (Spinner) findViewById(R.id.spnDelegaciones);
+        bot_Login = (ImageButton) findViewById(R.id.btnLogin);
+
+        //La forma de simular la sesión no iniciada
+        bot_partners.setEnabled(false);
+        bot_citas.setEnabled(false);
+        bot_envios.setEnabled(false);
+        bot_pedidos.setEnabled(false);
+        bot_Login.setEnabled(true);
+
 
 
 
@@ -110,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        bot_Login.setOnClickListener(view -> skype());
 
         bot_correo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -210,5 +221,36 @@ public class MainActivity extends AppCompatActivity {
         } catch (Throwable t) {
             Toast.makeText(this, "Ha ocurrido un error, vuelve a intentarlo: " + t.toString(), Toast.LENGTH_LONG).show();
         }
+    }
+
+    //Método para Toasts modulares
+    public void tostada(String texto){
+        Toast.makeText(this, texto, Toast.LENGTH_SHORT).show();
+    }
+    public void skype() {
+        Intent carry = new Intent(this, login_act.class);
+        startActivityForResult(carry, 7);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 7) {
+            if (resultCode == login_act.RESULT_OK) {
+                String resultado = data.getStringExtra("username");
+                tostada("Bienvenido " +resultado);
+
+                //Simular sesión iniciada:
+                bot_partners.setEnabled(true);
+                bot_citas.setEnabled(true);
+                bot_envios.setEnabled(true);
+                bot_pedidos.setEnabled(true);
+                bot_Login.setEnabled(false);
+
+
+            }
+        }
+
     }
 }

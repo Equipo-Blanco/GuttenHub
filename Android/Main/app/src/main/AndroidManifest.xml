@@ -10,19 +10,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Main">
-
-
-        <activity android:name=".DetallePresupuesto"
-            android:parentActivityName=".Pedidos"></activity>
-
+        <activity android:name=".login_act"></activity>
+        <activity
+            android:name=".DetallePresupuesto"
+            android:parentActivityName=".Pedidos" />
         <activity
             android:name=".Pedidos"
             android:label="@string/title_activity_pedidos"
-            android:theme="@style/Theme.Main.NoActionBar"
-            android:parentActivityName=".MainActivity"/>
-
-        <activity
-            android:name=".Catalogo" />
+            android:theme="@style/Theme.Main.NoActionBar" />
+        <activity android:name=".Catalogo" />
         <activity
             android:name=".NuevaCita"
             android:parentActivityName=".Citas" />
@@ -36,27 +32,23 @@
         -->
         <activity
             android:name=".Mapa"
-            android:label="@string/title_activity_mapa"
-            android:parentActivityName=".MainActivity" />
+            android:label="@string/title_activity_mapa" />
         <activity
-            android:name=".Envios"
-            android:parentActivityName=".MainActivity">
+            android:name=".Envios">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Citas"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Citas"/>
         <activity
-            android:name=".Partners"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Partners"/>
         <activity
-            android:name=".new_edit_partners"
-            android:parentActivityName=".MainActivity" />
+            android:name=".new_edit_partners"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -65,10 +57,10 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_key" />
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
